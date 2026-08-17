@@ -23,12 +23,17 @@ Each candidate must be assessed against the following criteria and supported by 
 |---|---|
 | Dataset identifier | Stable accession, DOI, repository ID, or equivalent |
 | Repository/source | Public source URL and acquisition route |
-| License | License or documented permission for experimental use |
+| Publication license | License attached to the paper or publication record |
+| Dataset license | Dataset-level redistribution and experimental-use terms, recorded separately from publication licensing |
 | Acquisition date | Date acquired by OysterBox and source release date where available |
 | Discovery evidence | Evidence available to the discovery-stage analysis |
 | Discovery cutoff | Fixed date for information permitted to scoring |
 | Validation source | Independent assay, cohort, or other prespecified source |
+| Validation assay type | Orthogonal assay, targeted PRM/SRM, independent cohort, or other prespecified category |
 | Validation-publication date | Date validation evidence became publicly available |
+| Cohort overlap | None, partial, unknown, or same cohort; overlap must not be hidden by the word independent |
+| Candidate-selection provenance | Counts and lineage for discovery-derived, literature-derived, and housekeeping candidates |
+| Candidate-outcome artifact | Separate artifact identity and checksum; it must remain unavailable to scoring |
 | Identifier mapping | Protein/peptide mapping method, version, and unresolved count |
 | Sample metadata | Completeness of sample, study, batch, and experiment metadata |
 | Processing provenance | Raw/processed files, software, parameters, and checksums |
@@ -42,7 +47,7 @@ Each candidate must be assessed against the following criteria and supported by 
 
 Screen candidates using only the frozen criteria. Record evidence URLs, acquisition timestamps, file hashes, and unresolved questions in `provenance/DATASET_SCREENING_0.2.yaml` and candidate-specific records under `experiments/0.2/dataset_candidates/`.
 
-A candidate may be marked `INCLUDE` only after the dataset identity, discovery cutoff, acquisition manifest checksum, validation-outcome separation checksum, and decision are frozen. `EXCLUDE` and `NEEDS_CLARIFICATION` candidates are never passed to scoring.
+A candidate may be marked `INCLUDE` only after the dataset identity, discovery cutoff, acquisition manifest checksum, validation-outcome separation checksum, licensing status, candidate-selection lineage, cohort-overlap status, and decision are frozen. A promising structural candidate may be recorded as `PROVISIONAL_CANDIDATE`, but it remains `NEEDS_CLARIFICATION` until those conditions are verified. `EXCLUDE` and `NEEDS_CLARIFICATION` candidates are never passed to scoring.
 
 After all screening decisions are committed, the included dataset may be acquired and scored using the frozen OysterBox 0.1 rubric. Validation outcomes remain in a separate controlled artifact until predictions are frozen and checksummed.
 

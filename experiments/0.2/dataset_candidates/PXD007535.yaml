@@ -1,0 +1,49 @@
+dataset_identifier: PXD007535
+source:
+  repository: PRIDE / ProteomeXchange
+  url: https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD007535
+publication_license: CC BY 4.0 (reported; verify against source record)
+dataset_license_status: NOT_VERIFIED
+acquisition_date: ""
+discovery_evidence:
+  description: Discovery LFQ proteomics cohort with 67 subjects and 119 differential proteins.
+  source_url: ""
+discovery_cutoff: ""
+validation_source:
+  description: Independently collected validation cohort with SRM measurements and candidate-level peptide results.
+  source_url: ""
+validation_assay_type: TARGETED_SRM
+validation_publication_date: ""
+discovery_cohort_description: "67-subject discovery cohort; exact sample and institution manifest pending verification."
+validation_cohort_description: "82-subject independent validation cohort; exact sample and institution manifest pending verification."
+cohort_overlap_status: UNKNOWN
+candidate_selection_provenance:
+  discovery_derived_count: 50
+  literature_derived_count: 11
+  housekeeping_count: 4
+  method: "Separate discovery-derived candidates from literature-derived and housekeeping candidates before scoring. Verify against the source publication and supplementary tables."
+candidate_outcome_artifact:
+  description: "SRM candidate-level measurements and outcome table; artifact identity and checksum pending acquisition."
+  source_url: ""
+  outcome_labels_visible_to_scoring: false
+identifier_mapping:
+  method: "Protein and peptide identifiers from source supplementary tables; mapping release pending verification."
+  version: ""
+  unresolved_count: null
+sample_metadata_completeness:
+  status: NEEDS_VERIFICATION
+  notes: "Reported as rich, with discovery and validation cohort metadata; verify sample, batch, institution, and experiment fields."
+processing_provenance_completeness:
+  status: NEEDS_VERIFICATION
+  notes: "Reported raw data, Skyline files, peptide measurements, and clinical metadata; freeze acquisition manifests and hashes before scoring."
+independent_validation_status: REPORTED_INDEPENDENT_COHORT_PENDING_VERIFICATION
+leakage_assessment:
+  status: NEEDS_CUTOFF_AND_ARTIFACT_REVIEW
+  notes: "Ignore published AUC and validation outcomes during discovery scoring. Reconstruct the discovery artifact, SRM outcome artifact, publication dates, and information cutoff."
+redistribution_or_hash_status:
+  status: HASH_REQUIRED
+  acquisition_manifest_sha256: ""
+  validation_outcome_separation_sha256: ""
+decision: NEEDS_CLARIFICATION
+screening_status: PROVISIONAL_CANDIDATE
+reviewer_rationale: "Strongest current structural candidate for a discovery-to-targeted-validation benchmark, but not yet eligible for scoring. Final inclusion requires verified dataset licensing, frozen discovery and SRM artifacts, a reconstructable information cutoff, candidate-provenance separation, and confirmation of cohort independence."

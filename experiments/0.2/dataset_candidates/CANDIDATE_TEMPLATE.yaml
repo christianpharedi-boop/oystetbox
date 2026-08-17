@@ -2,7 +2,8 @@ dataset_identifier: ""
 source:
   repository: ""
   url: ""
-license: ""
+publication_license: ""
+dataset_license_status: "VERIFIED / NOT_VERIFIED / RESTRICTED"
 acquisition_date: ""
 discovery_evidence:
   description: ""
@@ -11,7 +12,20 @@ discovery_cutoff: ""
 validation_source:
   description: ""
   source_url: ""
+validation_assay_type: "ORTHOGONAL_ASSAY / TARGETED_PRM / TARGETED_SRM / INDEPENDENT_COHORT / OTHER"
 validation_publication_date: ""
+discovery_cohort_description: ""
+validation_cohort_description: ""
+cohort_overlap_status: "NONE / PARTIAL / UNKNOWN / SAME_COHORT"
+candidate_selection_provenance:
+  discovery_derived_count: null
+  literature_derived_count: null
+  housekeeping_count: null
+  method: ""
+candidate_outcome_artifact:
+  description: ""
+  source_url: ""
+  outcome_labels_visible_to_scoring: false
 identifier_mapping:
   method: ""
   version: ""
@@ -31,4 +45,5 @@ redistribution_or_hash_status:
   acquisition_manifest_sha256: ""
   validation_outcome_separation_sha256: ""
 decision: "NEEDS_CLARIFICATION"
+screening_status: "PROVISIONAL_CANDIDATE"
 reviewer_rationale: ""

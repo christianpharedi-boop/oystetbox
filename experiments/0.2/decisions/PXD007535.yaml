@@ -1,0 +1,17 @@
+dataset_identifier: PXD007535
+screening_ledger: provenance/DATASET_SCREENING_0.2.yaml
+screening_protocol: docs/DATASET_SCREENING_0.2.md
+screening_status: PROVISIONAL_CANDIDATE
+decision: NEEDS_CLARIFICATION
+performance_inspected: false
+outcome_labels_exposed_to_oysterbox: false
+required_before_final_include:
+  - verify_dataset_level_license
+  - freeze_discovery_artifact_and_sha256
+  - freeze_srm_outcome_artifact_separately_and_sha256
+  - establish_discovery_information_cutoff
+  - verify_discovery_vs_literature_vs_housekeeping_candidate_lineage
+  - verify_discovery_and_validation_cohort_independence
+  - resolve_protein_and_peptide_identifier_mapping
+  - verify_sample_and_processing_metadata_completeness
+reviewer_rationale: "Strong structural candidate for exploratory feasibility, but the reported evidence is not yet sufficient for final inclusion. The published AUC and validation results must remain outside the scoring inputs."

@@ -10,11 +10,17 @@ required_frozen_artifacts:
   - acquisition_manifest_sha256
   - validation_outcome_separation_sha256
   - screening_decision
-candidate_count: 0
-candidates: []
+candidate_count: 1
+candidates:
+  - dataset_identifier: PXD007535
+    screening_record: experiments/0.2/dataset_candidates/PXD007535.yaml
+    decision_record: experiments/0.2/decisions/PXD007535.yaml
+    decision: NEEDS_CLARIFICATION
+    screening_status: PROVISIONAL_CANDIDATE
+    eligible_for_scoring: false
 decision_vocabulary:
   - INCLUDE
   - EXCLUDE
   - NEEDS_CLARIFICATION
 performance_results_seen_during_screening: false
-reviewer_rationale: Dataset screening governance is frozen before candidate discovery and OysterBox scoring.
+reviewer_rationale: Dataset screening governance is frozen before candidate discovery and OysterBox scoring. PXD007535 is recorded as a provisional structural candidate only; no performance was inspected and no validation outcome was exposed to OysterBox.

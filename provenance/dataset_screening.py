@@ -6,12 +6,19 @@ from typing import Mapping
 REQUIRED_FIELDS = (
     "dataset_identifier",
     "source",
-    "license",
+    "publication_license",
+    "dataset_license_status",
     "acquisition_date",
     "discovery_evidence",
     "discovery_cutoff",
     "validation_source",
+    "validation_assay_type",
     "validation_publication_date",
+    "discovery_cohort_description",
+    "validation_cohort_description",
+    "cohort_overlap_status",
+    "candidate_selection_provenance",
+    "candidate_outcome_artifact",
     "identifier_mapping",
     "sample_metadata_completeness",
     "processing_provenance_completeness",
@@ -19,6 +26,7 @@ REQUIRED_FIELDS = (
     "leakage_assessment",
     "redistribution_or_hash_status",
     "decision",
+    "screening_status",
     "reviewer_rationale",
 )
 

@@ -56,12 +56,19 @@ class OysterBoxTests(unittest.TestCase):
         base = {
             "dataset_identifier": "example",
             "source": "public repository",
-            "license": "permitted",
+            "publication_license": "permitted",
+            "dataset_license_status": "VERIFIED",
             "acquisition_date": "2026-01-01",
             "discovery_evidence": "discovery file",
             "discovery_cutoff": "2025-01-01",
             "validation_source": "independent assay",
+            "validation_assay_type": "TARGETED_SRM",
             "validation_publication_date": "2026-01-02",
+            "discovery_cohort_description": "discovery cohort",
+            "validation_cohort_description": "independent cohort",
+            "cohort_overlap_status": "NONE",
+            "candidate_selection_provenance": "discovery-derived",
+            "candidate_outcome_artifact": "separate outcome file",
             "identifier_mapping": "UniProt release",
             "sample_metadata_completeness": "complete",
             "processing_provenance_completeness": "complete",
@@ -69,6 +76,7 @@ class OysterBoxTests(unittest.TestCase):
             "leakage_assessment": "passed",
             "redistribution_or_hash_status": "hashed",
             "decision": "INCLUDE",
+            "screening_status": "FINAL_INCLUDED",
             "reviewer_rationale": "screened independently",
             "acquisition_manifest_sha256": "a" * 64,
             "validation_outcome_separation_sha256": "b" * 64,
@@ -78,6 +86,18 @@ class OysterBoxTests(unittest.TestCase):
             score_eligibility({**base, "decision": "NEEDS_CLARIFICATION"})
         with self.assertRaises(ValueError):
             score_eligibility({key: value for key, value in base.items() if key != "discovery_cutoff"})
+
+    def test_pxd007535_is_provisional_and_unscored(self):
+        candidate = (ROOT / "experiments/0.2/dataset_candidates/PXD007535.yaml").read_text(encoding="utf-8")
+        decision = (ROOT / "experiments/0.2/decisions/PXD007535.yaml").read_text(encoding="utf-8")
+        ledger = (ROOT / "provenance/DATASET_SCREENING_0.2.yaml").read_text(encoding="utf-8")
+        self.assertIn("decision: NEEDS_CLARIFICATION", candidate)
+        self.assertIn("screening_status: PROVISIONAL_CANDIDATE", candidate)
+        self.assertIn("dataset_license_status: NOT_VERIFIED", candidate)
+        self.assertIn("performance_inspected: false", decision)
+        self.assertIn("outcome_labels_exposed_to_oysterbox: false", decision)
+        self.assertIn("eligible_for_scoring: false", ledger)
+        self.assertIn("scoring_permitted: false", ledger)
 
     def test_parser_and_quality_gate(self):
         self.assertEqual(len(self.measurements), 6)
