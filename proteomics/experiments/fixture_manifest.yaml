@@ -1,0 +1,6 @@
+experiment_id: oysterbox_0_1_fixture
+version: "0.1"
+dataset: proteomics/dataset/fixture.csv
+measurement_unit: arbitrary_intensity_units
+analysis: protein_level_qc_summary
+validation_outcome_available_to_scoring: false

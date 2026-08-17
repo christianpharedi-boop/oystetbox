@@ -1,54 +1,40 @@
-# CoreSignal
+# OysterBox
 
-CoreSignal is a reproducible computational research framework for testing whether independently inferred inner-core dynamics have predictive power for Earth-rotation and geomagnetic observations.
+OysterBox is a clean experimental repository testing whether the scientific-trust architecture developed in [CoreSignal](https://github.com/christianpharedi-boop/coresignal) transfers from Earth-rotation research to proteomics.
 
-## Current release
+> Can a provenance, integrity, quality, admission, analysis, and evidence-chain architecture survive transplantation into molecular science without being redesigned around the new results?
 
-**v0.3.0 - Data Acquisition & Scientific Provenance**
+This repository is intentionally a **sandbox**, not a claim that a proteomics result has been biologically validated. It begins with a frozen specification, transparent scoring, deterministic tests, and an explicit record of which CoreSignal invariants are reused and which Earth-specific modules are removed.
 
-v0.2 defined the scientific protocol. v0.3 establishes the controlled data boundary required before modelling.
+## Status
 
-## Falsification-first principle
+OysterBox Experiment 0.1 is a validation-readiness framework. The default dataset is a small synthetic fixture used only to exercise the pipeline; no biological conclusion should be drawn from it. A real proteomics dataset must be registered with its license, acquisition metadata, raw-file checksum, and analysis plan before admission.
 
-CoreSignal is designed to falsify its motivating hypothesis, not merely demonstrate it.
+## Architecture transfer
 
-No scientific experiment may execute against a dataset whose provenance is incomplete or whose admission checks have failed.
+| CoreSignal concept | OysterBox adaptation |
+|---|---|
+| Dataset provenance | Sample and data provenance |
+| Acquisition | Dataset acquisition |
+| Hashing | Raw proteomics file hashing |
+| Parsing | Proteomics metadata and measurement parsing |
+| Quality gate | Proteomics QC gate |
+| Admission | Admission into the experiment |
+| Scientific computation | Proteomic analysis |
+| Result | Protein finding |
+| Evidence chain | Finding-to-evidence chain |
 
-## Dataset lifecycle
+The implementation deliberately keeps the architecture small. It does not import Earth-rotation semantics, station logic, geomagnetic models, or domain-specific forecasting into the proteomics experiment.
 
-```text
-PLANNED
-  -> DISCOVERED
-  -> METADATA_VERIFIED
-  -> ACQUIRED
-  -> HASHED
-  -> PARSED
-  -> QUALITY_CHECKED
-  -> ADMITTED
-```
-
-Only `ADMITTED` datasets may be used by scientific experiments.
-
-## v0.3 first target
-
-The first operational target is Earth rotation, specifically length-of-day (LOD), because it provides a clean first benchmark before adding inner-core predictors and geomagnetic targets.
-
-The underlying research question remains whether time-varying inner-core differential rotation and deformation can be quantitatively connected to measurable variations in LOD and geomagnetic secular variation. The complete v0.2 protocol is in [`docs/SCIENTIFIC_SPECIFICATION_v0.2.md`](docs/SCIENTIFIC_SPECIFICATION_v0.2.md), with supporting [experiment](docs/EXPERIMENT_PROTOCOL.md), [provenance](docs/DATA_PROVENANCE.md), and [scientific-status](docs/SCIENTIFIC_STATUS.md) documentation.
-
-## Local validation
+## Run
 
 ```bash
-python scripts/validate_provenance.py .
-python scripts/check_english_only.py .
-python -m unittest discover -s tests -v
+python3 -m unittest discover -s tests -v
+python3 scoring/validation_readiness.py
 ```
 
-## Data policy
+The score is transparent and bounded between 0 and 1. It is a readiness indicator, not a probability of biological truth.
 
-Raw external data are never silently edited. Derived datasets must retain a provenance link to their raw source and transformation version.
+## Provenance
 
-Do not commit externally licensed raw datasets unless their terms explicitly permit redistribution.
-
-## Author and citation
-
-CoreSignal is authored by **Basie Pharedi**. Citation metadata are maintained in [`CITATION.cff`](CITATION.cff).
+OysterBox derives its initial architecture from CoreSignal commit `c29254c483b5cb0d5bcaea86c3e47b7eb727ff15` (2026-08-17). The source history is retained in this repository; the transfer is documented in `provenance/CORESIGNAL_DERIVATION.md`.

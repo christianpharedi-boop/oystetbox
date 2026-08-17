@@ -1,0 +1,14 @@
+schema_version: "0.1"
+project: OysterBox
+status: experimental
+sources:
+  - id: coresignal_architecture
+    type: software_lineage
+    repository: https://github.com/christianpharedi-boop/coresignal
+    commit: c29254c483b5cb0d5bcaea86c3e47b7eb727ff15
+    status: fixed
+  - id: proteomics_fixture
+    type: synthetic_dataset
+    path: proteomics/dataset/fixture.csv
+    sha256: 18049595c2c0a34e14003545eb88ed2dc3d795c406852a37901fdfb8bc2c90da
+    status: fixed

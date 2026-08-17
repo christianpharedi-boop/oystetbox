@@ -1,2 +1,0 @@
-#Network | Station | Location | Channel | Latitude | Longitude | Elevation | Depth | Azimuth | Dip | SensorDescription | Scale | ScaleFreq | ScaleUnits | SampleRate | StartTime | EndTime
-IM|ILAR|FB|SHZ|64.7714|-146.886597|419.0|0.0|0.0|-90.0|G23900=ILAR=Gen=AIM24S_4.33E7=ILAR|1.60991E10|2.0|M/S|20.0|1980-01-01T00:00:00.0000|

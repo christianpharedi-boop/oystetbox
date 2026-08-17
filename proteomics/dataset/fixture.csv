@@ -1,0 +1,7 @@
+protein_id,sample_id,intensity,qc_pass,biological_evidence,independent_evidence
+P001,S001,120.0,1,0.8,0.6
+P001,S002,118.0,1,0.8,0.6
+P001,S003,121.0,1,0.8,0.6
+P002,S001,15.0,0,0.2,0.1
+P002,S002,16.0,1,0.2,0.1
+P002,S003,14.0,1,0.2,0.1

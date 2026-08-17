@@ -1,1 +1,0 @@
-"""CoreSignal rotation package."""

@@ -1,9 +1,0 @@
-{
-  "dataset": "iers_eop20u24_c04_1962_now",
-  "status": "QUALITY_CHECKED_PENDING_LICENSE",
-  "reason": "All acquisition, parsing, integrity and QC gates passed; explicit redistribution licence not verified.",
-  "raw_sha256": "0a9592923561528b8e1dcb9ea3628583f9687a2424ad82d3f62d2a71c819a8de",
-  "processed_sha256": "a8be254327222ab0c98b923d15aaea8464688f3fee26dfd4bea08b1ab00d5c2b",
-  "raw_bytes": 5163654,
-  "rows": 23575
-}

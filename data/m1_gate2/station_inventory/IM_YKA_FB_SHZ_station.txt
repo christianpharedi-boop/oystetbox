@@ -1,2 +1,0 @@
-#Network | Station | Location | Channel | Latitude | Longitude | Elevation | Depth | Azimuth | Dip | SensorDescription | Scale | ScaleFreq | ScaleUnits | SampleRate | StartTime | EndTime
-IM|YKA|FB|SHZ|62.493198|-114.605301|197.0|0.0|0.0|-90.0|Geotech S-13 short-period seismometer/CNSN Yellowk|9.3339E9|2.0|M/S|20.0|1989-01-25T00:00:00.0000|

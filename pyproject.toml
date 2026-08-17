@@ -3,26 +3,15 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "coresignal"
-version = "0.3.0"
-description = "Computational framework for coupled inner-core, Earth-rotation, and geomagnetic research."
+name = "oysterbox"
+version = "0.1.0"
+description = "A provenance-first proteomics transfer experiment derived from CoreSignal."
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.10"
 authors = [{ name = "Basie Pharedi" }]
-dependencies = [
-  "PyYAML>=6.0",
-]
-
-[project.optional-dependencies]
-test = [
-  "pytest>=8.0",
-]
-
-[tool.setuptools.packages.find]
-where = ["src"]
-
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+pythonpath = ["."]
 
 [tool.ruff]
 line-length = 120

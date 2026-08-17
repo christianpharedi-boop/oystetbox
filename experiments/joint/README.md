@@ -1,1 +1,0 @@
-# Joint coupled-model experiments
