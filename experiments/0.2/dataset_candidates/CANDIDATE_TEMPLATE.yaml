@@ -1,0 +1,34 @@
+dataset_identifier: ""
+source:
+  repository: ""
+  url: ""
+license: ""
+acquisition_date: ""
+discovery_evidence:
+  description: ""
+  source_url: ""
+discovery_cutoff: ""
+validation_source:
+  description: ""
+  source_url: ""
+validation_publication_date: ""
+identifier_mapping:
+  method: ""
+  version: ""
+  unresolved_count: null
+sample_metadata_completeness:
+  status: ""
+  notes: ""
+processing_provenance_completeness:
+  status: ""
+  notes: ""
+independent_validation_status: ""
+leakage_assessment:
+  status: ""
+  notes: ""
+redistribution_or_hash_status:
+  status: ""
+  acquisition_manifest_sha256: ""
+  validation_outcome_separation_sha256: ""
+decision: "NEEDS_CLARIFICATION"
+reviewer_rationale: ""

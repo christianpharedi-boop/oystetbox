@@ -33,7 +33,7 @@ python3 -m unittest discover -s tests -v
 python3 scoring/validation_readiness.py
 ```
 
-The score is transparent and bounded between 0 and 1. It is a readiness indicator, not a probability of biological truth. The v0.1 rubric is frozen; it must not be tuned using future validation outcomes.
+The score is transparent and bounded between 0 and 1. It is a readiness indicator, not a probability of biological truth. The v0.1 rubric is frozen; it must not be tuned using future validation outcomes. Dataset selection is governed separately by `docs/DATASET_SCREENING_0.2.md`, and no candidate may be scored until its screening decision and provenance artifacts are frozen.
 
 ## Provenance
 

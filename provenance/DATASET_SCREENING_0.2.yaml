@@ -1,0 +1,20 @@
+schema_version: "0.2"
+experiment: OysterBox Experiment 0.2 — Exploratory Feasibility Benchmark
+status: screening_protocol_frozen
+selection_independent_of_oysterbox_performance: true
+scoring_permitted: false
+scoring_block_reason: no candidate has a frozen INCLUDE decision and complete pre-scoring artifacts
+required_frozen_artifacts:
+  - dataset_identity
+  - discovery_cutoff
+  - acquisition_manifest_sha256
+  - validation_outcome_separation_sha256
+  - screening_decision
+candidate_count: 0
+candidates: []
+decision_vocabulary:
+  - INCLUDE
+  - EXCLUDE
+  - NEEDS_CLARIFICATION
+performance_results_seen_during_screening: false
+reviewer_rationale: Dataset screening governance is frozen before candidate discovery and OysterBox scoring.

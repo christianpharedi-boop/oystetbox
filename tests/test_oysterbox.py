@@ -13,6 +13,7 @@ from ingestion.proteomics_csv import parse_csv
 from integrity.hash_file import sha256_file
 from quality.qc import protein_qc_counts, qc_pass_rate
 from scoring.validation_readiness import DIMENSIONS, validation_readiness
+from provenance.dataset_screening import score_eligibility
 
 
 class OysterBoxTests(unittest.TestCase):
@@ -50,6 +51,33 @@ class OysterBoxTests(unittest.TestCase):
             "would not establish clinical utility",
         ]:
             self.assertIn(required, protocol)
+
+    def test_dataset_screening_gate_blocks_unfrozen_or_nonincluded_candidates(self):
+        base = {
+            "dataset_identifier": "example",
+            "source": "public repository",
+            "license": "permitted",
+            "acquisition_date": "2026-01-01",
+            "discovery_evidence": "discovery file",
+            "discovery_cutoff": "2025-01-01",
+            "validation_source": "independent assay",
+            "validation_publication_date": "2026-01-02",
+            "identifier_mapping": "UniProt release",
+            "sample_metadata_completeness": "complete",
+            "processing_provenance_completeness": "complete",
+            "independent_validation_status": "independent",
+            "leakage_assessment": "passed",
+            "redistribution_or_hash_status": "hashed",
+            "decision": "INCLUDE",
+            "reviewer_rationale": "screened independently",
+            "acquisition_manifest_sha256": "a" * 64,
+            "validation_outcome_separation_sha256": "b" * 64,
+        }
+        self.assertTrue(score_eligibility(base).score_eligible)
+        with self.assertRaises(ValueError):
+            score_eligibility({**base, "decision": "NEEDS_CLARIFICATION"})
+        with self.assertRaises(ValueError):
+            score_eligibility({key: value for key, value in base.items() if key != "discovery_cutoff"})
 
     def test_parser_and_quality_gate(self):
         self.assertEqual(len(self.measurements), 6)
