@@ -1,0 +1,23 @@
+schema_version: "0.1"
+experiment: OysterBox 0.1
+status: frozen_engineering_baseline
+baseline_commit: df9c14ada1013a7c6b2e2a73df7ba57893a640cc
+core_signal_source_commit: c29254c483b5cb0d5bcaea86c3e47b7eb727ff15
+fixture:
+  path: proteomics/dataset/fixture.csv
+  sha256: 18049595c2c0a34e14003545eb88ed2dc3d795c406852a37901fdfb8bc2c90da
+  bytes: 233
+scoring:
+  rubric: scoring/validation_readiness.py
+  dimensions:
+    - measurement_quality
+    - reproducibility
+    - statistical_strength
+    - biological_coherence
+    - independent_evidence
+    - provenance_completeness
+  aggregation: unweighted_arithmetic_mean
+  range: [0.0, 1.0]
+  weights_frozen: true
+  future_validation_outcomes_visible: false
+scientific_status: no_real_world_predictive_validity_established

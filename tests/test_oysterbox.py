@@ -1,4 +1,5 @@
 import csv
+import hashlib
 import sys
 import unittest
 from pathlib import Path
@@ -26,6 +27,29 @@ class OysterBoxTests(unittest.TestCase):
         self.assertIn("OysterBox Experiment 0.1", spec)
         self.assertIn("c29254c483b5cb0d5bcaea86c3e47b7eb727ff15", derivation)
         self.assertIn("original Git history is retained", derivation)
+
+    def test_baseline_record_matches_fixture_and_declared_commit(self):
+        baseline = (ROOT / "provenance/OYSTERBOX_0.1_BASELINE.yaml").read_text(encoding="utf-8")
+        digest = hashlib.sha256(self.dataset.read_bytes()).hexdigest()
+        self.assertIn("status: frozen_engineering_baseline", baseline)
+        self.assertIn("baseline_commit: df9c14ada1013a7c6b2e2a73df7ba57893a640cc", baseline)
+        self.assertIn(f"sha256: {digest}", baseline)
+        self.assertIn("weights_frozen: true", baseline)
+
+    def test_experiment_0_2_protocol_has_leakage_controls_and_baselines(self):
+        protocol = (ROOT / "docs/OYSTERBOX_EXPERIMENT_0.2.md").read_text(encoding="utf-8")
+        for required in [
+            "Primary validation outcome",
+            "Information boundary and leakage policy",
+            "before the validation-outcome file is made available",
+            "study-grouped AUROC",
+            "AUPRC",
+            "measurement quality alone",
+            "No weight tuning",
+            "missing outcomes",
+            "would not establish clinical utility",
+        ]:
+            self.assertIn(required, protocol)
 
     def test_parser_and_quality_gate(self):
         self.assertEqual(len(self.measurements), 6)
