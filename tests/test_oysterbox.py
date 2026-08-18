@@ -13,7 +13,7 @@ from ingestion.proteomics_csv import parse_csv
 from integrity.hash_file import sha256_file
 from quality.qc import protein_qc_counts, qc_pass_rate
 from scoring.validation_readiness import DIMENSIONS, validation_readiness
-from provenance.dataset_screening import score_eligibility
+from provenance.dataset_screening import score_eligibility, validate_audit
 
 
 class OysterBoxTests(unittest.TestCase):
@@ -115,6 +115,27 @@ class OysterBoxTests(unittest.TestCase):
         self.assertIn("status: NOT_FROZEN", benchmark)
         self.assertIn("selected_dataset: null", benchmark)
         self.assertIn("validation_artifact_visible_to_scoring: false", benchmark)
+
+    def test_pxd007535_audit_is_complete_but_blocked(self):
+        import re
+        audit_text = (ROOT / "experiments/0.2/decisions/PXD007535_AUDIT.yaml").read_text(encoding="utf-8")
+        self.assertIn("audit_status: COMPLETE_WITH_UNRESOLVED_GATES", audit_text)
+        self.assertIn("decision: NEEDS_CLARIFICATION", audit_text)
+        self.assertIn("scoring_allowed: false", audit_text)
+        self.assertIn("dataset_license:\n    status: UNVERIFIED", audit_text)
+        self.assertIn("discovery_artifact:\n    status: PENDING_HASH", audit_text)
+        self.assertIn("validation_outcome_separation:\n    status: PENDING", audit_text)
+        self.assertIn("next_operations:", audit_text)
+
+        # The audit validator is exercised with the unresolved state represented explicitly.
+        audit = {"decision": "NEEDS_CLARIFICATION", "scoring_allowed": False, "gates": {
+            "dataset_identity": {"status": "PASS"},
+            "publication_license": {"status": "PASS"},
+            "dataset_license": {"status": "UNVERIFIED"},
+        }}
+        errors = validate_audit(audit)
+        self.assertTrue(any("dataset_license" in error for error in errors))
+        self.assertTrue(any("missing audit gate" in error for error in errors))
 
     def test_parser_and_quality_gate(self):
         self.assertEqual(len(self.measurements), 6)

@@ -31,6 +31,24 @@ REQUIRED_FIELDS = (
     "reviewer_rationale",
 )
 
+AUDIT_REQUIRED_GATES = (
+    "dataset_identity",
+    "publication_license",
+    "dataset_license",
+    "discovery_artifact",
+    "discovery_cutoff",
+    "validation_source",
+    "candidate_lineage",
+    "cohort_independence",
+    "identifier_mapping",
+    "metadata_completeness",
+    "processing_provenance",
+    "validation_artifact",
+    "validation_outcome_separation",
+    "leakage_control",
+    "artifact_hashes",
+)
+
 DECISION_BASIS_FIELDS = (
     "dataset_license",
     "discovery_artifact",
@@ -73,6 +91,24 @@ def validate_candidate(candidate: Mapping[str, object]) -> list[str]:
         for field in DECISION_BASIS_FIELDS:
             if not basis.get(field):
                 errors.append(f"missing decision-basis field: {field}")
+    return errors
+
+
+def validate_audit(audit: Mapping[str, object]) -> list[str]:
+    """Return audit errors; unresolved gates prevent benchmark admission."""
+    errors = []
+    if audit.get("decision") != "NEEDS_CLARIFICATION":
+        errors.append("PXD007535 audit decision must remain NEEDS_CLARIFICATION until all gates pass")
+    if audit.get("scoring_allowed") is not False:
+        errors.append("scoring_allowed must remain false while audit gates are unresolved")
+    gates = audit.get("gates")
+    if not isinstance(gates, Mapping):
+        return errors + ["audit gates must be a mapping"]
+    for gate in AUDIT_REQUIRED_GATES:
+        if gate not in gates:
+            errors.append(f"missing audit gate: {gate}")
+        elif gates[gate].get("status") != "PASS":
+            errors.append(f"unresolved audit gate: {gate}")
     return errors
 
 

@@ -1,0 +1,94 @@
+schema_version: "0.2"
+experiment: OysterBox Experiment 0.2 — Exploratory Feasibility Benchmark
+dataset_identifier: PXD007535
+audit_basis_commit: 43906a62d76e92f912bbd2466463fec08a879d92
+audit_status: COMPLETE_WITH_UNRESOLVED_GATES
+decision: NEEDS_CLARIFICATION
+scoring_allowed: false
+benchmark_freeze_allowed: false
+performance_inspected: false
+outcome_labels_exposed_to_oysterbox: false
+source_record:
+  repository: PRIDE / ProteomeXchange
+  dataset_url: https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD007535
+  publication_doi: https://doi.org/10.1074/mcp.RA118.000718
+  publication_title: "LFQ and SRM proteome analysis of saliva reveals transition signatures from health to periodontal disease"
+gates:
+  dataset_identity:
+    status: PASS
+    evidence: "Stable accession PXD007535 and public PRIDE/ProteomeXchange record."
+    evidence_url: https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD007535
+  publication_license:
+    status: PASS
+    evidence: "Publication reported as CC BY 4.0; publication license is tracked separately from dataset terms."
+    evidence_url: https://doi.org/10.1074/mcp.RA118.000718
+  dataset_license:
+    status: UNVERIFIED
+    evidence: "Dataset-level redistribution and experimental-use terms were not established by this audit."
+    evidence_url: https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD007535
+  discovery_artifact:
+    status: PENDING_HASH
+    evidence: "Discovery LFQ material and raw MS data are identified, but acquired artifact and manifest checksum are absent."
+    artifact_sha256: null
+  discovery_cutoff:
+    status: PENDING
+    evidence: "Relevant dates are known, but the admissible information boundary and frozen discovery artifact are not yet defined."
+    cutoff: null
+  validation_source:
+    status: PASS
+    assay_type: TARGETED_SRM
+    evidence: "Reported SRM follow-up with 82-subject validation cohort and candidate-level quantitative material."
+    evidence_url: https://doi.org/10.1074/mcp.RA118.000718
+  candidate_lineage:
+    status: PASS
+    evidence: "65 targets reported as 50 discovery-derived, 11 literature-derived, and 4 housekeeping candidates."
+    discovery_derived: 50
+    literature_derived: 11
+    housekeeping: 4
+  cohort_independence:
+    status: PENDING
+    evidence: "Publication describes an independent validation cohort, but exact subject/sample reconciliation has not been frozen."
+    overlap_status: UNKNOWN
+  identifier_mapping:
+    status: PENDING
+    evidence: "Protein and proteotypic-peptide material is reported, but mapping release/version and unresolved count are not frozen."
+    mapping_version: null
+    unresolved_count: null
+  metadata_completeness:
+    status: PENDING
+    evidence: "Subject, disease, clinical, raw-MS, Skyline, and supplementary material are reported, but acquired manifest completeness is not verified."
+  processing_provenance:
+    status: PENDING
+    evidence: "Raw/processed files, software, parameters, manifests, and checksums have not yet been frozen together."
+  validation_artifact:
+    status: PENDING_HASH
+    evidence: "SRM outcome artifact is identified conceptually but has not been acquired and hashed separately."
+    artifact_sha256: null
+  validation_outcome_separation:
+    status: PENDING
+    evidence: "Outcome labels are declared unavailable to scoring, but the separate artifact boundary is not yet operationally frozen."
+    outcome_artifact_visible_to_scoring: false
+  leakage_control:
+    status: PENDING
+    evidence: "Published validation outcomes and the reported five-protein panel must be excluded from discovery-stage scoring inputs."
+    prediction_hash: null
+  artifact_hashes:
+    status: PENDING
+    evidence: "Discovery and validation artifact hashes are both required before admission."
+next_operations:
+  - acquire_discovery_artifact
+  - create_discovery_manifest
+  - hash_discovery_artifact
+  - freeze_discovery_information_cutoff
+  - acquire_validation_srm_artifact_separately
+  - hash_validation_srm_artifact
+  - reconcile_cohort_subjects_and_overlap
+  - freeze_identifier_mapping
+  - verify_metadata_and_processing_manifest
+  - verify_dataset_level_license
+  - update_decision_basis
+transition:
+  current: NEEDS_CLARIFICATION
+  next_allowed: INCLUDE_ONLY_AFTER_ALL_REQUIRED_GATES_PASS
+  benchmark_v1_freeze: forbidden_until_audited_include
+reviewer_rationale: "PXD007535 is a strong structural candidate but has not completed benchmark admission. Unverified or pending gates are not treated as failures of the science; they block the repository from pretending that admission evidence exists."
