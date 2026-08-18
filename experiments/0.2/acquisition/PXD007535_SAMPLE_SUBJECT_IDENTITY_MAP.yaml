@@ -38,8 +38,17 @@ population_counts:
 mapping_edges:
   validation:
     run_to_sample:
-      status: PENDING
-      evidence_references: []
+      status: PARTIALLY_RESOLVED
+      evidence_references:
+        - acquisition/manifests/PXD007535_edge_SP61_to_sample_20151204_022.yaml
+      verified_edges:
+        - from: SP61
+          to: 20151204_022_SP61
+          relation: RUN_TO_SAMPLE_FILE
+          status: PASS
+          evidence_sha256: 803f091bd1c61d45c2b7fb9dfb019c4be922fe12907b4da8f3296a4b1bd691ff
+          edge_record_sha256: c2adaf55fa432c937297987582a2c1ce062cfdf345835172a5316bc5d760c84e
+      remaining_scope: All other Run-to-Sample, Sample-to-Subject, Subject-to-Cohort, and cross-cohort edges remain pending.
       inferred: false
     sample_to_subject:
       status: PENDING
@@ -93,4 +102,4 @@ exit_conditions:
   - discovery_subject_to_cohort_mapping_verified
   - cross_cohort_subject_intersection_verified
   - 66_vs_67_explanation_evidenced
-next_operation: Obtain an authoritative mapping field for at least one edge; record only that edge and its evidence, leaving all other edges unresolved.
+next_operation: Obtain an authoritative mapping field for one Sample-to-Subject edge; record only that edge and its evidence, leaving all other edges unresolved.

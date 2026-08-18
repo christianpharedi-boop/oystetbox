@@ -1,0 +1,32 @@
+schema_version: "0.2"
+dataset_identifier: PXD007535
+edge:
+  from: SP61
+  to: 20151204_022_SP61
+  relation: RUN_TO_SAMPLE_FILE
+  status: PASS
+  biological_subject_identity: UNKNOWN
+  cohort_identity: UNKNOWN
+evidence:
+  source: publisher_supplement
+  source_url: https://ars.els-cdn.com/content/image/1-s2.0-S1535947620322234-mmc1.zip
+  outer_member: mmc1/136436_1_supp_105967_p6lkww.zip
+  inner_member: Supplement file 4a/Supplemental file S4a_Bostanci_etal_skyline_1.sky
+  artifact_scope: Skyline sample_file metadata only
+  locator: line 164
+  fields_used:
+    - sample_file.id
+    - sample_file.sample_name
+    - sample_file.file_path
+    - sample_file.acquired_time
+    - sample_file.modified_time
+  observed_metadata:
+    sample_file_id: _20151204_022_SP61_f0
+    sample_name: 20151204_022_SP61
+    file_path: W:\\p1930\\Proteomics\\QTRAP_1\\selevsek_20151204\\20151204_022_SP61.wiff
+    acquired_time: 2015-12-12T03:41:25
+    modified_time: 2015-12-12T09:20:10
+  evidence_hash_scope: this edge record and the metadata-only source excerpt
+measurement_values_in_edge_artifact: false
+validation_outcomes_exposed_to_oysterbox: false
+inference_policy: This edge establishes Run SP61 to the Skyline sample-file/sample-name record 20151204_022_SP61 only. It does not establish a biological subject, cohort, independence, or any mapping to the 75 quantitative samples beyond the explicit sample-file metadata.

@@ -303,6 +303,23 @@ class OysterBoxTests(unittest.TestCase):
         self.assertIn("identity_map:", unit)
         self.assertIn("establish_run_to_sample_edge_with_authoritative_evidence", unit)
 
+    def test_one_run_to_sample_edge_is_hashed_without_downstream_inference(self):
+        edge = (ROOT / "acquisition/manifests/PXD007535_edge_SP61_to_sample_20151204_022.yaml").read_text(encoding="utf-8")
+        excerpt = (ROOT / "acquisition/manifests/PXD007535_edge_SP61_source_excerpt.xml").read_text(encoding="utf-8")
+        identity = (ROOT / "experiments/0.2/acquisition/PXD007535_SAMPLE_SUBJECT_IDENTITY_MAP.yaml").read_text(encoding="utf-8")
+        self.assertIn("from: SP61", edge)
+        self.assertIn("to: 20151204_022_SP61", edge)
+        self.assertIn("relation: RUN_TO_SAMPLE_FILE", edge)
+        self.assertIn("status: PASS", edge)
+        self.assertIn("measurement_values_in_edge_artifact: false", edge)
+        self.assertIn("validation_outcomes_exposed_to_oysterbox: false", edge)
+        self.assertIn("<sample_file id=", excerpt)
+        self.assertIn("run_to_sample:", identity)
+        self.assertIn("status: PARTIALLY_RESOLVED", identity)
+        self.assertIn("sample_to_subject:", identity)
+        self.assertIn("status: PENDING", identity)
+        self.assertIn("All other Run-to-Sample", identity)
+
     def test_parser_and_quality_gate(self):
         self.assertEqual(len(self.measurements), 6)
         self.assertAlmostEqual(qc_pass_rate(self.measurements), 5 / 6)
