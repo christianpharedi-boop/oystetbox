@@ -1,0 +1,41 @@
+schema_version: "0.2"
+dataset_identifier: PXD007535
+source_member: mmc1/136436_1_supp_105984_p6pkwz.xls
+source_label: Supplemental File S7
+source_role: VALIDATION_ASSOCIATED_TABLE
+source_role_status: PARTIALLY_RESOLVED
+inspection_mode: METADATA_ONLY
+local_derived_artifact: acquisition/manifests/PXD007535_s7_membership_columns.json
+local_derived_sha256: a2ee711e621243b9cfec4a8ef10d2f166c6d00ba0b9cc4045e5cc2dbe49cbd0d
+local_derived_size_bytes: 3033
+columns_read:
+  - Condition
+  - Run
+columns_not_read:
+  - all protein abundance columns
+  - peptide or transition measurements
+  - quantitative values
+  - statistical significance
+  - classifier outputs
+  - biomarker panel values
+records:
+  row_count_excluding_header: 69
+  unique_run_count: 69
+  condition_counts:
+    Aggressive: 18
+    Chronic: 15
+    Gingivitis: 18
+    Healthy: 18
+interpretation:
+  run_ids_are_subject_ids: UNKNOWN
+  run_ids_are_sample_ids: UNKNOWN
+  technical_replicate_relationships: UNKNOWN
+  subject_sample_mapping: PENDING
+  recruited_subject_count: 82
+  publisher_quantitative_table_sample_count: 75
+  s7_membership_table_run_count: 69
+  discovery_validation_subject_intersection: UNKNOWN
+  pride_healthy_count_66_reconciled: false
+validation_outcomes_exposed_to_oysterbox: false
+scoring_allowed: false
+notes: Condition and Run labels were read because they establish cohort membership candidates. No measurement values or outcome-bearing fields were read. The 69 Run records cannot be promoted to subject or sample counts without a subject/sample mapping artifact.

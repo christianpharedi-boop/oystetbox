@@ -270,6 +270,23 @@ class OysterBoxTests(unittest.TestCase):
         self.assertIn("intersection:", unit)
         self.assertIn("unknown", notes.lower())
 
+    def test_s7_membership_extract_is_metadata_only_and_unresolved(self):
+        manifest = (ROOT / "acquisition/manifests/PXD007535_s7_membership_extract.yaml").read_text(encoding="utf-8")
+        extract = (ROOT / "acquisition/manifests/PXD007535_s7_membership_columns.json").read_text(encoding="utf-8")
+        unit = (ROOT / "experiments/0.2/acquisition/PXD007535_unit_of_analysis_reconciliation.yaml").read_text(encoding="utf-8")
+        self.assertIn("inspection_mode: METADATA_ONLY", manifest)
+        self.assertIn("row_count_excluding_header: 69", manifest)
+        self.assertIn("unique_run_count: 69", manifest)
+        self.assertIn("Condition", extract)
+        self.assertIn("Run", extract)
+        self.assertIn("protein_measurement_columns_read=false", extract)
+        self.assertIn("subject_sample_mapping: PENDING", manifest)
+        self.assertIn("discovery_validation_subject_intersection: UNKNOWN", manifest)
+        self.assertIn("s7_condition_run_records:", unit)
+        self.assertIn("unit: RUN_LABELS", unit)
+        self.assertIn("subject_or_sample_identity: UNKNOWN", unit)
+        self.assertIn("scoring_allowed: false", manifest)
+
     def test_parser_and_quality_gate(self):
         self.assertEqual(len(self.measurements), 6)
         self.assertAlmostEqual(qc_pass_rate(self.measurements), 5 / 6)
