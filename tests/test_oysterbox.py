@@ -116,6 +116,23 @@ class OysterBoxTests(unittest.TestCase):
         self.assertIn("selected_dataset: null", benchmark)
         self.assertIn("validation_artifact_visible_to_scoring: false", benchmark)
 
+    def test_pxd033169_is_provenance_first_but_unscored(self):
+        candidate = (ROOT / "experiments/0.2/dataset_candidates/PXD033169.yaml").read_text(encoding="utf-8")
+        decision = (ROOT / "experiments/0.2/decisions/PXD033169.yaml").read_text(encoding="utf-8")
+        ledger = (ROOT / "provenance/DATASET_SCREENING_0.2.yaml").read_text(encoding="utf-8")
+        protocol = (ROOT / "docs/DATASET_SCREENING_0.2.md").read_text(encoding="utf-8")
+        self.assertIn("dataset_identifier: PXD033169", candidate)
+        self.assertIn('decision: "NEEDS_CLARIFICATION"', candidate)
+        self.assertIn('screening_status: "PROVISIONAL_CANDIDATE"', candidate)
+        self.assertIn("provenance_first_rank: 1", candidate)
+        self.assertIn("biological_interest_used_for_selection: false", candidate)
+        self.assertIn("performance_inspected: false", decision)
+        self.assertIn("outcome_labels_exposed_to_oysterbox: false", decision)
+        self.assertIn("candidate_count: 2", ledger)
+        self.assertIn("provenance_first_rank: 1", ledger)
+        self.assertIn("Provenance-first Candidate #2 rule", protocol)
+        self.assertIn("Biological attractiveness", protocol)
+
     def test_pxd007535_audit_is_closed_but_blocked(self):
         audit_text = (ROOT / "experiments/0.2/decisions/PXD007535_AUDIT.yaml").read_text(encoding="utf-8")
         closure_text = (ROOT / "experiments/0.2/decisions/PXD007535_CLOSURE.yaml").read_text(encoding="utf-8")

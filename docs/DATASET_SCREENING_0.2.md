@@ -44,6 +44,12 @@ Each candidate must be assessed against the following criteria and supported by 
 | Decision basis | Machine-readable status for license, artifacts, cutoff, lineage, independence, mapping, metadata, and outcome separation |
 | Reviewer rationale | Reproducible explanation for the decision |
 
+## Provenance-first Candidate #2 rule
+
+Candidate #2 must be selected for evidence-chain quality before biological interest. The screening order is therefore: identity-chain completeness; explicit sample/subject mapping; discovery/validation cohort separation; public discovery and validation material; accessible supplementary metadata; unambiguous discovery and validation timing; sealable validation outcomes; processing completeness; identifier completeness; and licensing or access compatibility. Biological attractiveness, reported effect size, number of findings, and any OysterBox result are not selection criteria.
+
+The preferred Candidate #2 is deliberately ordinary: a candidate that is less exciting scientifically but more auditable is ranked above a biologically attractive candidate with unresolved identity or cohort provenance. This ranking is applied before any candidate is scored and must be recorded as a screening decision, not inferred retrospectively from performance.
+
 ## Decision procedure
 
 Screen candidates using only the frozen criteria. Record evidence URLs, acquisition timestamps, file hashes, and unresolved questions in `provenance/DATASET_SCREENING_0.2.yaml` and candidate-specific records under `experiments/0.2/dataset_candidates/`.
