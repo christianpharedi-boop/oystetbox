@@ -1,0 +1,45 @@
+schema_version: "0.2"
+dataset_identifier: PXD007535
+source:
+  publisher: Molecular & Cellular Proteomics
+  outer_member: mmc1/136436_1_supp_105976_p6qkwz.docx
+  label: Supplemental File S1
+  source_url: https://www.mcponline.org/article/S1535-9476(20)32223-4/fulltext
+  sha256: ce9b1982c1ced949e09afa3c459a29e4ac3b2d746c5d5513c846a1b20c3dff18
+  size_bytes: 74871
+inspection_mode: STRUCTURE_AND_HEADER_ONLY
+structure:
+  tables: 2
+  table_1:
+    title: Patients Characteristics
+    groups:
+      AP: 17
+      CP: 17
+      Gingivitis: 17
+      Health: 16
+    total: 67
+    population_role: DISCOVERY
+  table_2:
+    title: Patients Characteristics
+    groups:
+      AP: 21
+      CP: 21
+      Gingivitis: 20
+      Health: 20
+    total: 82
+    population_role: VALIDATION
+mapping_capability:
+  pseudonymous_subject_identifier_field_present: false
+  sample_name_field_present: false
+  run_to_subject_link_present: false
+  sample_to_subject_link_present: false
+  cohort_summary_only: true
+  status: NO_PARTICIPANT_LEVEL_EDGE
+measurement_values_read: false
+validation_outcomes_exposed_to_oysterbox: false
+interpretation:
+  discovery_count_67: supported_by_s1_group_total
+  validation_recruited_count_82: supported_by_s1_group_total
+  66_vs_67: unresolved; S1 supports 67 discovery individuals but does not explain the PRIDE value of 66
+  selected_sample_20151204_022_SP61_subject: unresolved
+  decision: This artifact strengthens population-count reconciliation but cannot establish Sample-to-Subject identity.

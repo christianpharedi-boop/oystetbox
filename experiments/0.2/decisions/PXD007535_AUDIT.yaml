@@ -29,6 +29,7 @@ acquisition_state:
   publisher_supplement_manifest: experiments/0.2/acquisition/PXD007535_publisher_supplement_manifest.yaml
   s7_membership_extract: acquisition/manifests/PXD007535_s7_membership_extract.yaml
   identity_map: experiments/0.2/acquisition/PXD007535_SAMPLE_SUBJECT_IDENTITY_MAP.yaml
+  s1_participant_artifact_structure: acquisition/manifests/PXD007535_S1_participant_artifact_structure.yaml
   information_boundary: experiments/0.2/acquisition/PXD007535_information_boundary.yaml
 source_record:
   repository: PRIDE / ProteomeXchange
@@ -83,7 +84,9 @@ gates:
     reconciliation_record: experiments/0.2/acquisition/PXD007535_cohort_reconciliation.yaml
   identifier_mapping:
     status: PENDING
-    evidence: "Protein and proteotypic-peptide material is reported, but mapping release/version and unresolved count are not frozen."
+    evidence: "Supplementary File S1 provides discovery and validation group-summary totals (67 and 82) but no pseudonymous subject identifier or sample-to-subject field for the selected sample."
+    participant_artifact: acquisition/manifests/PXD007535_S1_participant_artifact_structure.yaml
+    mapping_evidence: "Protein and proteotypic-peptide material is reported, but mapping release/version and unresolved count are not frozen."
     mapping_version: null
     unresolved_count: null
   metadata_completeness:

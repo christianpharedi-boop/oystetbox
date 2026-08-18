@@ -334,6 +334,20 @@ class OysterBoxTests(unittest.TestCase):
         self.assertIn("evidence_gap: No authoritative participant-or-subject identifier", identity)
         self.assertIn("status: PENDING", identity)
 
+    def test_s1_supports_population_totals_but_not_sample_subject_identity(self):
+        s1 = (ROOT / "acquisition/manifests/PXD007535_S1_participant_artifact_structure.yaml").read_text(encoding="utf-8")
+        edge = (ROOT / "acquisition/manifests/PXD007535_edge_sample_20151204_022_to_subject.yaml").read_text(encoding="utf-8")
+        identity = (ROOT / "experiments/0.2/acquisition/PXD007535_SAMPLE_SUBJECT_IDENTITY_MAP.yaml").read_text(encoding="utf-8")
+        self.assertIn("tables: 2", s1)
+        self.assertIn("total: 67", s1)
+        self.assertIn("total: 82", s1)
+        self.assertIn("pseudonymous_subject_identifier_field_present: false", s1)
+        self.assertIn("sample_to_subject_link_present: false", s1)
+        self.assertIn("cohort_summary_only: true", s1)
+        self.assertIn("status: UNRESOLVED", edge)
+        self.assertIn("S1 provides cohort-summary tables only.", identity)
+        self.assertIn("66_vs_67", s1)
+
     def test_parser_and_quality_gate(self):
         self.assertEqual(len(self.measurements), 6)
         self.assertAlmostEqual(qc_pass_rate(self.measurements), 5 / 6)
