@@ -1,0 +1,40 @@
+schema_version: "0.2"
+dataset_identifier: PXD007535
+edge:
+  from: 20151204_022_SP61
+  to: null
+  relation: SAMPLE_TO_SUBJECT
+  status: UNRESOLVED
+  biological_subject_identity: UNKNOWN
+  cohort_identity: UNKNOWN
+evidence_reviewed:
+  - source: acquisition/manifests/PXD007535_edge_SP61_source_excerpt.xml
+    fields_reviewed:
+      - sample_file.id
+      - sample_file.sample_name
+      - sample_file.file_path
+      - sample_file.acquired_time
+      - sample_file.modified_time
+    sha256: 803f091bd1c61d45c2b7fb9dfb019c4be922fe12907b4da8f3296a4b1bd691ff
+  - source: acquisition/manifests/PXD007535_s7_membership_extract.yaml
+    fields_reviewed:
+      - Condition
+      - Run
+    sha256: a2ee711e621243b9cfec4a8ef10d2f166c6d00ba0b9cc4045e5cc2dbe49cbd0d
+missing_authoritative_field:
+  required: participant_or_subject_identifier_linked_to_sample_name
+  observed: false
+  source_search_scope:
+    - Skyline sample_file metadata
+    - S7 Condition and Run metadata
+    - publisher supplementary archive member structure
+prohibited_inferences:
+  - Do not infer subject identity from SP61.
+  - Do not infer subject identity from 20151204_022.
+  - Do not infer subject identity from acquisition date or file numbering.
+  - Do not infer subject identity from Condition labels.
+  - Do not infer biological independence or cohort membership.
+measurement_values_read: false
+validation_outcomes_exposed_to_oysterbox: false
+scoring_allowed: false
+conclusion: No Sample-to-Subject edge can be admitted from the reviewed evidence. The edge remains UNRESOLVED until an authoritative participant-level mapping field is obtained.

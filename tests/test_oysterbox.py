@@ -320,6 +320,20 @@ class OysterBoxTests(unittest.TestCase):
         self.assertIn("status: PENDING", identity)
         self.assertIn("All other Run-to-Sample", identity)
 
+    def test_sample_to_subject_edge_stays_unresolved_without_participant_field(self):
+        edge = (ROOT / "acquisition/manifests/PXD007535_edge_sample_20151204_022_to_subject.yaml").read_text(encoding="utf-8")
+        identity = (ROOT / "experiments/0.2/acquisition/PXD007535_SAMPLE_SUBJECT_IDENTITY_MAP.yaml").read_text(encoding="utf-8")
+        self.assertIn("relation: SAMPLE_TO_SUBJECT", edge)
+        self.assertIn("status: UNRESOLVED", edge)
+        self.assertIn("observed: false", edge)
+        self.assertIn("Do not infer subject identity from SP61.", edge)
+        self.assertIn("Do not infer subject identity from acquisition date or file numbering.", edge)
+        self.assertIn("measurement_values_read: false", edge)
+        self.assertIn("validation_outcomes_exposed_to_oysterbox: false", edge)
+        self.assertIn("sample_to_subject:", identity)
+        self.assertIn("evidence_gap: No authoritative participant-or-subject identifier", identity)
+        self.assertIn("status: PENDING", identity)
+
     def test_parser_and_quality_gate(self):
         self.assertEqual(len(self.measurements), 6)
         self.assertAlmostEqual(qc_pass_rate(self.measurements), 5 / 6)
