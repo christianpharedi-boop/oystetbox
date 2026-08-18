@@ -51,6 +51,7 @@ redistribution_or_hash_status:
   validation_outcome_separation_sha256: null
 decision: "NEEDS_CLARIFICATION"
 screening_status: "CLOSED_PROVENANCE_INSUFFICIENT"
+failure_class: "IDENTITY_MAPPING_AND_ASSAY_STRUCTURE_MISSING"
 decision_basis:
   dataset_license: "UNVERIFIED"
   discovery_artifact: "PENDING_HASH"

@@ -56,6 +56,14 @@ A publication or repository statement that a validation cohort is “independent
 
 Each provisional candidate receives a finite evidence-search budget. The predefined routes are the ProteomeXchange and PRIDE metadata, submission XML, SDRF and sample routes; the publisher full text and supplementary metadata; and linked publication repository records. If authoritative participant-level mapping and cohort separation cannot be established within three search rounds, the candidate is marked `NEEDS_CLARIFICATION` or `EXCLUDE` and the process moves to the next candidate. Performance must never influence exhaustion or continuation decisions.
 
+## Provenance-failure taxonomy
+
+The first two candidates are retained as analytical failure cases rather than undifferentiated rejections. `PXD007535` is classified as `IDENTITY_MAPPING_MISSING`: cohort-level evidence exists, but the public Sample → Subject edge is not established. `PXD033169` is classified as `IDENTITY_MAPPING_AND_ASSAY_STRUCTURE_MISSING`: the study reports DIA discovery and targeted-MS validation, but the identity graph and exact validation structure remain unreconstructable. The taxonomy is descriptive only; it does not modify scoring.
+
+## Candidate #3 selection rule
+
+Candidate #3 must be selected for **machine-reconstructable evidence-chain completeness**, not biological interest. Before any result inspection or scoring, the preferred candidate should expose, ideally in one public package, raw or processed discovery material; sample metadata; pseudonymous subject IDs; cohort assignments; finding lineage; independent validation samples; validation subject IDs; and targeted measurements, with an explicit SDRF or equivalent file linking technical and biological layers. A candidate earns admission review only when the evidence audit can reconstruct the discovery-to-validation chain; it is not automatically admitted or scored merely because a paper reports discovery and validation.
+
 ## Decision procedure
 
 Screen candidates using only the frozen criteria. Record evidence URLs, acquisition timestamps, file hashes, and unresolved questions in `provenance/DATASET_SCREENING_0.2.yaml` and candidate-specific records under `experiments/0.2/dataset_candidates/`.

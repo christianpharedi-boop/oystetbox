@@ -1,0 +1,34 @@
+schema_version: "0.2"
+experiment: OysterBox Experiment 0.2 — Exploratory Feasibility Benchmark
+purpose: "Classify provenance-insufficient candidates by the evidence-chain failure observed before scoring."
+scoring_impact: none
+performance_inspected: false
+validation_outcomes_exposed_to_oysterbox: false
+taxonomy:
+  PROVENANCE_INSUFFICIENT:
+    description: "Public evidence is insufficient to support the identity, cohort, assay, or artifact claims required for Benchmark v1 admission."
+    children:
+      IDENTITY_MAPPING_MISSING:
+        description: "The study reports cohort-level material, but public evidence does not establish the required Sample-to-Subject edge."
+        cases:
+          - PXD007535
+      IDENTITY_MAPPING_AND_ASSAY_STRUCTURE_MISSING:
+        description: "The study reports discovery and targeted validation, but public evidence does not reconstruct the identity graph and does not establish the exact validation assay structure."
+        cases:
+          - PXD033169
+cases:
+  PXD007535:
+    failure_class: IDENTITY_MAPPING_MISSING
+    scientific_failure: false
+    benchmark_status: EXCLUDED_PENDING_NEW_AUTHORITATIVE_EVIDENCE
+    audit_record: experiments/0.2/decisions/PXD007535_AUDIT.yaml
+  PXD033169:
+    failure_class: IDENTITY_MAPPING_AND_ASSAY_STRUCTURE_MISSING
+    scientific_failure: false
+    benchmark_status: EXCLUDED_PENDING_NEW_AUTHORITATIVE_EVIDENCE
+    audit_record: experiments/0.2/decisions/PXD033169_AUDIT.yaml
+next_candidate_selection:
+  candidate_number: 3
+  selection_priority: MACHINE_RECONSTRUCTABLE_EVIDENCE_CHAIN_COMPLETENESS
+  biological_interest_used_for_selection: false
+  oysterbox_performance_used_for_selection: false

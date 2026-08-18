@@ -10,7 +10,8 @@ scoring_allowed: false
 performance_inspected: false
 outcome_labels_exposed_to_oysterbox: false
 scientific_failure: false
-provenance_sufficiency: NOT_YET_ESTABLISHED
+provenance_sufficiency: INSUFFICIENT
+failure_class: IDENTITY_MAPPING_AND_ASSAY_STRUCTURE_MISSING
 source_record:
   repository: PRIDE / ProteomeXchange
   dataset_url: https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD033169
@@ -135,4 +136,6 @@ transition:
   benchmark_v1: EXCLUDED_PENDING_NEW_AUTHORITATIVE_EVIDENCE
   benchmark_v1_freeze: forbidden_until_audited_include
 next_candidate: Candidate #3; selection remains independent of OysterBox performance
+next_candidate_selection_priority: MACHINE_RECONSTRUCTABLE_EVIDENCE_CHAIN_COMPLETENESS
+biological_interest_used_for_next_candidate_selection: false
 reviewer_rationale: "PXD033169 was a structurally promising provenance-first lead, but the predefined three-round metadata-only search did not establish Run-to-Sample, Sample-to-Subject, Subject-to-Cohort, cohort intersection, or the exact targeted-MS subtype. The candidate is retained as a provenance-insufficient negative case, not a scientific failure. No validation measurements, outcomes, or performance results were accessed."

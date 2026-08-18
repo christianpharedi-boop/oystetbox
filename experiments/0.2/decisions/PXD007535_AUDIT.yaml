@@ -7,6 +7,7 @@ decision: NEEDS_CLARIFICATION
 benchmark_eligibility: BLOCKED
 scientific_failure: false
 provenance_sufficiency: INSUFFICIENT
+failure_class: IDENTITY_MAPPING_MISSING
 benchmark_v1_decision: EXCLUDE_PENDING_NEW_AUTHORITATIVE_EVIDENCE
 closure_record: experiments/0.2/decisions/PXD007535_CLOSURE.yaml
 scoring_allowed: false

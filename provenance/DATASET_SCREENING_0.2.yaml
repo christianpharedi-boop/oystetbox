@@ -4,6 +4,7 @@ status: screening_protocol_frozen
 selection_independent_of_oysterbox_performance: true
 scoring_permitted: false
 scoring_block_reason: no candidate has a frozen INCLUDE decision and complete pre-scoring artifacts
+provenance_failure_taxonomy: provenance/PROVENANCE_FAILURE_TAXONOMY_0.2.yaml
 required_frozen_artifacts:
   - dataset_identity
   - discovery_cutoff
@@ -19,6 +20,7 @@ candidates:
     screening_status: CLOSED_PROVENANCE_INSUFFICIENT
     eligible_for_scoring: false
     provenance_first_rank: 2
+    failure_class: IDENTITY_MAPPING_MISSING
   - dataset_identifier: PXD033169
     screening_record: experiments/0.2/dataset_candidates/PXD033169.yaml
     decision_record: experiments/0.2/decisions/PXD033169.yaml
@@ -27,10 +29,13 @@ candidates:
     eligible_for_scoring: false
     provenance_first_rank: 1
     search_budget_status: EXHAUSTED_AFTER_THREE_ROUNDS
+    failure_class: IDENTITY_MAPPING_AND_ASSAY_STRUCTURE_MISSING
 decision_vocabulary:
   - INCLUDE
   - EXCLUDE
   - NEEDS_CLARIFICATION
 performance_results_seen_during_screening: false
 next_candidate: Candidate #3
+next_candidate_selection_priority: MACHINE_RECONSTRUCTABLE_EVIDENCE_CHAIN_COMPLETENESS
+biological_interest_used_for_next_candidate_selection: false
 reviewer_rationale: Dataset screening governance is frozen before candidate discovery and OysterBox scoring. PXD007535 is retained as a closed provenance-insufficient negative case. PXD033169 was the provenance-first Candidate #2 lead, but the three-round metadata-only search did not establish its identity graph or exact targeted-MS subtype. It is retained as a provenance-insufficient negative case, not a scientific failure. Neither candidate has been scored; no performance was inspected and no validation outcome was exposed to OysterBox.

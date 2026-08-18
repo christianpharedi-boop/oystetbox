@@ -48,7 +48,8 @@ redistribution_or_hash_status:
   acquisition_manifest_sha256: ""
   validation_outcome_separation_sha256: ""
 decision: NEEDS_CLARIFICATION
-screening_status: PROVISIONAL_CANDIDATE
+screening_status: CLOSED_PROVENANCE_INSUFFICIENT
+failure_class: IDENTITY_MAPPING_MISSING
 decision_basis:
   dataset_license: PARTIALLY_RESOLVED
   discovery_artifact: PENDING_HASH
@@ -59,4 +60,4 @@ decision_basis:
   identifier_mapping: PENDING
   metadata_completeness: PENDING
   validation_outcome_separation: PENDING
-reviewer_rationale: "Strongest current structural candidate for a discovery-to-targeted-validation benchmark, but not yet eligible for scoring. Final inclusion requires verified dataset licensing, frozen discovery and SRM artifacts, a reconstructable information cutoff, candidate-provenance separation, and confirmation of cohort independence."
+reviewer_rationale: "PXD007535 is retained as a provenance-insufficient negative case. The public evidence does not establish the Sample-to-Subject edge required to verify cohort independence. This is not a scientific failure, and the candidate remains unscored."

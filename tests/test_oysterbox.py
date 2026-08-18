@@ -105,7 +105,7 @@ class OysterBoxTests(unittest.TestCase):
         decision = (ROOT / "experiments/0.2/decisions/PXD007535.yaml").read_text(encoding="utf-8")
         ledger = (ROOT / "provenance/DATASET_SCREENING_0.2.yaml").read_text(encoding="utf-8")
         self.assertIn("decision: NEEDS_CLARIFICATION", candidate)
-        self.assertIn("screening_status: PROVISIONAL_CANDIDATE", candidate)
+        self.assertIn("screening_status: CLOSED_PROVENANCE_INSUFFICIENT", candidate)
         self.assertIn("dataset_license_status: PARTIALLY_RESOLVED", candidate)
         self.assertIn("performance_inspected: false", decision)
         self.assertIn("outcome_labels_exposed_to_oysterbox: false", decision)
@@ -198,6 +198,23 @@ class OysterBoxTests(unittest.TestCase):
         errors = validate_audit(audit)
         self.assertTrue(any("dataset_license" in error for error in errors))
         self.assertTrue(any("missing audit gate" in error for error in errors))
+
+    def test_provenance_failure_taxonomy_and_candidate3_priority_are_frozen(self):
+        taxonomy = (ROOT / "provenance/PROVENANCE_FAILURE_TAXONOMY_0.2.yaml").read_text(encoding="utf-8")
+        ledger = (ROOT / "provenance/DATASET_SCREENING_0.2.yaml").read_text(encoding="utf-8")
+        protocol = (ROOT / "docs/DATASET_SCREENING_0.2.md").read_text(encoding="utf-8")
+        pxd007535 = (ROOT / "experiments/0.2/dataset_candidates/PXD007535.yaml").read_text(encoding="utf-8")
+        pxd033169 = (ROOT / "experiments/0.2/dataset_candidates/PXD033169.yaml").read_text(encoding="utf-8")
+        self.assertIn("IDENTITY_MAPPING_MISSING", taxonomy)
+        self.assertIn("PXD007535", taxonomy)
+        self.assertIn("IDENTITY_MAPPING_AND_ASSAY_STRUCTURE_MISSING", taxonomy)
+        self.assertIn("PXD033169", taxonomy)
+        self.assertIn("selection_priority: MACHINE_RECONSTRUCTABLE_EVIDENCE_CHAIN_COMPLETENESS", taxonomy)
+        self.assertIn("next_candidate_selection_priority: MACHINE_RECONSTRUCTABLE_EVIDENCE_CHAIN_COMPLETENESS", ledger)
+        self.assertIn("Candidate #3 selection rule", protocol)
+        self.assertIn("machine-reconstructable evidence-chain completeness", protocol)
+        self.assertIn("failure_class: IDENTITY_MAPPING_MISSING", pxd007535)
+        self.assertIn('failure_class: "IDENTITY_MAPPING_AND_ASSAY_STRUCTURE_MISSING"', pxd033169)
 
     def test_candidate_exhaustion_and_scoring_freeze_are_explicit(self):
         benchmark = (ROOT / "provenance/EXPERIMENT_0.2_BENCHMARK_v1.yaml").read_text(encoding="utf-8")
