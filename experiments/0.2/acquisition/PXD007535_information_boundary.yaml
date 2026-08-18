@@ -1,0 +1,21 @@
+schema_version: "0.2"
+dataset_identifier: PXD007535
+status: NOT_FROZEN
+discovery_cutoff: null
+cutoff_basis: ""
+admissible_discovery_inputs: []
+prohibited_inputs:
+  - validation_outcomes
+  - targeted_assay_results
+  - post_cutoff_publications
+  - published_validation_panel
+  - analyst_conclusions_about_validation
+  - validation_artifact_contents
+allowed_artifact_hashes_before_scoring:
+  - discovery_manifest_sha256
+  - validation_manifest_sha256
+  - sealed_validation_outcome_sha256
+validation_artifact_contents_visible_to_scoring: false
+boundary_reviewer: ""
+boundary_frozen_at: null
+notes: Calendar publication date alone is insufficient. The cutoff must identify the exact admissible discovery artifact and the information available to the scoring process.

@@ -1,0 +1,16 @@
+schema_version: "0.2"
+dataset_identifier: PXD007535
+artifact_role: discovery
+status: NOT_ACQUIRED
+acquired_at: null
+source_record: https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD007535
+files: []
+manifest_sha256: null
+required_file_fields:
+  - path
+  - size_bytes
+  - source_url
+  - acquired_at
+  - sha256
+  - license_status
+notes: Discovery material must be acquired and hashed independently of the validation/SRM material. Do not add validation outcomes to this manifest.

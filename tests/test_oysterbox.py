@@ -13,7 +13,7 @@ from ingestion.proteomics_csv import parse_csv
 from integrity.hash_file import sha256_file
 from quality.qc import protein_qc_counts, qc_pass_rate
 from scoring.validation_readiness import DIMENSIONS, validation_readiness
-from provenance.dataset_screening import score_eligibility, validate_audit
+from provenance.dataset_screening import score_eligibility, validate_acquisition_state, validate_audit
 
 
 class OysterBoxTests(unittest.TestCase):
@@ -136,6 +136,19 @@ class OysterBoxTests(unittest.TestCase):
         errors = validate_audit(audit)
         self.assertTrue(any("dataset_license" in error for error in errors))
         self.assertTrue(any("missing audit gate" in error for error in errors))
+
+    def test_acquisition_and_exposure_boundary_remains_blocked(self):
+        discovery = {"status": "NOT_ACQUIRED", "manifest_sha256": None}
+        validation = {"status": "NOT_ACQUIRED", "manifest_sha256": None}
+        boundary = {"status": "NOT_FROZEN", "discovery_cutoff": None, "validation_artifact_contents_visible_to_scoring": False}
+        sealed = {"exposure_state": "SEALED", "outcome_contents_available_to_scoring": False, "prediction_artifact_sha256_required_before_release": True}
+        errors = validate_acquisition_state(discovery, validation, boundary, sealed)
+        self.assertTrue(any("discovery artifact is not acquired" in error for error in errors))
+        self.assertTrue(any("information boundary is not frozen" in error for error in errors))
+
+        released = {**sealed, "exposure_state": "RELEASED"}
+        errors = validate_acquisition_state({"status": "ACQUIRED", "manifest_sha256": "d" * 64}, {"status": "SEALED", "manifest_sha256": "v" * 64}, {"status": "FROZEN", "discovery_cutoff": "2018-04-02", "validation_artifact_contents_visible_to_scoring": False}, released)
+        self.assertTrue(any("validation outcomes are not sealed" in error for error in errors))
 
     def test_parser_and_quality_gate(self):
         self.assertEqual(len(self.measurements), 6)

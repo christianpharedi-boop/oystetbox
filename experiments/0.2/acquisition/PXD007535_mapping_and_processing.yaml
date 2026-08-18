@@ -1,0 +1,24 @@
+schema_version: "0.2"
+dataset_identifier: PXD007535
+status: NOT_FROZEN
+identifier_mapping:
+  protein_accession_to_gene: null
+  gene_to_peptide_sequence: null
+  peptide_to_srm_transition: null
+  mapping_release: null
+  unresolved_protein_count: null
+  unresolved_peptide_count: null
+  unresolved_transition_count: null
+processing_provenance:
+  instruments: []
+  acquisition_methods: []
+  search_software: []
+  quantification_software: []
+  parameters: []
+  sequence_database: null
+  database_version: null
+  raw_to_processed_chain: []
+  manifest_sha256: null
+reviewer: ""
+reviewed_at: null
+notes: Mapping and processing fields must be frozen with source versions and checksums before scoring.

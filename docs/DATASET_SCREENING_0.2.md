@@ -68,6 +68,14 @@ The executable enforcement is implemented in `provenance/dataset_screening.py`. 
 
 `INCLUDE` means the candidate satisfies the protocol and is eligible for later scoring. `EXCLUDE` means a protocol requirement fails or cannot be demonstrated. `NEEDS_CLARIFICATION` means the evidence is incomplete and no score may be generated.
 
+## Evidence-acquisition order
+
+Evidence acquisition remains separate from scoring. First acquire discovery material and record an immutable file manifest with path, size, source URL, acquisition timestamp, license status, and SHA-256. Acquire validation/SRM material separately with a different manifest and checksum. Then reconcile discovery and validation subjects, freeze the information boundary, freeze protein-to-gene-to-peptide-to-transition mappings, and freeze the instrument/software/parameter/database processing chain.
+
+Validation outcomes may be possessed as a sealed artifact hash without exposing the outcome file to OysterBox. Acquisition and exposure are different operations. The outcome file can be released only after the prediction artifact has been frozen and checksummed, and the release authorization has been recorded.
+
+The current PXD007535 acquisition templates are under `experiments/0.2/acquisition/`; the sealed-outcome contract is under `experiments/0.2/validation_outcomes/`. All templates remain intentionally incomplete, so scoring remains blocked.
+
 ## Outcome of the first run
 
 The result will be classified as one of: an infeasible boundary, a reproducible evidence-chain demonstration, an exploratory discrimination result, or a justified larger-benchmark proposal. Even a strong exploratory result will not establish clinical utility, causal biological relevance, or general predictive validity.

@@ -1,0 +1,18 @@
+schema_version: "0.2"
+dataset_identifier: PXD007535
+artifact_role: validation_srm
+status: NOT_ACQUIRED
+acquired_at: null
+source_record: https://doi.org/10.1074/mcp.RA118.000718
+files: []
+manifest_sha256: null
+outcome_artifact_sha256: null
+outcome_contents_exposed_to_scoring: false
+required_file_fields:
+  - path
+  - size_bytes
+  - source_url
+  - acquired_at
+  - sha256
+  - license_status
+notes: Possessing this manifest and its checksum is permitted before scoring. Validation outcome contents must remain sealed until the prediction artifact checksum is frozen.

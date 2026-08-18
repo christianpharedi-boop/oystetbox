@@ -1,0 +1,14 @@
+schema_version: "0.2"
+dataset_identifier: PXD007535
+artifact_role: validation_outcomes
+status: NOT_ACQUIRED
+exposure_state: SEALED
+artifact_path: null
+artifact_sha256: null
+acquired_at: null
+outcome_contents_available_to_scoring: false
+prediction_artifact_sha256_required_before_release: true
+released_at: null
+release_authorized_by: null
+release_authorization_record: null
+notes: This record may exist before scoring. The outcome file itself must remain outside the scoring workspace until a frozen prediction checksum and release authorization record exist.

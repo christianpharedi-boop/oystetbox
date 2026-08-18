@@ -1,0 +1,17 @@
+schema_version: "0.2"
+dataset_identifier: PXD007535
+status: NOT_RECONCILED
+discovery_subjects: []
+validation_subjects: []
+intersection: []
+counts:
+  discovery: null
+  validation: null
+  intersection: null
+  discovery_only: null
+  validation_only: null
+reconciliation_method: ""
+source_manifest_sha256: null
+reviewer: ""
+reviewed_at: null
+notes: The intersection must be explicitly enumerated. The word independent is not accepted as a substitute for subject-level reconciliation.

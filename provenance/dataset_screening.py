@@ -112,6 +112,37 @@ def validate_audit(audit: Mapping[str, object]) -> list[str]:
     return errors
 
 
+def validate_acquisition_state(
+    discovery_manifest: Mapping[str, object],
+    validation_manifest: Mapping[str, object],
+    information_boundary: Mapping[str, object],
+    sealed_outcomes: Mapping[str, object],
+) -> list[str]:
+    """Return errors for the evidence-acquisition and exposure boundary."""
+    errors = []
+    if discovery_manifest.get("status") != "ACQUIRED":
+        errors.append("discovery artifact is not acquired")
+    if not discovery_manifest.get("manifest_sha256"):
+        errors.append("discovery manifest checksum is missing")
+    if validation_manifest.get("status") not in {"ACQUIRED", "SEALED"}:
+        errors.append("validation manifest is not acquired or sealed")
+    if not validation_manifest.get("manifest_sha256"):
+        errors.append("validation manifest checksum is missing")
+    if information_boundary.get("status") != "FROZEN":
+        errors.append("information boundary is not frozen")
+    if not information_boundary.get("discovery_cutoff"):
+        errors.append("discovery cutoff is missing")
+    if information_boundary.get("validation_artifact_contents_visible_to_scoring") is not False:
+        errors.append("validation artifact contents must be invisible to scoring")
+    if sealed_outcomes.get("exposure_state") != "SEALED":
+        errors.append("validation outcomes are not sealed")
+    if sealed_outcomes.get("outcome_contents_available_to_scoring") is not False:
+        errors.append("validation outcome contents must be unavailable to scoring")
+    if sealed_outcomes.get("prediction_artifact_sha256_required_before_release") is not True:
+        errors.append("prediction checksum requirement is missing")
+    return errors
+
+
 def score_eligibility(candidate: Mapping[str, object]) -> ScreeningDecision:
     errors = validate_candidate(candidate)
     if errors:
