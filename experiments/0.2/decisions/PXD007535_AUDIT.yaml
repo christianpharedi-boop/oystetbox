@@ -21,6 +21,8 @@ acquisition_state:
   discovery_subject_manifest: experiments/0.2/acquisition/PXD007535_discovery_subject_manifest.yaml
   validation_subject_manifest: experiments/0.2/acquisition/PXD007535_validation_subject_manifest.yaml
   cohort_reconciliation: experiments/0.2/acquisition/PXD007535_cohort_reconciliation.yaml
+  unit_of_analysis_reconciliation: experiments/0.2/acquisition/PXD007535_unit_of_analysis_reconciliation.yaml
+  unit_analysis_source_notes: acquisition/manifests/PXD007535_unit_analysis_source_notes.md
   information_boundary: experiments/0.2/acquisition/PXD007535_information_boundary.yaml
 source_record:
   repository: PRIDE / ProteomeXchange
@@ -68,7 +70,8 @@ gates:
     housekeeping: 4
   cohort_independence:
     status: PENDING
-    evidence: "Metadata-only reconciliation is blocked: reported discovery counts conflict (66 in PRIDE description versus 67 in publication/candidate material), and identifiable discovery/validation subject manifests are absent."
+    evidence: "Unit of analysis is unresolved: reported discovery counts conflict (66 in PRIDE description versus 67 in the PubMed abstract), and subject/sample manifests are absent."
+    unit_of_analysis_record: experiments/0.2/acquisition/PXD007535_unit_of_analysis_reconciliation.yaml
     overlap_status: UNKNOWN
     reconciliation_record: experiments/0.2/acquisition/PXD007535_cohort_reconciliation.yaml
   identifier_mapping:
@@ -108,7 +111,10 @@ next_operations:
   - acquire_complete_validation_srm_artifact_separately
   - assemble_and_hash_sealed_validation_outcome_artifact
   - reconcile_reported_identifiable_and_acquired_validation_counts
+  - identify_unit_for_each_reported_count
+  - produce_subject_and_sample_manifests_without_outcomes
   - calculate_subject_intersection_without_exposing_outcomes
+  - explain_66_vs_67_with_source_reference
   - reconcile_cohort_subjects_and_overlap
   - freeze_identifier_mapping
   - verify_metadata_and_processing_manifest

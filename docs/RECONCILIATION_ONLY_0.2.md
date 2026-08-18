@@ -22,6 +22,10 @@ The reconciliation record must keep the following quantities separate:
 
 The 66-versus-67 discrepancy must not be resolved by majority vote or by selecting the more convenient number. It remains blocked until the evidence explains the difference.
 
+## Unit-of-analysis decision rule
+
+Before assigning a reconciled count, the audit must identify whether each number refers to subjects, samples, enrolled individuals, measured individuals, retained individuals, or another inclusion stage. The record must preserve `N_reported`, `N_identifiable`, and `N_in_acquired_artifact` separately for both discovery and validation. A count may not be promoted from reported to reconciled merely because it appears in a publication or because it matches a partial acquired artifact.
+
 ## File-role rule
 
 Every file in the official inventory receives a record containing its source, role, role evidence, acquisition date, PRIDE checksum, local SHA-256 when acquired, and outcome-inspection state. Filename-only role assignment is insufficient for admission. The current record intentionally leaves 97 files unclassified and marks three files as validation candidates only.

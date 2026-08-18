@@ -1,0 +1,88 @@
+schema_version: "0.2"
+dataset_identifier: PXD007535
+status: BLOCKED_UNIT_OF_ANALYSIS_UNRESOLVED
+reconciliation_scope: reconciliation_only
+scoring_allowed: false
+validation_outcomes_exposed: false
+evidence_hierarchy:
+  - rank: 1
+    source_type: authoritative_pride_metadata_or_file_metadata
+    status: AVAILABLE_FOR_PROJECT_COUNTS
+  - rank: 2
+    source_type: study_supplementary_or_sample_metadata
+    status: NOT_ACQUIRED
+  - rank: 3
+    source_type: publication_text
+    status: AVAILABLE_BUT_NOT_SUFFICIENT_ALONE
+reported_counts:
+  discovery:
+    pride_project_description:
+      value: 66
+      unit: SUBJECTS_OR_UNRESOLVED
+      source: https://www.ebi.ac.uk/pride/archive/projects/PXD007535
+    pubmed_abstract:
+      value: 67
+      unit: INDIVIDUALS_OR_UNRESOLVED
+      source: https://pubmed.ncbi.nlm.nih.gov/29610270/
+    publication_doi: https://doi.org/10.1074/mcp.RA118.000718
+  validation:
+    pride_project_description:
+      value: 82
+      unit: SUBJECTS_OR_UNRESOLVED
+      source: https://www.ebi.ac.uk/pride/archive/projects/PXD007535
+    pubmed_abstract:
+      value: 82
+      unit: INDIVIDUALS_OR_UNRESOLVED
+      source: https://pubmed.ncbi.nlm.nih.gov/29610270/
+identifiable_counts:
+  discovery:
+    subjects: null
+    samples: null
+    enrolled_individuals: null
+    measured_individuals: null
+    retained_individuals: null
+  validation:
+    subjects: null
+    samples: null
+    enrolled_individuals: null
+    measured_individuals: null
+    retained_individuals: null
+acquired_artifact_counts:
+  discovery:
+    subjects: null
+    samples: null
+  validation:
+    subjects: null
+    samples: null
+candidate_interpretations:
+  - id: enrolled_vs_measured
+    hypothesis: 67 individuals enrolled and 66 successfully measured or retained
+    status: UNVERIFIED
+  - id: subjects_vs_samples
+    hypothesis: 66 subjects represented by 67 samples
+    status: UNVERIFIED
+  - id: inclusion_stage
+    hypothesis: 67 initial participants reduced to 66 after an unreported inclusion or quality stage
+    status: UNVERIFIED
+  - id: distinct_population_definition
+    hypothesis: 66 and 67 describe different valid population definitions
+    status: UNVERIFIED
+intersection:
+  discovery_subject_ids: []
+  validation_subject_ids: []
+  count: null
+  status: UNKNOWN
+  method: SUBJECT_MANIFEST_RECONCILIATION
+  evidence_hash: null
+discrepancy_66_vs_67:
+  resolved: false
+  explanation: null
+  evidence: "The available PRIDE description and PubMed abstract report different discovery counts, while the subject/sample manifests needed to establish the unit are not acquired."
+required_next_evidence:
+  - acquire_study_supplementary_or_sample_metadata
+  - identify_unit_for_each_reported_count
+  - produce_discovery_subject_and_sample_manifest
+  - produce_validation_subject_and_sample_manifest_without_outcome_contents
+  - calculate_subject_intersection
+  - explain_66_vs_67_with_source_reference
+  - hash_reconciliation_evidence

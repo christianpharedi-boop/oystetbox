@@ -1,6 +1,7 @@
 schema_version: "0.2"
 dataset_identifier: PXD007535
-status: BLOCKED_CONFLICTING_REPORTED_COUNTS
+status: BLOCKED_UNIT_OF_ANALYSIS_UNRESOLVED
+unit_of_analysis_record: experiments/0.2/acquisition/PXD007535_unit_of_analysis_reconciliation.yaml
 reported_counts:
   discovery:
     - count: 66
@@ -21,11 +22,16 @@ intersection: []
 counts:
   reported_discovery_publication: 67
   reported_discovery_pride_description: 66
-  identifiable_discovery: null
+  identifiable_discovery_subjects: null
+  identifiable_discovery_samples: null
+  discovery_in_acquired_artifact_subjects: null
+  discovery_in_acquired_artifact_samples: null
   discovery_in_acquired_artifact: null
   reported_validation: 82
-  identifiable_validation: null
-  validation_in_acquired_artifact: null
+  identifiable_validation_subjects: null
+  identifiable_validation_samples: null
+  validation_in_acquired_artifact_subjects: null
+  validation_in_acquired_artifact_samples: null
   intersection: null
   discovery_only: null
   validation_only: null
@@ -34,4 +40,4 @@ reconciliation_method: "Metadata-only record; pending acquisition of subject/sam
 source_manifest_sha256: null
 reviewer: ""
 reviewed_at: null
-notes: Do not infer zero overlap from the word independent. The 66-versus-67 discovery-count discrepancy must be resolved before cohort independence can be marked PASS.
+notes: Do not infer zero overlap from the word independent. Establish whether 66 and 67 refer to subjects, samples, enrollment, measurement, or inclusion stage before cohort independence can be marked PASS.
