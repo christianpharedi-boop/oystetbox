@@ -227,6 +227,19 @@ class OysterBoxTests(unittest.TestCase):
         self.assertIn("unit of analysis remains unresolved", notes)
         self.assertIn("Unit-of-analysis decision rule", protocol)
 
+    def test_full_text_access_is_provenance_and_not_reconciliation_evidence(self):
+        access = (ROOT / "acquisition/manifests/PXD007535_full_text_access.yaml").read_text(encoding="utf-8")
+        unit = (ROOT / "experiments/0.2/acquisition/PXD007535_unit_of_analysis_reconciliation.yaml").read_text(encoding="utf-8")
+        self.assertIn("status: BLOCKED", access)
+        self.assertIn("inference_from_failure: false", access)
+        self.assertIn("result: RECAPTCHA", access)
+        self.assertIn("result: CAPTCHA", access)
+        self.assertIn("result: NOT_OPEN_ACCESS", access)
+        self.assertIn("sample_level_evidence_obtained: false", access)
+        self.assertIn("full_text_access_record:", unit)
+        self.assertIn("resolved: false", unit)
+        self.assertIn("validation_outcomes_exposed: false", unit)
+
     def test_parser_and_quality_gate(self):
         self.assertEqual(len(self.measurements), 6)
         self.assertAlmostEqual(qc_pass_rate(self.measurements), 5 / 6)

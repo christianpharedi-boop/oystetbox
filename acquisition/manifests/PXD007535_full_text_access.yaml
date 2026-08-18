@@ -1,0 +1,40 @@
+schema_version: "0.2"
+dataset_identifier: PXD007535
+full_text_access:
+  status: BLOCKED
+  inference_from_failure: false
+  attempts:
+    - source: PMC
+      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC6030726/
+      result: RECAPTCHA
+      sample_level_evidence_obtained: false
+    - source: Publisher
+      url: https://linkinghub.elsevier.com/retrieve/pii/S1535-9476(20)32223-4
+      result: CAPTCHA
+      sample_level_evidence_obtained: false
+    - source: Europe_PMC_full_text_xml
+      url: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6030726/fullTextXML
+      result: HTTP_404
+      sample_level_evidence_obtained: false
+    - source: Europe_PMC_supplementary_files
+      url: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6030726/supplementaryFiles
+      result: NOT_OPEN_ACCESS
+      sample_level_evidence_obtained: false
+    - source: PubMed_abstract
+      url: https://pubmed.ncbi.nlm.nih.gov/29610270/
+      result: ABSTRACT_AVAILABLE
+      sample_level_evidence_obtained: false
+    - source: PRIDE_project_metadata
+      url: https://www.ebi.ac.uk/pride/archive/projects/PXD007535
+      result: PROJECT_METADATA_AVAILABLE
+      sample_level_evidence_obtained: false
+  europepmc_record: acquisition/manifests/europepmc_29610270.json
+  pmc_id: PMC6030726
+  has_supplementary_material: true
+  supplementary_material_accessible_via_checked_route: false
+  next_authoritative_routes:
+    - publisher_supplementary_download
+    - PRIDE_sample_metadata_or_SDRF
+    - ProteomeXchange_submission_metadata
+    - institutional_author_repository_copy
+notes: Access failure is recorded as provenance and does not justify guessing subject/sample membership or resolving 66 versus 67.

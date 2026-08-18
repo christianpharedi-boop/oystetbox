@@ -23,6 +23,7 @@ acquisition_state:
   cohort_reconciliation: experiments/0.2/acquisition/PXD007535_cohort_reconciliation.yaml
   unit_of_analysis_reconciliation: experiments/0.2/acquisition/PXD007535_unit_of_analysis_reconciliation.yaml
   unit_analysis_source_notes: acquisition/manifests/PXD007535_unit_analysis_source_notes.md
+  full_text_access: acquisition/manifests/PXD007535_full_text_access.yaml
   information_boundary: experiments/0.2/acquisition/PXD007535_information_boundary.yaml
 source_record:
   repository: PRIDE / ProteomeXchange
@@ -115,6 +116,7 @@ next_operations:
   - produce_subject_and_sample_manifests_without_outcomes
   - calculate_subject_intersection_without_exposing_outcomes
   - explain_66_vs_67_with_source_reference
+  - pursue_authoritative_sample_level_route
   - reconcile_cohort_subjects_and_overlap
   - freeze_identifier_mapping
   - verify_metadata_and_processing_manifest
