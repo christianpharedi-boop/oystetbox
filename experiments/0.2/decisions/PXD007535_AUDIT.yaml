@@ -28,6 +28,7 @@ acquisition_state:
   publisher_supplement_notes: acquisition/manifests/PXD007535_publisher_supplement_notes.md
   publisher_supplement_manifest: experiments/0.2/acquisition/PXD007535_publisher_supplement_manifest.yaml
   s7_membership_extract: acquisition/manifests/PXD007535_s7_membership_extract.yaml
+  identity_map: experiments/0.2/acquisition/PXD007535_SAMPLE_SUBJECT_IDENTITY_MAP.yaml
   information_boundary: experiments/0.2/acquisition/PXD007535_information_boundary.yaml
 source_record:
   repository: PRIDE / ProteomeXchange
@@ -77,6 +78,7 @@ gates:
     status: PENDING
     evidence: "Publisher text distinguishes 67 discovery individuals, 82 recruited validation subjects, and a 75-sample quantitative SRM table. S7 exposes 69 Condition/Run records, but Run identity is not established as subject or sample identity; PRIDE still reports 66 systemically healthy subjects and intersection remains absent."
     unit_of_analysis_record: experiments/0.2/acquisition/PXD007535_unit_of_analysis_reconciliation.yaml
+    identity_map_record: experiments/0.2/acquisition/PXD007535_SAMPLE_SUBJECT_IDENTITY_MAP.yaml
     overlap_status: UNKNOWN
     reconciliation_record: experiments/0.2/acquisition/PXD007535_cohort_reconciliation.yaml
   identifier_mapping:

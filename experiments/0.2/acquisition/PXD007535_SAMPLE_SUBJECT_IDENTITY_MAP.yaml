@@ -1,0 +1,96 @@
+schema_version: "0.2"
+dataset_identifier: PXD007535
+mapping_status: PENDING
+reconciliation_scope: metadata_only
+measurement_values_read: false
+validation_outcomes_exposed: false
+scoring_allowed: false
+benchmark_freeze_allowed: false
+population_counts:
+  validation:
+    recruited_subjects:
+      count: 82
+      unit: SUBJECTS
+      source: publisher
+      status: REPORTED
+    quantitative_samples:
+      count: 75
+      unit: SAMPLES
+      source: publisher_quantitative_table
+      status: REPORTED
+    s7_runs:
+      count: 69
+      unit: RUN_LABELS
+      source: acquisition/manifests/PXD007535_s7_membership_extract.yaml
+      status: VERIFIED_METADATA_ONLY
+      biological_independence: UNKNOWN
+  discovery:
+    reported_individuals:
+      count: 67
+      unit: INDIVIDUALS
+      source: publisher
+      status: REPORTED
+    pride_healthy_records:
+      count: 66
+      unit: SUBJECTS_OR_UNRESOLVED
+      source: PRIDE project description
+      status: REPORTED_CONFLICTING
+mapping_edges:
+  validation:
+    run_to_sample:
+      status: PENDING
+      evidence_references: []
+      inferred: false
+    sample_to_subject:
+      status: PENDING
+      evidence_references: []
+      inferred: false
+    subject_to_cohort:
+      status: PENDING
+      evidence_references: []
+      inferred: false
+  discovery:
+    sample_to_subject:
+      status: PENDING
+      evidence_references: []
+      inferred: false
+    subject_to_cohort:
+      status: PENDING
+      evidence_references: []
+      inferred: false
+  cross_cohort:
+    discovery_subject_to_validation_subject:
+      status: PENDING
+      evidence_references: []
+      inferred: false
+    discovery_validation_subject_intersection:
+      status: PENDING
+      value: null
+      evidence_references: []
+      inferred: false
+identity_records: []
+identity_record_schema:
+  run_id: required_if_available
+  sample_id: required_if_available
+  subject_id: required_if_available
+  cohort_label: required_if_available
+  evidence_reference: required
+  evidence_checksum: required_if_materialized
+  evidence_scope: required
+  status: VERIFIED_OR_UNRESOLVED
+  inferred: must_be_false
+prohibitions:
+  - Do not equate unique Run labels with unique subjects.
+  - Do not equate quantitative-table samples with recruited subjects.
+  - Do not infer Sample-to-Subject or Run-to-Sample mappings from labels alone.
+  - Do not expose measurement values, transitions, statistical results, AUC, or biomarker-panel values.
+  - Do not score or freeze Benchmark v1 while any required mapping edge is PENDING.
+exit_conditions:
+  - validation_run_to_sample_mapping_verified
+  - validation_sample_to_subject_mapping_verified
+  - validation_subject_to_cohort_mapping_verified
+  - discovery_sample_to_subject_mapping_verified
+  - discovery_subject_to_cohort_mapping_verified
+  - cross_cohort_subject_intersection_verified
+  - 66_vs_67_explanation_evidenced
+next_operation: Obtain an authoritative mapping field for at least one edge; record only that edge and its evidence, leaving all other edges unresolved.

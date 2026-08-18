@@ -287,6 +287,22 @@ class OysterBoxTests(unittest.TestCase):
         self.assertIn("subject_or_sample_identity: UNKNOWN", unit)
         self.assertIn("scoring_allowed: false", manifest)
 
+    def test_identity_map_requires_edge_evidence_and_forbids_inference(self):
+        identity = (ROOT / "experiments/0.2/acquisition/PXD007535_SAMPLE_SUBJECT_IDENTITY_MAP.yaml").read_text(encoding="utf-8")
+        unit = (ROOT / "experiments/0.2/acquisition/PXD007535_unit_of_analysis_reconciliation.yaml").read_text(encoding="utf-8")
+        self.assertIn("mapping_status: PENDING", identity)
+        self.assertIn("run_to_sample:", identity)
+        self.assertIn("sample_to_subject:", identity)
+        self.assertIn("subject_to_cohort:", identity)
+        self.assertIn("discovery_subject_to_validation_subject:", identity)
+        self.assertIn("Do not equate unique Run labels with unique subjects.", identity)
+        self.assertIn("Do not infer Sample-to-Subject or Run-to-Sample mappings from labels alone.", identity)
+        self.assertIn("measurement_values_read: false", identity)
+        self.assertIn("validation_outcomes_exposed: false", identity)
+        self.assertIn("scoring_allowed: false", identity)
+        self.assertIn("identity_map:", unit)
+        self.assertIn("establish_run_to_sample_edge_with_authoritative_evidence", unit)
+
     def test_parser_and_quality_gate(self):
         self.assertEqual(len(self.measurements), 6)
         self.assertAlmostEqual(qc_pass_rate(self.measurements), 5 / 6)

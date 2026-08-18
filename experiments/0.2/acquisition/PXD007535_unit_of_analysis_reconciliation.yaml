@@ -9,6 +9,7 @@ pride_route_results: acquisition/manifests/PXD007535_pride_route_results.yaml
 publisher_supplement_notes: acquisition/manifests/PXD007535_publisher_supplement_notes.md
 publisher_supplement_manifest: experiments/0.2/acquisition/PXD007535_publisher_supplement_manifest.yaml
 s7_membership_extract: acquisition/manifests/PXD007535_s7_membership_extract.yaml
+identity_map: experiments/0.2/acquisition/PXD007535_SAMPLE_SUBJECT_IDENTITY_MAP.yaml
 evidence_hierarchy:
   - rank: 1
     source_type: authoritative_pride_metadata_or_file_metadata
@@ -104,6 +105,8 @@ discrepancy_66_vs_67:
   evidence: "The publisher supports 67 discovery individuals, while PRIDE describes 66 systemically healthy subjects. The 66 value may describe a subgroup or another inclusion stage, but subject/sample manifests are still absent."
 required_next_evidence:
   - acquire_study_supplementary_or_sample_metadata
+  - establish_run_to_sample_edge_with_authoritative_evidence
+  - establish_sample_to_subject_edge_with_authoritative_evidence
   - map_s7_run_labels_to_subject_or_sample_identifiers
   - pursue_an_authoritative_sample_level_source_outside_checked_project_and_submission_routes
   - identify_unit_for_each_reported_count
