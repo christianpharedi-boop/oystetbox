@@ -1,10 +1,33 @@
 schema_version: "0.2"
 dataset_identifier: PXD007535
 artifact_role: validation_srm
-status: NOT_ACQUIRED
-acquired_at: null
+status: PARTIALLY_ACQUIRED
+acquired_at: "2026-08-18T07:16:17Z"
 source_record: https://doi.org/10.1074/mcp.RA118.000718
-files: []
+project_metadata_json: acquisition/manifests/PXD007535_project.json
+file_listing_json: acquisition/manifests/PXD007535_files.json
+files:
+  - path: acquisition/PXD007535/validation_sealed/20151030_003a_plate_3425_5_1_method2_SRM_MS2.wiff
+    size_bytes: 643072
+    source_url: https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151030_003a_plate_3425_5_1_method2_SRM_MS2.wiff
+    acquired_at: "2026-08-18T07:16:12Z"
+    sha256: f07c71858713af7e8d1e67e4c899525a13e33935fc0261a1d2c5ca7ca4c5b264
+    pride_checksum_md5: dc8a902f182eca27aa1e21b44500cd730f0ec1c3
+    license_status: DATASET_LICENSE_NOT_VERIFIED
+  - path: acquisition/PXD007535/validation_sealed/20151030_005a_plate_3425_5_2_method2_SRM_MS2.wiff
+    size_bytes: 634880
+    source_url: https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151030_005a_plate_3425_5_2_method2_SRM_MS2.wiff
+    acquired_at: "2026-08-18T07:16:14Z"
+    sha256: d6fb04a801223789ac81c525fff5f90e06b268c2151b6eb17cd88408d99dcdb3
+    pride_checksum_md5: 271486b526f559b1d72fdad6adc7ed3f43ad9cf1
+    license_status: DATASET_LICENSE_NOT_VERIFIED
+  - path: acquisition/PXD007535/validation_sealed/20151030_005a_plate_3425_5_2_method2_SRM_MS2.wiff.scan
+    size_bytes: 491708
+    source_url: https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151030_005a_plate_3425_5_2_method2_SRM_MS2.wiff.scan
+    acquired_at: "2026-08-18T07:16:17Z"
+    sha256: f0fe28898d31128fbda134c26d1430f5a1a9dabd94ce342147f22596f65c7eea
+    pride_checksum_md5: f737f46578b969b1fb37eab1302b0585e8493a1f
+    license_status: DATASET_LICENSE_NOT_VERIFIED
 manifest_sha256: null
 outcome_artifact_sha256: null
 outcome_contents_exposed_to_scoring: false
@@ -15,4 +38,4 @@ required_file_fields:
   - acquired_at
   - sha256
   - license_status
-notes: Possessing this manifest and its checksum is permitted before scoring. Validation outcome contents must remain sealed until the prediction artifact checksum is frozen.
+notes: Three small SRM-side files were acquired and kept in the sealed validation area. This is not the complete validation artifact; do not open or score these files. The outcome artifact remains sealed and admission remains blocked.

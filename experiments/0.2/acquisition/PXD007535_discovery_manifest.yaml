@@ -1,10 +1,20 @@
 schema_version: "0.2"
 dataset_identifier: PXD007535
 artifact_role: discovery
-status: NOT_ACQUIRED
-acquired_at: null
+status: PARTIALLY_ACQUIRED
+acquired_at: "2026-08-18T07:16:37Z"
 source_record: https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD007535
-files: []
+project_metadata_json: acquisition/manifests/PXD007535_project.json
+file_listing_json: acquisition/manifests/PXD007535_files.json
+metadata_only_inventory_json: acquisition/manifests/PXD007535_file_inventory_metadata.json
+files:
+  - path: acquisition/PXD007535/discovery/20160316_022_SP17.wiff.scan
+    size_bytes: 1319016
+    source_url: https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160316_022_SP17.wiff.scan
+    acquired_at: "2026-08-18T07:16:37Z"
+    sha256: cc6a705d3059335c92d5f91a910aaa36f9f4d1f40adccec2c415c973f3f5cbb6
+    pride_checksum_md5: caf6295e5e3c57f56ff06b6cf8dfe370d4b8c8d2
+    license_status: DATASET_LICENSE_NOT_VERIFIED
 manifest_sha256: null
 required_file_fields:
   - path
@@ -13,4 +23,4 @@ required_file_fields:
   - acquired_at
   - sha256
   - license_status
-notes: Discovery material must be acquired and hashed independently of the validation/SRM material. Do not add validation outcomes to this manifest.
+notes: A representative small discovery-side scan and official metadata inventories were acquired. This is not the complete LFQ discovery artifact; admission remains blocked until the complete discovery material and manifest are defined and hashed.

@@ -1,0 +1,807 @@
+{
+  "dataset_identifier": "PXD007535",
+  "inspection_mode": "metadata_only",
+  "validation_contents_opened": false,
+  "files": [
+    {
+      "fileName": "20151030_003a_plate_3425_5_1_method2_SRM_MS2.wiff",
+      "fileSizeBytes": 643072,
+      "checksum": "dc8a902f182eca27aa1e21b44500cd730f0ec1c3",
+      "role_hint_from_filename": "candidate_metadata_or_validation_related",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151030_003a_plate_3425_5_1_method2_SRM_MS2.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151030_005a_plate_3425_5_2_method2_SRM_MS2.wiff",
+      "fileSizeBytes": 634880,
+      "checksum": "271486b526f559b1d72fdad6adc7ed3f43ad9cf1",
+      "role_hint_from_filename": "candidate_metadata_or_validation_related",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151030_005a_plate_3425_5_2_method2_SRM_MS2.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151030_005a_plate_3425_5_2_method2_SRM_MS2.wiff.scan",
+      "fileSizeBytes": 491708,
+      "checksum": "f737f46578b969b1fb37eab1302b0585e8493a1f",
+      "role_hint_from_filename": "candidate_metadata_or_validation_related",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151030_005a_plate_3425_5_2_method2_SRM_MS2.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20130530_06_H27_Health.raw",
+      "fileSizeBytes": 1256808614,
+      "checksum": "097645b9e431685813703880b07e4ca795510403",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20130530_06_H27_Health.raw",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20130530_13_H40_Health.raw",
+      "fileSizeBytes": 1030906546,
+      "checksum": "61427ac17a15faf858a6fea001c803857c9ebfa4",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20130530_13_H40_Health.raw",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20130530_14_H41_Health.raw",
+      "fileSizeBytes": 1219424004,
+      "checksum": "9f02962309f5f8e94667fe756b51fd1b29ec11f0",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20130530_14_H41_Health.raw",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20130530_15_CED13_Health.raw",
+      "fileSizeBytes": 1177129902,
+      "checksum": "5ff879b5f8cd4616219139f0d57232a51a03f18a",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20130530_15_CED13_Health.raw",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20130530_19_CED52_Health.raw",
+      "fileSizeBytes": 830031338,
+      "checksum": "6586187432c0afc4d4ecd21ec4a50845c355771a",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20130530_19_CED52_Health.raw",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20130530_24_H21_Gingivitis.raw",
+      "fileSizeBytes": 1088989800,
+      "checksum": "b872518e259901bb1cd265e4008e92838dcc3f9b",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20130530_24_H21_Gingivitis.raw",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20130530_27_H25_Gingivitis.raw",
+      "fileSizeBytes": 961512398,
+      "checksum": "8f81564a6f72ddde95eeb2af8c17266d0ea99127",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20130530_27_H25_Gingivitis.raw",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20130530_28_H26_Gingivitis.raw",
+      "fileSizeBytes": 1063600776,
+      "checksum": "b2777c81c7677b4da8a234eac868d32a0ae4ce98",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20130530_28_H26_Gingivitis.raw",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20130530_32_H38_Gingivitis.raw",
+      "fileSizeBytes": 994228288,
+      "checksum": "212f9b53a191b088e8d3425d4c9ed22dad46c550",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20130530_32_H38_Gingivitis.raw",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20130530_35_CED11_Gingivitis.raw",
+      "fileSizeBytes": 1310293018,
+      "checksum": "fc5f2ff5a001eef2100dc45413ee6a7118fbe367",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20130530_35_CED11_Gingivitis.raw",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20130530_46_CED05_Agressive.raw",
+      "fileSizeBytes": 1251726370,
+      "checksum": "b3b5d15ae566ee15e6d85bee62ca4a6d87883e14",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20130530_46_CED05_Agressive.raw",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20130530_53_CED42_Agressive.raw",
+      "fileSizeBytes": 1289935824,
+      "checksum": "6bd7363d0cfe18d25baa2c011d543a195305fe70",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20130530_53_CED42_Agressive.raw",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20130530_56_CED50_Agressive.raw",
+      "fileSizeBytes": 1188732648,
+      "checksum": "9a68698e5c4420a1fa0e2feabf3109dc531fe43d",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20130530_56_CED50_Agressive.raw",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20130530_57_CED51_Agressive.raw",
+      "fileSizeBytes": 1162499104,
+      "checksum": "4dc6510942fc92599f8aff61f7e4be7d33f3a8ae",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20130530_57_CED51_Agressive.raw",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20130530_59_CED58-2_Agressive.raw",
+      "fileSizeBytes": 1091850014,
+      "checksum": "6814de6bff9e75673ecef19c25489b0a82cdc657",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20130530_59_CED58-2_Agressive.raw",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20130530_66_CED14_Chronic.raw",
+      "fileSizeBytes": 2099950534,
+      "checksum": "922fe6c5ad016dcd98ada5c3aa6d402a2a7cc095",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20130530_66_CED14_Chronic.raw",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20130530_68_CED18_Chronic.raw",
+      "fileSizeBytes": 1431284960,
+      "checksum": "2b28df13f71b3d49ed0f4f6035cb8b05eeda0214",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20130530_68_CED18_Chronic.raw",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20130530_73_CED38_Chronic.raw",
+      "fileSizeBytes": 1189835184,
+      "checksum": "5514d53525f42719c6577371423376d184d15462",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20130530_73_CED38_Chronic.raw",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20130530_77_CED48_Chronic.raw",
+      "fileSizeBytes": 1649282918,
+      "checksum": "4b5c0fb53f807c41380e15733f7a77378db7dee2",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20130530_77_CED48_Chronic.raw",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151204_016_SP29.wiff.scan",
+      "fileSizeBytes": 855648,
+      "checksum": "5b0f8e17f5385bda751065883937a4935a643d68",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151204_016_SP29.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151204_017_SP10.wiff",
+      "fileSizeBytes": 3883008,
+      "checksum": "7f1a5b4e604a45eaa48a56d84c8d89224b5c7f75",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151204_017_SP10.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151204_020_SP14.wiff",
+      "fileSizeBytes": 3883008,
+      "checksum": "dfb14e798c5bbc47eca039c16bcfc697b47e3957",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151204_020_SP14.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151204_021_SP46.wiff",
+      "fileSizeBytes": 3883008,
+      "checksum": "82d5c9208f73dcbf606dc13aca221fc99d224f76",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151204_021_SP46.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151204_022_SP61.wiff.scan",
+      "fileSizeBytes": 866712,
+      "checksum": "6848820c02234ebf242a33c8af624ae0b7fde46d",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151204_022_SP61.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151204_025_SP63.wiff.scan",
+      "fileSizeBytes": 834072,
+      "checksum": "47fd1fb27770af83853ada5f86fb4908e02a79ee",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151204_025_SP63.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151204_026_SP30.wiff.scan",
+      "fileSizeBytes": 864184,
+      "checksum": "21de492cf5b98c0f8f35ee287379872cbc27358b",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151204_026_SP30.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151204_036_SP70.wiff.scan",
+      "fileSizeBytes": 884432,
+      "checksum": "c1a10da2fe76868c8ec81f16b3691c1e94c9d18f",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151204_036_SP70.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151204_037_SP73.wiff",
+      "fileSizeBytes": 3887104,
+      "checksum": "99091e8b5f41219795552e79af57ebf6bd233528",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151204_037_SP73.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151204_039_SP1.wiff.scan",
+      "fileSizeBytes": 814420,
+      "checksum": "547bdae2e284700ecb8512e63452b431782d80b8",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151204_039_SP1.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151204_044_SP32.wiff.scan",
+      "fileSizeBytes": 822600,
+      "checksum": "c8f8d04c7b65cb60f8d731ac0e129e8883240138",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151204_044_SP32.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151204_049_SP56.wiff",
+      "fileSizeBytes": 3874816,
+      "checksum": "10a4c149809a92536a200e8d84e9b42590318186",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151204_049_SP56.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151204_051_SP37.wiff",
+      "fileSizeBytes": 3883008,
+      "checksum": "8af14c7a38107f80daeed70ca49c9c30091ceb6b",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151204_051_SP37.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151204_056_SP42.wiff",
+      "fileSizeBytes": 3883008,
+      "checksum": "693b38978bc35a9126d19fef5b06cbf4dd05e3f4",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151204_056_SP42.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151204_057_SP13.wiff",
+      "fileSizeBytes": 3887104,
+      "checksum": "5aa15a25e43b99cc9f446c6316b9297e2ceac2a1",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151204_057_SP13.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151204_071_Sp8.wiff",
+      "fileSizeBytes": 3891200,
+      "checksum": "f1a7ea44e6b68996fa9e3cb4b13480618a0b29e5",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151204_071_Sp8.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151204_077_SP41.wiff.scan",
+      "fileSizeBytes": 845388,
+      "checksum": "27cf76b9b58e57ae67fd45c688754b1fb17ae9c1",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151204_077_SP41.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151204_080_SP15.wiff.scan",
+      "fileSizeBytes": 844684,
+      "checksum": "a283b75d47407c80615954ae1a61ed6a437a0d64",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151204_080_SP15.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151204_084_SP60.wiff",
+      "fileSizeBytes": 3891200,
+      "checksum": "db6527e858b627b251d0d51cb60fc8983dc46590",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151204_084_SP60.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151204_085_SP34.wiff.scan",
+      "fileSizeBytes": 828540,
+      "checksum": "c59eea801ca2af04f345e7f6ab004e4ba98879f3",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151204_085_SP34.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151204_089_SP3.wiff.scan",
+      "fileSizeBytes": 813240,
+      "checksum": "0975c1fb649e11a3b92ab73c93f8b6822c8bc995",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151204_089_SP3.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151204_092_SP77.wiff.scan",
+      "fileSizeBytes": 878668,
+      "checksum": "caafb81c6469f5b14509b1ed9b31f369b9ec9660",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151204_092_SP77.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151204_096_Sp76.wiff.scan",
+      "fileSizeBytes": 856728,
+      "checksum": "71c37ab942a283c8276528b9fbed274fe56c7325",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151204_096_Sp76.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151204_097_SP79.wiff",
+      "fileSizeBytes": 3895296,
+      "checksum": "76dc15229e3ee9be1ea0c2725cf1d30a306e5e04",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151204_097_SP79.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151204_097_SP79.wiff.scan",
+      "fileSizeBytes": 818532,
+      "checksum": "d3dc24ffbe1d1fb5d5c7282a7dab1f393347afe0",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151204_097_SP79.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151204_099_Sp16.wiff.scan",
+      "fileSizeBytes": 803456,
+      "checksum": "cd9d9f2859ab568882a0ea5be10a1dadac267e90",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151204_099_Sp16.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151204_100_Sp75.wiff",
+      "fileSizeBytes": 3895296,
+      "checksum": "7858aee640df292408a2dc9e5387b8fecdf2be46",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151204_100_Sp75.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151204_100_Sp75.wiff.scan",
+      "fileSizeBytes": 845964,
+      "checksum": "655a696f015e74648780d6fa14419b7e96e4d241",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151204_100_Sp75.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151204_104_SP49.wiff",
+      "fileSizeBytes": 3895296,
+      "checksum": "fb38a2553cbecc527254c4e5acde65f99dcd76e2",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151204_104_SP49.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151204_105_SP59.wiff.scan",
+      "fileSizeBytes": 821776,
+      "checksum": "2327b3779fe84a426e0d1c9e5ec4a7954866047e",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151204_105_SP59.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151204_106_SP17.wiff",
+      "fileSizeBytes": 3891200,
+      "checksum": "36612da5e1988c86b414fcf677c80158e4809e8d",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151204_106_SP17.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20151204_111_SP80.wiff",
+      "fileSizeBytes": 3891200,
+      "checksum": "b47d03af2612e768b9c37a1eb324de4d46ca424e",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20151204_111_SP80.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160316_006_SP40.wiff.scan",
+      "fileSizeBytes": 1358820,
+      "checksum": "f5cd980d124ba41249eff7155c65e92f13980cb1",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160316_006_SP40.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160316_007_SP3.wiff",
+      "fileSizeBytes": 6025216,
+      "checksum": "be6bd73256d82fd39cebd490f1f9f8c940d0ad81",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160316_007_SP3.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160316_008_SP16.wiff.scan",
+      "fileSizeBytes": 1292388,
+      "checksum": "4603223d3b9b4b24495232a78f347a0ec7702e9c",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160316_008_SP16.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160316_012_SP35.wiff",
+      "fileSizeBytes": 6029312,
+      "checksum": "51e37fa608fe1f9937634215861d8e2f793ef865",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160316_012_SP35.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160316_012_SP35.wiff.scan",
+      "fileSizeBytes": 1310512,
+      "checksum": "2b4abc7ae1f158162564b213376862809e0b732a",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160316_012_SP35.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160316_013_SP57.wiff.scan",
+      "fileSizeBytes": 1322932,
+      "checksum": "bf9e7ea9932579ae6988532249054be869ae4ee7",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160316_013_SP57.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160316_015_SP47.wiff",
+      "fileSizeBytes": 6008832,
+      "checksum": "d37e61376beb812693691efcc75856b692a87828",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160316_015_SP47.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160316_018_SP37.wiff",
+      "fileSizeBytes": 6025216,
+      "checksum": "589b073db75976b1928004eae9ddabd8c4ba7f0a",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160316_018_SP37.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160316_018_SP37.wiff.scan",
+      "fileSizeBytes": 1325244,
+      "checksum": "d3908ac7d6bb6b86c2730a0394f3437d6f5f4902",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160316_018_SP37.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160316_021_SP59.wiff",
+      "fileSizeBytes": 6029312,
+      "checksum": "9152b7fc4831fedb74a068b92a83d8a961c27ce8",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160316_021_SP59.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160316_022_SP17.wiff.scan",
+      "fileSizeBytes": 1319016,
+      "checksum": "caf6295e5e3c57f56ff06b6cf8dfe370d4b8c8d2",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160316_022_SP17.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160316_025_SP8.wiff",
+      "fileSizeBytes": 6017024,
+      "checksum": "f5e4ca5a4f3796791cd4e1fc983772f92edaeef6",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160316_025_SP8.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160316_027_SP54.wiff",
+      "fileSizeBytes": 6025216,
+      "checksum": "4832a9f3fc0bab8a9763c6afdd2ebb4b136dc0d0",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160316_027_SP54.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160316_028_SP5.wiff",
+      "fileSizeBytes": 6025216,
+      "checksum": "70526f94a8c8ef4d2d541e6575b6480a60af2d03",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160316_028_SP5.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160316_030_SP12.wiff.scan",
+      "fileSizeBytes": 1283688,
+      "checksum": "1e8de2619d567f0c5627581b33bfd2434729c124",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160316_030_SP12.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160316_031_SP21.wiff",
+      "fileSizeBytes": 6008832,
+      "checksum": "74336a9ed13d7179968176cfeb6ee25e639e5310",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160316_031_SP21.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160316_031_SP21.wiff.scan",
+      "fileSizeBytes": 1359144,
+      "checksum": "3d8b1e86f5c4a389f38bacd57efa465fb576bdcc",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160316_031_SP21.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160316_033_SP76.wiff",
+      "fileSizeBytes": 6012928,
+      "checksum": "d0f47166c82122aba14bd0d297fd7d436c032ecb",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160316_033_SP76.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160316_033_SP76.wiff.scan",
+      "fileSizeBytes": 1362468,
+      "checksum": "d2d9d479d368297b9bdee2bb3169680e7baf450d",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160316_033_SP76.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160316_042_SP19.wiff",
+      "fileSizeBytes": 6025216,
+      "checksum": "db049c4ad02fcb18017f4fda3cca3c0f2032b779",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160316_042_SP19.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160316_043_SP82.wiff",
+      "fileSizeBytes": 6017024,
+      "checksum": "06f2404ad0f679f61b137a8608e53529e205a3d6",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160316_043_SP82.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160316_047_SP31.wiff",
+      "fileSizeBytes": 5984256,
+      "checksum": "28fc07671142a395d131710317a3a90ef5a5c354",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160316_047_SP31.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160316_047_SP31.wiff.scan",
+      "fileSizeBytes": 1281888,
+      "checksum": "cf1bc9423412bd6e3cbebc197415cb682d4e8ef6",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160316_047_SP31.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160316_051_SP48.wiff.scan",
+      "fileSizeBytes": 1210436,
+      "checksum": "e111a99cba91a333c18c03987099b47fb9768662",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160316_051_SP48.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160316_055_SP68.wiff.scan",
+      "fileSizeBytes": 1296832,
+      "checksum": "84cc22c6549702809fda12783b8eb0c2950b46eb",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160316_055_SP68.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160406_003_SP15.wiff",
+      "fileSizeBytes": 6004736,
+      "checksum": "6dde934b0ef9c184c760502de6856cbfba376c08",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160406_003_SP15.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160406_003_SP15.wiff.scan",
+      "fileSizeBytes": 1299824,
+      "checksum": "007c6625ed4f11001396c108c4c9b08a6a2a86bc",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160406_003_SP15.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160406_005_SP13.wiff",
+      "fileSizeBytes": 5988352,
+      "checksum": "a6cee76fdb2a4c245e87cb9672e5dbe5e8961209",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160406_005_SP13.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160406_010_SP22.wiff.scan",
+      "fileSizeBytes": 1279548,
+      "checksum": "a33a1a5c78ef233a29c37a80d490048b08494471",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160406_010_SP22.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160406_011_SP67.wiff.scan",
+      "fileSizeBytes": 1371736,
+      "checksum": "0010fbbb57f39efec71a0b56e24f927186b80cb6",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160406_011_SP67.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160406_014_SP10.wiff",
+      "fileSizeBytes": 6012928,
+      "checksum": "4eb55d747eaa6eea818a0307bcee106db7da3700",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160406_014_SP10.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160406_015_SP53.wiff",
+      "fileSizeBytes": 6012928,
+      "checksum": "b761528de40e4bc46c7997f07d17ff641e81566e",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160406_015_SP53.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160406_016_SP69.wiff",
+      "fileSizeBytes": 6017024,
+      "checksum": "63fb896dfa79988c5fb1300384c9fc826cd928d1",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160406_016_SP69.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160406_017_SP4.wiff.scan",
+      "fileSizeBytes": 1290896,
+      "checksum": "699e7011dde7b3ab57b9b13c3c032155e5b49401",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160406_017_SP4.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160406_019_SP71.wiff.scan",
+      "fileSizeBytes": 1325344,
+      "checksum": "837f394401d804f0f550067e37e7f51301e3859e",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160406_019_SP71.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160406_030_SP20.wiff",
+      "fileSizeBytes": 6021120,
+      "checksum": "d3c67e87eb4e87156ad88a752324d98c83b71224",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160406_030_SP20.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160406_034_SP70.wiff",
+      "fileSizeBytes": 6025216,
+      "checksum": "0a08fdde8ffe7ba9c70cbc6c4b78f2512fda12cf",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160406_034_SP70.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160406_036_SP43.wiff.scan",
+      "fileSizeBytes": 1338372,
+      "checksum": "a2f0d4fb24edc42c72fc0cb8de222c31176db294",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160406_036_SP43.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160406_040_SP33.wiff.scan",
+      "fileSizeBytes": 1348320,
+      "checksum": "6f0f28e2c7ee38f7a55d7ccc5d5ea1eecda34096",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160406_040_SP33.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160406_043_SP63.wiff.scan",
+      "fileSizeBytes": 1354820,
+      "checksum": "3d7279a8c3d74a375748f46ad2a6c4981dc2c2e7",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160406_043_SP63.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160406_047_SP41.wiff.scan",
+      "fileSizeBytes": 1354324,
+      "checksum": "36212a195dc7d7f7deebe51cd543aea34dce86ac",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160406_047_SP41.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160406_048_SP11.wiff.scan",
+      "fileSizeBytes": 1300120,
+      "checksum": "4432d669a5eb54ab436da3c05144da75f2595325",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160406_048_SP11.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160406_151_SP65.wiff.scan",
+      "fileSizeBytes": 1314672,
+      "checksum": "3f68a66bdb91e4c12fadc1858eea99a3d118bdb7",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160406_151_SP65.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160406_152_SP23.wiff",
+      "fileSizeBytes": 6017024,
+      "checksum": "60401ef7a84fda5bc8825b8237037f1122f6e63d",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160406_152_SP23.wiff",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160406_159_SP66.wiff.scan",
+      "fileSizeBytes": 1363864,
+      "checksum": "52c30733b2020e0b97e7ee84d19cd33ebb5861e6",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160406_159_SP66.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    },
+    {
+      "fileName": "20160406_164_SP76.wiff.scan",
+      "fileSizeBytes": 1357244,
+      "checksum": "a0ba693900ed6b281ace584acdfed2f711b62fb8",
+      "role_hint_from_filename": "raw_mass_spectrometry",
+      "ftp": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/04/PXD007535/20160406_164_SP76.wiff.scan",
+      "publicationDate": "2018-04-10T09:17:13.000+00:00"
+    }
+  ]
+}

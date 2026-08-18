@@ -10,3 +10,7 @@ dist/
 data/raw/
 data/processed/
 *.egg-info/
+
+# External PXD007535 data remain local until dataset-level licensing is verified.
+/acquisition/PXD007535/
+

@@ -8,6 +8,14 @@ scoring_allowed: false
 benchmark_freeze_allowed: false
 performance_inspected: false
 outcome_labels_exposed_to_oysterbox: false
+acquisition_state:
+  status: PARTIAL_ACQUISITION
+  discovery_manifest: experiments/0.2/acquisition/PXD007535_discovery_manifest.yaml
+  validation_manifest: experiments/0.2/acquisition/PXD007535_validation_manifest.yaml
+  project_metadata: acquisition/manifests/PXD007535_project.json
+  file_listing: acquisition/manifests/PXD007535_files.json
+  validation_contents_opened: false
+  validation_outcome_contract: experiments/0.2/validation_outcomes/PXD007535_SEALED_OUTCOME_ARTIFACT.yaml
 source_record:
   repository: PRIDE / ProteomeXchange
   dataset_url: https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD007535
@@ -28,7 +36,9 @@ gates:
     evidence_url: https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD007535
   discovery_artifact:
     status: PENDING_HASH
-    evidence: "Discovery LFQ material and raw MS data are identified, but acquired artifact and manifest checksum are absent."
+    evidence: "Official project metadata and file inventory were acquired; one small discovery-side scan was acquired, but the complete LFQ discovery artifact and manifest checksum remain absent."
+    sample_artifact: acquisition/PXD007535/discovery/20160316_022_SP17.wiff.scan
+    sample_sha256: cc6a705d3059335c92d5f91a910aaa36f9f4d1f40adccec2c415c973f3f5cbb6
     artifact_sha256: null
   discovery_cutoff:
     status: PENDING
@@ -62,7 +72,8 @@ gates:
     evidence: "Raw/processed files, software, parameters, manifests, and checksums have not yet been frozen together."
   validation_artifact:
     status: PENDING_HASH
-    evidence: "SRM outcome artifact is identified conceptually but has not been acquired and hashed separately."
+    evidence: "Three small SRM-side artifacts were acquired and hashed separately, but the complete validation/outcome artifact has not been assembled or hashed."
+    acquired_components_manifest: acquisition/manifests/PXD007535_validation_acquired_sha256.txt
     artifact_sha256: null
   validation_outcome_separation:
     status: PENDING
@@ -76,12 +87,11 @@ gates:
     status: PENDING
     evidence: "Discovery and validation artifact hashes are both required before admission."
 next_operations:
-  - acquire_discovery_artifact
-  - create_discovery_manifest
-  - hash_discovery_artifact
+  - acquire_complete_discovery_artifact
+  - complete_discovery_manifest_and_hash
   - freeze_discovery_information_cutoff
-  - acquire_validation_srm_artifact_separately
-  - hash_validation_srm_artifact
+  - acquire_complete_validation_srm_artifact_separately
+  - assemble_and_hash_sealed_validation_outcome_artifact
   - reconcile_cohort_subjects_and_overlap
   - freeze_identifier_mapping
   - verify_metadata_and_processing_manifest

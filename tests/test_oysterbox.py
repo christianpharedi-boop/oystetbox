@@ -150,6 +150,20 @@ class OysterBoxTests(unittest.TestCase):
         errors = validate_acquisition_state({"status": "ACQUIRED", "manifest_sha256": "d" * 64}, {"status": "SEALED", "manifest_sha256": "v" * 64}, {"status": "FROZEN", "discovery_cutoff": "2018-04-02", "validation_artifact_contents_visible_to_scoring": False}, released)
         self.assertTrue(any("validation outcomes are not sealed" in error for error in errors))
 
+    def test_partial_pxd007535_acquisition_is_recorded_but_blocked(self):
+        discovery = (ROOT / "experiments/0.2/acquisition/PXD007535_discovery_manifest.yaml").read_text(encoding="utf-8")
+        validation = (ROOT / "experiments/0.2/acquisition/PXD007535_validation_manifest.yaml").read_text(encoding="utf-8")
+        sealed = (ROOT / "experiments/0.2/validation_outcomes/PXD007535_SEALED_OUTCOME_ARTIFACT.yaml").read_text(encoding="utf-8")
+        source_notes = (ROOT / "acquisition/manifests/PXD007535_source_notes.md").read_text(encoding="utf-8")
+        self.assertIn("status: PARTIALLY_ACQUIRED", discovery)
+        self.assertIn("cc6a705d3059335c92d5f91a910aaa36f9f4d1f40adccec2c415c973f3f5cbb6", discovery)
+        self.assertIn("status: PARTIALLY_ACQUIRED", validation)
+        self.assertIn("f07c71858713af7e8d1e67e4c899525a13e33935fc0261a1d2c5ca7ca4c5b264", validation)
+        self.assertIn("outcome_contents_exposed_to_scoring: false", validation)
+        self.assertIn("exposure_state: SEALED", sealed)
+        self.assertIn("outcome_contents_available_to_scoring: false", sealed)
+        self.assertIn("have not been acquired", source_notes.lower())
+
     def test_parser_and_quality_gate(self):
         self.assertEqual(len(self.measurements), 6)
         self.assertAlmostEqual(qc_pass_rate(self.measurements), 5 / 6)

@@ -1,14 +1,15 @@
 schema_version: "0.2"
 dataset_identifier: PXD007535
 artifact_role: validation_outcomes
-status: NOT_ACQUIRED
+status: PARTIALLY_ACQUIRED
 exposure_state: SEALED
-artifact_path: null
+artifact_path: acquisition/PXD007535/validation_sealed/
 artifact_sha256: null
-acquired_at: null
+acquired_at: "2026-08-18T07:16:17Z"
+component_hashes: acquisition/manifests/PXD007535_validation_acquired_sha256.txt
 outcome_contents_available_to_scoring: false
 prediction_artifact_sha256_required_before_release: true
 released_at: null
 release_authorized_by: null
 release_authorization_record: null
-notes: This record may exist before scoring. The outcome file itself must remain outside the scoring workspace until a frozen prediction checksum and release authorization record exist.
+notes: Three small validation-side raw artifacts were acquired as sealed components; the complete outcome artifact is not yet assembled or hashed. The outcome contents remain outside the scoring workspace until a frozen prediction checksum and release authorization record exist.
