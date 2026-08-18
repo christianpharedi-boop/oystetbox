@@ -1,0 +1,29 @@
+schema_version: "0.2"
+dataset_identifier: PXD007535
+route_assessment: PROJECT_LEVEL_ONLY
+routes:
+  - endpoint: https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD007535
+    result: PROJECT_METADATA_AVAILABLE
+    sample_level_records: false
+  - endpoint: https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD007535
+    result: PROJECT_METADATA_AVAILABLE
+    sample_level_records: false
+  - endpoint: https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD007535/files
+    result: COMPLETE_FILE_INVENTORY_AVAILABLE
+    sample_level_records: false
+  - endpoint: https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD007535/samples
+    result: HTTP_404
+    sample_level_records: false
+  - endpoint: https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD007535/sdrf
+    result: HTTP_404
+    sample_level_records: false
+  - endpoint: https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD007535/assays
+    result: HTTP_404
+    sample_level_records: false
+  - endpoint: https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD007535.0-2&outputMode=XML&test=no
+    result: SUBMISSION_XML_AVAILABLE
+    sample_level_records: false
+  - endpoint: https://www.ebi.ac.uk/pride/archive/projects/PXD007535
+    result: PROJECT_PAGE_AVAILABLE_NO_SDRF_DATA
+    sample_level_records: false
+notes: Checked official project, file, v3, submission, assay, sample, and SDRF routes. None provided a sample-level manifest or cohort membership record. No validation measurements or outcomes were opened.

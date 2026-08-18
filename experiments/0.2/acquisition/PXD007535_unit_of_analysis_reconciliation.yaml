@@ -5,6 +5,7 @@ reconciliation_scope: reconciliation_only
 scoring_allowed: false
 validation_outcomes_exposed: false
 full_text_access_record: acquisition/manifests/PXD007535_full_text_access.yaml
+pride_route_results: acquisition/manifests/PXD007535_pride_route_results.yaml
 evidence_hierarchy:
   - rank: 1
     source_type: authoritative_pride_metadata_or_file_metadata
@@ -81,7 +82,7 @@ discrepancy_66_vs_67:
   evidence: "The available PRIDE description and PubMed abstract report different discovery counts, while the subject/sample manifests needed to establish the unit are not acquired."
 required_next_evidence:
   - acquire_study_supplementary_or_sample_metadata
-  - pursue_an_authoritative_route_not_blocked_by_current_captcha_or_non_open_access_barrier
+  - pursue_an_authoritative_sample_level_source_outside_checked_project_and_submission_routes
   - identify_unit_for_each_reported_count
   - produce_discovery_subject_and_sample_manifest
   - produce_validation_subject_and_sample_manifest_without_outcome_contents

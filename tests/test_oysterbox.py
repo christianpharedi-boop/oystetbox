@@ -240,6 +240,18 @@ class OysterBoxTests(unittest.TestCase):
         self.assertIn("resolved: false", unit)
         self.assertIn("validation_outcomes_exposed: false", unit)
 
+    def test_pride_routes_do_not_supply_sample_level_membership(self):
+        routes = (ROOT / "acquisition/manifests/PXD007535_pride_route_results.yaml").read_text(encoding="utf-8")
+        unit = (ROOT / "experiments/0.2/acquisition/PXD007535_unit_of_analysis_reconciliation.yaml").read_text(encoding="utf-8")
+        self.assertIn("route_assessment: PROJECT_LEVEL_ONLY", routes)
+        self.assertIn("COMPLETE_FILE_INVENTORY_AVAILABLE", routes)
+        self.assertIn("SUBMISSION_XML_AVAILABLE", routes)
+        self.assertIn("HTTP_404", routes)
+        self.assertIn("PROJECT_PAGE_AVAILABLE_NO_SDRF_DATA", routes)
+        self.assertIn("sample_level_records: false", routes)
+        self.assertIn("pride_route_results:", unit)
+        self.assertIn("status: BLOCKED_UNIT_OF_ANALYSIS_UNRESOLVED", unit)
+
     def test_parser_and_quality_gate(self):
         self.assertEqual(len(self.measurements), 6)
         self.assertAlmostEqual(qc_pass_rate(self.measurements), 5 / 6)
