@@ -3,6 +3,8 @@ dataset_identifier: PXD033169
 screening_ledger: provenance/DATASET_SCREENING_0.2.yaml
 screening_protocol: docs/DATASET_SCREENING_0.2.md
 selection_basis: PROVENANCE_FIRST
+provenance_audit: experiments/0.2/decisions/PXD033169_AUDIT.yaml
+identity_graph: experiments/0.2/acquisition/PXD033169_IDENTITY_GRAPH.yaml
 screening_status: PROVISIONAL_CANDIDATE
 decision: NEEDS_CLARIFICATION
 performance_inspected: false
@@ -23,4 +25,13 @@ required_before_final_include:
   - verify_sample_and_processing_metadata_completeness
   - create_sealed_validation_outcome_artifact
   - verify_prediction_hash_requirement_before_outcome_release
+evidence_search_budget:
+  maximum_search_rounds: 3
+  rounds_completed: 1
+  predefined_routes:
+    - ProteomeXchange and PRIDE metadata, submission XML, SDRF, and sample routes
+    - publisher full text and supplementary metadata
+    - linked publication repository records
+  exhaustion_action: NEEDS_CLARIFICATION_OR_EXCLUDE_AND_MOVE_TO_NEXT_CANDIDATE
+  performance_may_influence_decision: false
 reviewer_rationale: "PXD033169 is the provenance-first Candidate #2 lead because the authoritative ProteomeXchange record reports DIA discovery, targeted-MS validation in an independent cohort, a public PRIDE accession, and a public FTP route. The record is not an INCLUDE decision. All biological measurements and validation outcomes remain outside OysterBox, and scoring remains blocked until the complete evidence chain is independently verified."

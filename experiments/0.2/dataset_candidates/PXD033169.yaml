@@ -1,5 +1,7 @@
 schema_version: "0.2"
 dataset_identifier: PXD033169
+audit_record: experiments/0.2/decisions/PXD033169_AUDIT.yaml
+identity_graph_record: experiments/0.2/acquisition/PXD033169_IDENTITY_GRAPH.yaml
 study_title: "Novel Diagnostic Biomarkers for High-Grade Serous Ovarian Cancer Uncovered by Data-Independent Acquisition Mass Spectrometry"
 source:
   repository: "PRIDE / ProteomeXchange"
@@ -13,7 +15,7 @@ discovery_evidence:
   source_url: https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD033169
   discovery_cutoff: "PENDING_METADATA_AND_ARTIFACT_REVIEW"
 validation_source:
-  description: "ProteomeXchange metadata reports targeted-MS validation of 18 prioritized candidates in an independent cohort."
+  description: "ProteomeXchange metadata reports targeted-MS validation of 18 prioritized candidates in a cohort described as independent; independence remains unverified until subject-level mapping is established."
   source_url: https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD033169
 validation_assay_type: "TARGETED_MS_AND_INDEPENDENT_COHORT"
 validation_publication_date: "2022 publication; exact public outcome-release boundary pending verification"
@@ -39,7 +41,7 @@ sample_metadata_completeness:
 processing_provenance_completeness:
   status: "PENDING"
   notes: "Instrument is reported as Orbitrap Exploris 480; complete raw/processed file roles, software, parameters, databases, and checksums remain unverified."
-independent_validation_status: "PENDING_VERIFICATION"
+independent_validation_status: "NOT_ESTABLISHED"
 leakage_assessment:
   status: "PENDING_METADATA_REVIEW"
   notes: "Candidate selection occurred from provenance metadata only. No OysterBox performance was inspected and no validation outcomes were exposed."
@@ -61,4 +63,4 @@ decision_basis:
   validation_outcome_separation: "PENDING"
 provenance_first_rank: 1
 biological_interest_used_for_selection: false
-reviewer_rationale: "PXD033169 is selected as Candidate #2 because the public ProteomeXchange record explicitly distinguishes DIA discovery from targeted-MS validation in an independent cohort and provides a public PRIDE accession and FTP route. This is a provenance-first lead, not an admission decision. The candidate remains blocked until sample-to-subject mapping, cohort separation, artifact hashes, discovery cutoff, licensing, processing provenance, and sealed outcome separation are independently verified."
+reviewer_rationale: "PXD033169 remains a provenance-first Candidate #2 lead because the public ProteomeXchange record explicitly distinguishes DIA discovery from targeted-MS validation in an independent cohort and provides a public PRIDE accession and FTP route. This is a provenance-first lead, not an admission decision. The candidate remains blocked until sample-to-subject mapping, cohort separation, artifact hashes, discovery cutoff, licensing, processing provenance, and sealed outcome separation are independently verified."

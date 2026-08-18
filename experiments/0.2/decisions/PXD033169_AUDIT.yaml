@@ -1,0 +1,120 @@
+schema_version: "0.2"
+experiment: OysterBox Experiment 0.2 — Exploratory Feasibility Benchmark
+dataset_identifier: PXD033169
+audit_status: OPEN_METADATA_ONLY
+screening_decision: NEEDS_CLARIFICATION
+benchmark_eligibility: BLOCKED
+scoring_allowed: false
+performance_inspected: false
+outcome_labels_exposed_to_oysterbox: false
+scientific_failure: false
+provenance_sufficiency: NOT_YET_ESTABLISHED
+source_record:
+  repository: PRIDE / ProteomeXchange
+  dataset_url: https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD033169
+  pride_ftp: ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2022/08/PXD033169
+  source_artifact: ProteomeXchange dataset record
+  source_artifact_review_mode: METADATA_ONLY
+  source_artifact_sha256: null
+  publication_title: "Novel Diagnostic Biomarkers for High-Grade Serous Ovarian Cancer Uncovered by Data-Independent Acquisition Mass Spectrometry"
+  publication_year: 2022
+  dataset_announcement_date: 2023-11-14
+  source_record_claims_not_treated_as_identity_proof: true
+assay_transition:
+  discovery_assay:
+    modality: DIA
+    subtype: LC_DIA_TANDEM_MS
+    platform: Orbitrap Exploris 480
+    status: REPORTED_METADATA_ONLY
+    evidence: "ProteomeXchange describes LC-DIA tandem-mass spectrometry on depleted serum samples."
+  validation_assay:
+    modality: TARGETED_MS
+    subtype: UNKNOWN_PENDING_ARTIFACT_REVIEW
+    platform: UNKNOWN_PENDING_ARTIFACT_REVIEW
+    status: REPORTED_METADATA_ONLY
+    evidence: "ProteomeXchange describes targeted-MS validation but does not establish the exact PRM/SRM subtype or platform in the reviewed record."
+  orthogonality:
+    status: NOT_ESTABLISHED
+    evidence: "A change from DIA discovery to targeted MS is an assay transition, but targeted status alone does not prove orthogonality or independent subject identity."
+identity_graph:
+  contract: Run -> Sample -> Subject -> Cohort
+  record: experiments/0.2/acquisition/PXD033169_IDENTITY_GRAPH.yaml
+  run_to_sample: PENDING_AUTHORITATIVE_EVIDENCE
+  sample_to_subject: PENDING_AUTHORITATIVE_EVIDENCE
+  subject_to_cohort: PENDING_AUTHORITATIVE_EVIDENCE
+  discovery_subject_ids: null
+  validation_subject_ids: null
+  intersection: null
+  validation_measurements_accessed: false
+cohort_counts:
+  discovery:
+    cases: 26
+    controls: 24
+    count_basis: ProteomeXchange dataset description
+    status: REPORTED_NOT_RECONCILED
+  validation:
+    cases: null
+    controls: null
+    total: null
+    count_basis: "Independent cohort is asserted in the dataset description; exact counts require authoritative metadata or artifacts."
+    status: UNRESOLVED
+  cohort_independence:
+    status: NOT_ESTABLISHED
+    evidence: "The reviewed record reports an independent validation cohort, but no subject-level mapping or intersection calculation is available."
+artifact_boundary:
+  discovery:
+    status: NOT_ACQUIRED
+    admissible_to_scoring: NOT_YET
+    manifest: experiments/0.2/acquisition/PXD033169_DISCOVERY_MANIFEST.yaml
+    sha256: null
+  validation:
+    status: NOT_ACQUIRED
+    admissible_to_scoring: false
+    manifest: experiments/0.2/acquisition/PXD033169_VALIDATION_MANIFEST.yaml
+    sha256: null
+    sealed_outcome_artifact: experiments/0.2/validation_outcomes/PXD033169_SEALED_OUTCOME_ARTIFACT.yaml
+    outcome_contents_accessed: false
+information_boundary:
+  status: NOT_FROZEN
+  discovery_cutoff: null
+  validation_outcomes_exposed_to_scoring: false
+  prediction_hash_required_before_outcome_release: true
+provenance_gates:
+  dataset_identity: PASS_METADATA_ONLY
+  dataset_license: PENDING
+  discovery_artifact_manifest: PENDING
+  validation_artifact_manifest: PENDING
+  discovery_cutoff: PENDING
+  run_to_sample: PENDING
+  sample_to_subject: PENDING
+  subject_to_cohort: PENDING
+  cohort_overlap: PENDING
+  candidate_lineage: PENDING
+  identifier_mapping: PENDING
+  processing_provenance: PENDING
+  validation_outcome_separation: PENDING
+  redistribution_or_hash_status: PENDING
+candidate_effort_budget:
+  purpose: Prevent indefinite forensic archaeology of a single candidate.
+  predefined_search_routes:
+    - ProteomeXchange dataset record and announcement metadata
+    - PRIDE project metadata, file inventory, submission XML, and SDRF/sample routes
+    - publisher full text and supplementary metadata
+    - linked publication repository records
+  maximum_search_rounds: 3
+  rounds_completed: 1
+  authoritative_participant_mapping_found: false
+  if_mapping_not_found_after_budget: NEEDS_CLARIFICATION_OR_EXCLUDE_AND_MOVE_TO_NEXT_CANDIDATE
+  performance_may_influence_decision: false
+next_operations:
+  - inspect_pride_project_metadata_and_submission_sdrf_without_opening_measurements
+  - inspect_publisher_supplementary_metadata_for_sample_subject_fields
+  - classify_discovery_and_validation_file_roles
+  - hash_metadata_manifests_separately
+  - freeze_or_reject_discovery_cutoff
+  - update_identity_graph_without_inference
+transition:
+  current: NEEDS_CLARIFICATION
+  next_allowed: INCLUDE_ONLY_AFTER_ALL_REQUIRED_GATES_PASS
+  benchmark_v1_freeze: forbidden
+reviewer_rationale: "PXD033169 survives the provenance-first lead screen because the authoritative ProteomeXchange record reports DIA discovery, targeted-MS validation, and an asserted independent cohort. The claim of independence remains unverified. The first audit records only metadata-level facts; no validation measurements, outcomes, or performance results were accessed."

@@ -1,0 +1,23 @@
+schema_version: "0.2"
+dataset_identifier: PXD033169
+artifact_role: VALIDATION
+status: NOT_ACQUIRED
+inspection_mode: METADATA_ONLY
+admissible_to_scoring: false
+source_url: https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD033169
+file_role_classification: PENDING
+acquisition_date: null
+manifest_sha256: null
+measurement_values_accessed: false
+outcome_labels_accessed: false
+sealed_outcome_contract: experiments/0.2/validation_outcomes/PXD033169_SEALED_OUTCOME_ARTIFACT.yaml
+required_fields:
+  - source_path
+  - file_role
+  - byte_size
+  - acquisition_timestamp
+  - source_checksum_if_available
+  - local_sha256_when_acquired
+  - sample_or_subject_mapping_evidence
+  - outcome_inspection_state
+release_condition: "A frozen prediction artifact hash and release authorization are required before any validation outcome contents can be opened."

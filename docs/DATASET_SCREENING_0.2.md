@@ -50,6 +50,12 @@ Candidate #2 must be selected for evidence-chain quality before biological inter
 
 The preferred Candidate #2 is deliberately ordinary: a candidate that is less exciting scientifically but more auditable is ranked above a biologically attractive candidate with unresolved identity or cohort provenance. This ranking is applied before any candidate is scored and must be recorded as a screening decision, not inferred retrospectively from performance.
 
+A publication or repository statement that a validation cohort is “independent” is a claim requiring verification, not an identity-graph PASS. OysterBox must establish the Run → Sample → Subject → Cohort edges and calculate the discovery/validation intersection from authoritative metadata before cohort independence can be marked verified.
+
+## Candidate evidence-search budget
+
+Each provisional candidate receives a finite evidence-search budget. The predefined routes are the ProteomeXchange and PRIDE metadata, submission XML, SDRF and sample routes; the publisher full text and supplementary metadata; and linked publication repository records. If authoritative participant-level mapping and cohort separation cannot be established within three search rounds, the candidate is marked `NEEDS_CLARIFICATION` or `EXCLUDE` and the process moves to the next candidate. Performance must never influence exhaustion or continuation decisions.
+
 ## Decision procedure
 
 Screen candidates using only the frozen criteria. Record evidence URLs, acquisition timestamps, file hashes, and unresolved questions in `provenance/DATASET_SCREENING_0.2.yaml` and candidate-specific records under `experiments/0.2/dataset_candidates/`.

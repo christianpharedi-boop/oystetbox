@@ -1,0 +1,13 @@
+schema_version: "0.2"
+dataset_identifier: PXD033169
+artifact_role: SEALED_VALIDATION_OUTCOME
+exposure_state: SEALED
+outcome_contents_available_to_scoring: false
+outcome_contents_exposed_to_scoring: false
+outcome_contents_accessed: false
+measurement_values_accessed: false
+outcome_labels_accessed: false
+artifact_sha256: null
+prediction_artifact_sha256_required_before_release: true
+release_authorization: NOT_GRANTED
+release_condition: "Release requires a frozen prediction artifact SHA-256, a completed blind-boundary audit, and explicit authorization recorded after prediction generation."

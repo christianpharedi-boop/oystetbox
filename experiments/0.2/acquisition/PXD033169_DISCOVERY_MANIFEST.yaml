@@ -1,0 +1,22 @@
+schema_version: "0.2"
+dataset_identifier: PXD033169
+artifact_role: DISCOVERY
+status: NOT_ACQUIRED
+inspection_mode: METADATA_ONLY
+admissible_to_scoring: NOT_YET
+source_url: https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD033169
+file_role_classification: PENDING
+acquisition_date: null
+information_cutoff: null
+manifest_sha256: null
+measurement_values_accessed: false
+outcome_labels_accessed: false
+required_fields:
+  - source_path
+  - file_role
+  - byte_size
+  - acquisition_timestamp
+  - source_checksum_if_available
+  - local_sha256_when_acquired
+  - sample_or_run_mapping_evidence
+  - outcome_inspection_state

@@ -1,0 +1,51 @@
+schema_version: "0.2"
+dataset_identifier: PXD033169
+inspection_mode: METADATA_ONLY
+outcome_measurements_accessed: false
+contract: Run -> Sample -> Subject -> Cohort
+mapping_status: PENDING
+edges:
+  run_to_sample:
+    status: PENDING
+    observed: false
+    evidence_required: "Authoritative SDRF, sample manifest, submission XML, or equivalent field mapping run/file to sample."
+    inference_from_filename_or_run_order: false
+  sample_to_subject:
+    status: PENDING
+    observed: false
+    evidence_required: "Authoritative sample-level participant identifier or reconstructable intermediate accession."
+    inference_from_group_label_or_filename: false
+  subject_to_cohort:
+    status: PENDING
+    observed: false
+    evidence_required: "Authoritative cohort label or study-design field assigning the subject to discovery or validation."
+    inference_from_publication_prose_only: false
+cohort_graph:
+  discovery_subject_ids: null
+  validation_subject_ids: null
+  intersection: null
+  overlap_status: UNKNOWN
+  counts_reconciled: false
+assay_nodes:
+  discovery:
+    modality: DIA
+    subtype: LC_DIA_TANDEM_MS
+    platform: Orbitrap Exploris 480
+    evidence_status: REPORTED_METADATA_ONLY
+  validation:
+    modality: TARGETED_MS
+    subtype: UNKNOWN
+    platform: UNKNOWN
+    evidence_status: REPORTED_METADATA_ONLY
+    orthogonality_status: NOT_ESTABLISHED
+artifact_edges:
+  discovery_manifest: PENDING
+  validation_manifest: PENDING
+  sealed_outcome_artifact: DECLARED_NOT_ACCESSED
+hashes:
+  source_record_sha256: null
+  identity_graph_sha256: null
+  discovery_manifest_sha256: null
+  validation_manifest_sha256: null
+  sealed_outcome_artifact_sha256: null
+reviewer_rationale: "The ProteomeXchange record establishes accession-level study metadata and reports an independent targeted-MS cohort, but it does not itself establish the biological identity chain. No Run-to-Sample, Sample-to-Subject, or Subject-to-Cohort edge is marked PASS until authoritative sample-level evidence is reviewed."
