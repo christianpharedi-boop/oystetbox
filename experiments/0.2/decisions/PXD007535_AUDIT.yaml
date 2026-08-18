@@ -25,6 +25,8 @@ acquisition_state:
   unit_analysis_source_notes: acquisition/manifests/PXD007535_unit_analysis_source_notes.md
   full_text_access: acquisition/manifests/PXD007535_full_text_access.yaml
   pride_route_results: acquisition/manifests/PXD007535_pride_route_results.yaml
+  publisher_supplement_notes: acquisition/manifests/PXD007535_publisher_supplement_notes.md
+  publisher_supplement_manifest: experiments/0.2/acquisition/PXD007535_publisher_supplement_manifest.yaml
   information_boundary: experiments/0.2/acquisition/PXD007535_information_boundary.yaml
 source_record:
   repository: PRIDE / ProteomeXchange
@@ -72,7 +74,7 @@ gates:
     housekeeping: 4
   cohort_independence:
     status: PENDING
-    evidence: "Unit of analysis is unresolved: reported discovery counts conflict (66 in PRIDE description versus 67 in the PubMed abstract), and subject/sample manifests are absent."
+    evidence: "Publisher text partially distinguishes 67 discovery individuals, 82 recruited validation subjects, and a 75-sample quantitative SRM table; PRIDE still reports 66 systemically healthy subjects, and subject/sample manifests plus intersection are absent."
     unit_of_analysis_record: experiments/0.2/acquisition/PXD007535_unit_of_analysis_reconciliation.yaml
     overlap_status: UNKNOWN
     reconciliation_record: experiments/0.2/acquisition/PXD007535_cohort_reconciliation.yaml

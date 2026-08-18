@@ -252,6 +252,24 @@ class OysterBoxTests(unittest.TestCase):
         self.assertIn("pride_route_results:", unit)
         self.assertIn("status: BLOCKED_UNIT_OF_ANALYSIS_UNRESOLVED", unit)
 
+    def test_publisher_route_partially_distinguishes_counts_without_membership(self):
+        supplement = (ROOT / "experiments/0.2/acquisition/PXD007535_publisher_supplement_manifest.yaml").read_text(encoding="utf-8")
+        notes = (ROOT / "acquisition/manifests/PXD007535_publisher_supplement_notes.md").read_text(encoding="utf-8")
+        unit = (ROOT / "experiments/0.2/acquisition/PXD007535_unit_of_analysis_reconciliation.yaml").read_text(encoding="utf-8")
+        self.assertIn("local_sha256: dabbe5983d3aeaae6e4cc03779e3792e961c115ccfcf6f2a02a345de9ece326b", supplement)
+        self.assertIn("value: 67", supplement)
+        self.assertIn("value: 82", supplement)
+        self.assertIn("value: 75", supplement)
+        self.assertIn("unit: SAMPLES", supplement)
+        self.assertIn("extracted: false", supplement)
+        self.assertIn("biological_contents_opened: false", supplement)
+        self.assertIn("publisher_supported_distinctions:", unit)
+        self.assertIn("status: PARTIALLY_RESOLVED", unit)
+        self.assertIn("identifiable_counts:", unit)
+        self.assertIn("subjects: null", unit)
+        self.assertIn("intersection:", unit)
+        self.assertIn("unknown", notes.lower())
+
     def test_parser_and_quality_gate(self):
         self.assertEqual(len(self.measurements), 6)
         self.assertAlmostEqual(qc_pass_rate(self.measurements), 5 / 6)

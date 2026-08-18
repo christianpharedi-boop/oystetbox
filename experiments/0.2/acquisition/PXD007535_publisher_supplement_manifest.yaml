@@ -1,0 +1,63 @@
+schema_version: "0.2"
+dataset_identifier: PXD007535
+source_url: https://ars.els-cdn.com/content/image/1-s2.0-S1535947620322234-mmc1.zip
+source_type: PUBLISHER_SUPPLEMENTARY_ARCHIVE
+article_doi: https://doi.org/10.1074/mcp.RA118.000718
+local_controlled_path: acquisition/PXD007535/publisher/S1535947620322234-mmc1.zip
+local_size_bytes: 56860222
+local_sha256: dabbe5983d3aeaae6e4cc03779e3792e961c115ccfcf6f2a02a345de9ece326b
+extracted: false
+biological_contents_opened: false
+validation_outcomes_exposed_to_oysterbox: false
+member_inventory:
+  total_members: 17
+  nested_archive:
+    name: mmc1/136436_1_supp_105967_p6lkww.zip
+    role_hypothesis: SUPPLEMENTAL_FILE_S4A_SKYLINE
+    role_status: HYPOTHESIS_ONLY
+    contents_opened: false
+  spreadsheets_and_documents:
+    - name: mmc1/136436_1_supp_105968_p61kwx.xls
+      role_status: UNRESOLVED
+    - name: mmc1/136436_1_supp_105969_p6skwy.xlsx
+      role_status: UNRESOLVED
+    - name: mmc1/136436_1_supp_105970_p6ckwy.xls
+      role_status: UNRESOLVED
+    - name: mmc1/136436_1_supp_105971_p61kwy.xlsx
+      role_status: UNRESOLVED
+    - name: mmc1/136436_1_supp_105972_p6gkwy.xls
+      role_status: UNRESOLVED
+    - name: mmc1/136436_1_supp_105974_p6skwy.xlsx
+      role_status: UNRESOLVED
+    - name: mmc1/136436_1_supp_105976_p6qkwz.docx
+      role_status: UNRESOLVED
+    - name: mmc1/136436_1_supp_105977_p67kwz.pdf
+      role_status: UNRESOLVED
+    - name: mmc1/136436_1_supp_105979_p62kwz.xlsx
+      role_status: UNRESOLVED
+    - name: mmc1/136436_1_supp_105980_p6dkwz.xlsx
+      role_status: UNRESOLVED
+    - name: mmc1/136436_1_supp_105981_p6dkwz.pdf
+      role_status: UNRESOLVED
+    - name: mmc1/136436_1_supp_105983_p68kwz.xlsx
+      role_status: UNRESOLVED
+    - name: mmc1/136436_1_supp_105984_p6pkwz.xls
+      role_status: UNRESOLVED
+    - name: mmc1/136436_1_supp_105986_p6zkwz.xlsx
+      role_status: UNRESOLVED
+    - name: mmc1/136436_1_supp_105988_p6kkx0.txt
+      role_status: UNRESOLVED
+publisher_evidence:
+  discovery_publication_count:
+    value: 67
+    unit: INDIVIDUALS
+    source: https://www.sciencedirect.com/science/article/pii/S1535947620322234
+  validation_recruited_count:
+    value: 82
+    unit: SUBJECTS
+    source: https://www.sciencedirect.com/science/article/pii/S1535947620322234
+  validation_quantitative_table_count:
+    value: 75
+    unit: SAMPLES
+    source: https://www.sciencedirect.com/science/article/pii/S1535947620322234
+notes: The publisher route resolves the existence of a 75-sample quantitative SRM table but does not identify the seven recruited subjects absent from that table, provide subject IDs, or establish discovery/validation intersection. File roles remain unclassified until authoritative content-level review is permitted under the sealed-outcome protocol.

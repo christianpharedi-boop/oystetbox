@@ -6,6 +6,8 @@ scoring_allowed: false
 validation_outcomes_exposed: false
 full_text_access_record: acquisition/manifests/PXD007535_full_text_access.yaml
 pride_route_results: acquisition/manifests/PXD007535_pride_route_results.yaml
+publisher_supplement_notes: acquisition/manifests/PXD007535_publisher_supplement_notes.md
+publisher_supplement_manifest: experiments/0.2/acquisition/PXD007535_publisher_supplement_manifest.yaml
 evidence_hierarchy:
   - rank: 1
     source_type: authoritative_pride_metadata_or_file_metadata
@@ -56,6 +58,19 @@ acquired_artifact_counts:
   validation:
     subjects: null
     samples: null
+publisher_supported_distinctions:
+  - discovery_publication_count:
+      value: 67
+      unit: INDIVIDUALS
+      status: PARTIALLY_RESOLVED
+  - validation_recruited_count:
+      value: 82
+      unit: SUBJECTS
+      status: PARTIALLY_RESOLVED
+  - validation_quantitative_table_count:
+      value: 75
+      unit: SAMPLES
+      status: PARTIALLY_RESOLVED
 candidate_interpretations:
   - id: enrolled_vs_measured
     hypothesis: 67 individuals enrolled and 66 successfully measured or retained
@@ -79,7 +94,7 @@ intersection:
 discrepancy_66_vs_67:
   resolved: false
   explanation: null
-  evidence: "The available PRIDE description and PubMed abstract report different discovery counts, while the subject/sample manifests needed to establish the unit are not acquired."
+  evidence: "The publisher supports 67 discovery individuals, while PRIDE describes 66 systemically healthy subjects. The 66 value may describe a subgroup or another inclusion stage, but subject/sample manifests are still absent."
 required_next_evidence:
   - acquire_study_supplementary_or_sample_metadata
   - pursue_an_authoritative_sample_level_source_outside_checked_project_and_submission_routes
