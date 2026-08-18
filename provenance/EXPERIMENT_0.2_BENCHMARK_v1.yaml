@@ -22,7 +22,14 @@ artifact_separation:
   validation_artifact_visible_to_scoring: false
   predictions_must_be_hashed_before_outcome_release: true
   outcome_release_requires_frozen_prediction_hash: true
+candidate_exhaustion_rule:
+  if_no_authoritative_participant_mapping_after_predefined_search: exclude_from_benchmark_v1
+  retain_as: documented_provenance_failure_case
+  scientific_failure: false
+  performance_must_not_be_inspected_for_exclusion: true
+  next_candidate_selection_independent_of_oysterbox_performance: true
 transition_policy:
   from_needs_clarification_to_include: requires_new_audited_decision_record
+  pxd007535_closed_status: EXCLUDE_PENDING_NEW_AUTHORITATIVE_EVIDENCE
   from_include_to_benchmark_v1: requires_all_required_before_freeze
   scoring_code_commit: frozen_oysterbox_v0_1

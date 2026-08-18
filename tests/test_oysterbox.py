@@ -116,16 +116,22 @@ class OysterBoxTests(unittest.TestCase):
         self.assertIn("selected_dataset: null", benchmark)
         self.assertIn("validation_artifact_visible_to_scoring: false", benchmark)
 
-    def test_pxd007535_audit_is_complete_but_blocked(self):
-        import re
+    def test_pxd007535_audit_is_closed_but_blocked(self):
         audit_text = (ROOT / "experiments/0.2/decisions/PXD007535_AUDIT.yaml").read_text(encoding="utf-8")
-        self.assertIn("audit_status: COMPLETE_WITH_UNRESOLVED_GATES", audit_text)
+        closure_text = (ROOT / "experiments/0.2/decisions/PXD007535_CLOSURE.yaml").read_text(encoding="utf-8")
+        self.assertIn("audit_status: CLOSED_PROVENANCE_INSUFFICIENT", audit_text)
         self.assertIn("decision: NEEDS_CLARIFICATION", audit_text)
+        self.assertIn("benchmark_eligibility: BLOCKED", audit_text)
+        self.assertIn("scientific_failure: false", audit_text)
+        self.assertIn("provenance_sufficiency: INSUFFICIENT", audit_text)
         self.assertIn("scoring_allowed: false", audit_text)
-        self.assertIn("dataset_license:\n    status: PARTIALLY_RESOLVED", audit_text)
-        self.assertIn("discovery_artifact:\n    status: PENDING_HASH", audit_text)
-        self.assertIn("validation_outcome_separation:\n    status: PENDING", audit_text)
         self.assertIn("next_operations:", audit_text)
+        self.assertIn("select_candidate_2_independently_of_oysterbox_performance", audit_text)
+        self.assertIn("benchmark_v1_decision: EXCLUDE_PENDING_NEW_AUTHORITATIVE_EVIDENCE", closure_text)
+        self.assertIn("participant_mapping_found: false", closure_text)
+        self.assertIn("evidence_search_closed: true", closure_text)
+        self.assertIn("performance_inspected: false", closure_text)
+        self.assertIn("validation_outcomes_exposed_to_oysterbox: false", closure_text)
 
         # The audit validator is exercised with the unresolved state represented explicitly.
         audit = {"decision": "NEEDS_CLARIFICATION", "scoring_allowed": False, "gates": {
@@ -136,6 +142,18 @@ class OysterBoxTests(unittest.TestCase):
         errors = validate_audit(audit)
         self.assertTrue(any("dataset_license" in error for error in errors))
         self.assertTrue(any("missing audit gate" in error for error in errors))
+
+    def test_candidate_exhaustion_and_scoring_freeze_are_explicit(self):
+        benchmark = (ROOT / "provenance/EXPERIMENT_0.2_BENCHMARK_v1.yaml").read_text(encoding="utf-8")
+        protocol = (ROOT / "docs/RECONCILIATION_ONLY_0.2.md").read_text(encoding="utf-8")
+        scoring = ROOT / "scoring/validation_readiness.py"
+        self.assertIn("if_no_authoritative_participant_mapping_after_predefined_search: exclude_from_benchmark_v1", benchmark)
+        self.assertIn("scientific_failure: false", benchmark)
+        self.assertIn("performance_must_not_be_inspected_for_exclusion: true", benchmark)
+        self.assertIn("next_candidate_selection_independent_of_oysterbox_performance: true", benchmark)
+        self.assertIn("Candidate-exhaustion rule", protocol)
+        self.assertIn("The next candidate must be selected independently", protocol)
+        self.assertEqual(hashlib.sha256(scoring.read_bytes()).hexdigest(), "dd6ef205d7fed0f50a01e538198d44282e12e3f12bad4d6b64062b58610bb9dc")
 
     def test_acquisition_and_exposure_boundary_remains_blocked(self):
         discovery = {"status": "NOT_ACQUIRED", "manifest_sha256": None}
@@ -204,7 +222,8 @@ class OysterBoxTests(unittest.TestCase):
         self.assertIn("intersection: null", cohorts)
         self.assertIn("The 66-versus-67 discrepancy", protocol)
         self.assertIn("scoring_allowed: false", audit)
-        self.assertIn("calculate_subject_intersection_without_exposing_outcomes", audit)
+        self.assertIn("historical_unresolved_gates:", audit)
+        self.assertIn("sample_to_subject_mapping", audit)
 
     def test_unit_of_analysis_reconciliation_remains_blocked(self):
         unit = (ROOT / "experiments/0.2/acquisition/PXD007535_unit_of_analysis_reconciliation.yaml").read_text(encoding="utf-8")

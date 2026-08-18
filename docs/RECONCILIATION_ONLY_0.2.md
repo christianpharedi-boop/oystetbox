@@ -37,3 +37,9 @@ Subject identifiers and manifest metadata may be reconciled separately from vali
 ## Exit conditions
 
 The reconciliation phase exits only when the discovery and validation subject manifests are hashed, the intersection is calculated, the 66-versus-67 discrepancy is explained, and the file-role evidence supports complete discovery and validation artifact definitions. Until then, the information boundary is not frozen, Benchmark v1 is not frozen, and scoring remains blocked.
+
+## Candidate-exhaustion rule
+
+If no authoritative participant-level mapping source is identified after the predefined evidence search, the candidate is excluded from Benchmark v1 and retained as a documented provenance-failure case. This is not a scientific-failure judgment, and performance must not be inspected or used to justify the exclusion. The candidate may be reopened only if new authoritative participant-level evidence appears.
+
+For PXD007535, the formal closure status is `NEEDS_CLARIFICATION` with `benchmark_eligibility: BLOCKED`, `scientific_failure: false`, and `provenance_sufficiency: INSUFFICIENT`. The next candidate must be selected independently of OysterBox performance.

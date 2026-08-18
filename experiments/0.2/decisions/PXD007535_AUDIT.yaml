@@ -2,8 +2,13 @@ schema_version: "0.2"
 experiment: OysterBox Experiment 0.2 — Exploratory Feasibility Benchmark
 dataset_identifier: PXD007535
 audit_basis_commit: 43906a62d76e92f912bbd2466463fec08a879d92
-audit_status: COMPLETE_WITH_UNRESOLVED_GATES
+audit_status: CLOSED_PROVENANCE_INSUFFICIENT
 decision: NEEDS_CLARIFICATION
+benchmark_eligibility: BLOCKED
+scientific_failure: false
+provenance_sufficiency: INSUFFICIENT
+benchmark_v1_decision: EXCLUDE_PENDING_NEW_AUTHORITATIVE_EVIDENCE
+closure_record: experiments/0.2/decisions/PXD007535_CLOSURE.yaml
 scoring_allowed: false
 benchmark_freeze_allowed: false
 performance_inspected: false
@@ -113,26 +118,20 @@ gates:
     evidence: "Discovery and validation artifact hashes are both required before admission; the official file inventory is complete but artifact-role classification remains pending."
     artifact_set_definition: experiments/0.2/acquisition/PXD007535_artifact_set_definition.yaml
 next_operations:
-  - classify_all_files_with_authoritative_role_evidence
-  - acquire_complete_discovery_artifact
-  - complete_discovery_manifest_and_hash
-  - reconcile_reported_identifiable_and_acquired_discovery_counts
-  - freeze_discovery_information_cutoff
-  - acquire_complete_validation_srm_artifact_separately
-  - assemble_and_hash_sealed_validation_outcome_artifact
-  - reconcile_reported_identifiable_and_acquired_validation_counts
-  - identify_unit_for_each_reported_count
-  - produce_subject_and_sample_manifests_without_outcomes
-  - calculate_subject_intersection_without_exposing_outcomes
-  - explain_66_vs_67_with_source_reference
-  - pursue_authoritative_sample_level_source_outside_checked_pride_and_submission_routes
-  - reconcile_cohort_subjects_and_overlap
-  - freeze_identifier_mapping
-  - verify_metadata_and_processing_manifest
-  - verify_original_data_owner_restrictions_and_file_redistribution_terms
-  - update_decision_basis
+  - preserve_closed_negative_benchmark_case
+  - select_candidate_2_independently_of_oysterbox_performance
+  - retain_reopen_path_only_for_new_authoritative_participant_mapping_evidence
+historical_unresolved_gates:
+  - complete_discovery_artifact_and_hash
+  - complete_validation_artifact_and_hash
+  - discovery_information_cutoff
+  - cohort_independence
+  - sample_to_subject_mapping
+  - 66_vs_67_explanation
+  - original_data_owner_restrictions
 transition:
   current: NEEDS_CLARIFICATION
-  next_allowed: INCLUDE_ONLY_AFTER_ALL_REQUIRED_GATES_PASS
+  next_allowed: REOPEN_ONLY_IF_NEW_AUTHORITATIVE_PARTICIPANT_MAPPING_EVIDENCE_APPEARS
+  benchmark_v1: EXCLUDED_PENDING_NEW_AUTHORITATIVE_EVIDENCE
   benchmark_v1_freeze: forbidden_until_audited_include
-reviewer_rationale: "PXD007535 is a strong structural candidate but has not completed benchmark admission. Unverified or pending gates are not treated as failures of the science; they block the repository from pretending that admission evidence exists."
+reviewer_rationale: "PXD007535 is retained as a scientifically interesting but provenance-insufficient negative benchmark case. Public evidence establishes cohort-level counts and one technical Run-to-Sample-file edge, but no authoritative Sample-to-Subject mapping was found and 66 versus 67 remains unexplained. This is not a scientific failure; it is a failure to meet the current evidence-chain requirement for Benchmark v1."

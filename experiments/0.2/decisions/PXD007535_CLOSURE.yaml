@@ -1,0 +1,36 @@
+schema_version: "0.2"
+experiment: OysterBox Experiment 0.2 — Exploratory Feasibility Benchmark
+dataset_identifier: PXD007535
+closure_status: CLOSED_FOR_BENCHMARK_V1
+scientific_failure: false
+provenance_sufficiency: INSUFFICIENT
+benchmark_eligibility: BLOCKED
+benchmark_v1_decision: EXCLUDE_PENDING_NEW_AUTHORITATIVE_EVIDENCE
+screening_decision: NEEDS_CLARIFICATION
+closure_basis:
+  primary: Publicly accessible evidence establishes cohort-level counts but does not establish the Sample-to-Subject identity mapping required to verify discovery/validation independence.
+  secondary: The PRIDE-reported 66 healthy subjects versus publisher-supported 67 discovery individuals discrepancy remains unexplained.
+  technical_provenance: Demonstrated for one Run-to-Sample-file edge only.
+  biological_subject_provenance: Unavailable for the selected sample after the defined evidence search.
+  validation_outcomes_exposed_to_oysterbox: false
+  performance_inspected: false
+candidate_exhaustion:
+  rule: If no authoritative participant-level mapping source is identified after the predefined evidence search, the candidate is excluded from Benchmark v1 and retained as a documented provenance-failure case.
+  search_scope_completed:
+    - PRIDE and ProteomeXchange project, file, submission, sample, SDRF, and assay routes
+    - publisher supplementary archive and S1 cohort artifact
+    - Skyline sample_file metadata
+    - S7 Condition and Run metadata
+    - publisher MCP full-text route and alternate full-text routes
+  participant_mapping_found: false
+  evidence_search_closed: true
+negative_case_label: provenance_insufficient_not_scientific_failure
+preserved_artifacts:
+  - experiments/0.2/decisions/PXD007535_AUDIT.yaml
+  - experiments/0.2/acquisition/PXD007535_SAMPLE_SUBJECT_IDENTITY_MAP.yaml
+  - acquisition/manifests/PXD007535_edge_SP61_to_sample_20151204_022.yaml
+  - acquisition/manifests/PXD007535_edge_sample_20151204_022_to_subject.yaml
+  - acquisition/manifests/PXD007535_S1_participant_artifact_structure.yaml
+next_candidate: Candidate #2; must be selected independently of OysterBox performance.
+scoring_allowed: false
+benchmark_freeze_allowed: false
