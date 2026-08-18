@@ -41,7 +41,7 @@ sample_metadata_completeness:
 processing_provenance_completeness:
   status: "PENDING"
   notes: "Instrument is reported as Orbitrap Exploris 480; complete raw/processed file roles, software, parameters, databases, and checksums remain unverified."
-independent_validation_status: "NOT_ESTABLISHED"
+independent_validation_status: "NOT_ESTABLISHED_AFTER_THREE_ROUNDS"
 leakage_assessment:
   status: "PENDING_METADATA_REVIEW"
   notes: "Candidate selection occurred from provenance metadata only. No OysterBox performance was inspected and no validation outcomes were exposed."
@@ -50,7 +50,7 @@ redistribution_or_hash_status:
   acquisition_manifest_sha256: null
   validation_outcome_separation_sha256: null
 decision: "NEEDS_CLARIFICATION"
-screening_status: "PROVISIONAL_CANDIDATE"
+screening_status: "CLOSED_PROVENANCE_INSUFFICIENT"
 decision_basis:
   dataset_license: "UNVERIFIED"
   discovery_artifact: "PENDING_HASH"
@@ -63,4 +63,4 @@ decision_basis:
   validation_outcome_separation: "PENDING"
 provenance_first_rank: 1
 biological_interest_used_for_selection: false
-reviewer_rationale: "PXD033169 remains a provenance-first Candidate #2 lead because the public ProteomeXchange record explicitly distinguishes DIA discovery from targeted-MS validation in an independent cohort and provides a public PRIDE accession and FTP route. This is a provenance-first lead, not an admission decision. The candidate remains blocked until sample-to-subject mapping, cohort separation, artifact hashes, discovery cutoff, licensing, processing provenance, and sealed outcome separation are independently verified."
+reviewer_rationale: "PXD033169 was a provenance-first Candidate #2 lead, but after the three-round search the public ProteomeXchange record explicitly distinguishes DIA discovery from targeted-MS validation in an independent cohort and provides a public PRIDE accession and FTP route. This candidate is retained as a provenance-insufficient negative case, not a scientific failure. It remains blocked until sample-to-subject mapping, cohort separation, artifact hashes, discovery cutoff, licensing, processing provenance, and sealed outcome separation are independently verified."

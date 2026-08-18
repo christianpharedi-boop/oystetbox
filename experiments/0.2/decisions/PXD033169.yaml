@@ -5,12 +5,15 @@ screening_protocol: docs/DATASET_SCREENING_0.2.md
 selection_basis: PROVENANCE_FIRST
 provenance_audit: experiments/0.2/decisions/PXD033169_AUDIT.yaml
 identity_graph: experiments/0.2/acquisition/PXD033169_IDENTITY_GRAPH.yaml
-screening_status: PROVISIONAL_CANDIDATE
+screening_status: CLOSED_PROVENANCE_INSUFFICIENT
 decision: NEEDS_CLARIFICATION
 performance_inspected: false
 outcome_labels_exposed_to_oysterbox: false
 biological_interest_used_for_selection: false
 provenance_first_rank: 1
+search_budget_status: EXHAUSTED_AFTER_THREE_ROUNDS
+benchmark_v1_decision: EXCLUDE_PENDING_NEW_AUTHORITATIVE_EVIDENCE
+next_candidate: Candidate #3
 required_before_final_include:
   - verify_dataset_level_license
   - acquire_metadata_and_build_discovery_manifest
@@ -34,4 +37,4 @@ evidence_search_budget:
     - linked publication repository records
   exhaustion_action: NEEDS_CLARIFICATION_OR_EXCLUDE_AND_MOVE_TO_NEXT_CANDIDATE
   performance_may_influence_decision: false
-reviewer_rationale: "PXD033169 is the provenance-first Candidate #2 lead because the authoritative ProteomeXchange record reports DIA discovery, targeted-MS validation in an independent cohort, a public PRIDE accession, and a public FTP route. The record is not an INCLUDE decision. All biological measurements and validation outcomes remain outside OysterBox, and scoring remains blocked until the complete evidence chain is independently verified."
+reviewer_rationale: "PXD033169 was the provenance-first Candidate #2 lead because the authoritative ProteomeXchange record reports DIA discovery, targeted-MS validation in an independent cohort, a public PRIDE accession, and a public FTP route. The three-round search did not establish the complete identity graph or exact targeted-MS subtype. The candidate is retained as a provenance-insufficient negative case, not a scientific failure. All biological measurements and validation outcomes remain outside OysterBox, and scoring remains blocked."

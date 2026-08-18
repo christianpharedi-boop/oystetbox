@@ -23,12 +23,14 @@ candidates:
     screening_record: experiments/0.2/dataset_candidates/PXD033169.yaml
     decision_record: experiments/0.2/decisions/PXD033169.yaml
     decision: NEEDS_CLARIFICATION
-    screening_status: PROVISIONAL_CANDIDATE
+    screening_status: CLOSED_PROVENANCE_INSUFFICIENT
     eligible_for_scoring: false
     provenance_first_rank: 1
+    search_budget_status: EXHAUSTED_AFTER_THREE_ROUNDS
 decision_vocabulary:
   - INCLUDE
   - EXCLUDE
   - NEEDS_CLARIFICATION
 performance_results_seen_during_screening: false
-reviewer_rationale: Dataset screening governance is frozen before candidate discovery and OysterBox scoring. PXD007535 is retained as a closed provenance-insufficient negative case. PXD033169 is the provenance-first Candidate #2 lead because its authoritative ProteomeXchange record distinguishes discovery from targeted validation in an independent cohort and provides public accession-level routes. Neither candidate has been scored; no performance was inspected and no validation outcome was exposed to OysterBox.
+next_candidate: Candidate #3
+reviewer_rationale: Dataset screening governance is frozen before candidate discovery and OysterBox scoring. PXD007535 is retained as a closed provenance-insufficient negative case. PXD033169 was the provenance-first Candidate #2 lead, but the three-round metadata-only search did not establish its identity graph or exact targeted-MS subtype. It is retained as a provenance-insufficient negative case, not a scientific failure. Neither candidate has been scored; no performance was inspected and no validation outcome was exposed to OysterBox.

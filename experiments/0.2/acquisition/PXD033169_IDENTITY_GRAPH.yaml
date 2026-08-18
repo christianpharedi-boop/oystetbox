@@ -3,20 +3,20 @@ dataset_identifier: PXD033169
 inspection_mode: METADATA_ONLY
 outcome_measurements_accessed: false
 contract: Run -> Sample -> Subject -> Cohort
-mapping_status: PENDING
+mapping_status: UNRESOLVED_AFTER_THREE_ROUNDS
 edges:
   run_to_sample:
-    status: PENDING
+    status: UNRESOLVED
     observed: false
     evidence_required: "Authoritative SDRF, sample manifest, submission XML, or equivalent field mapping run/file to sample."
     inference_from_filename_or_run_order: false
   sample_to_subject:
-    status: PENDING
+    status: UNRESOLVED
     observed: false
     evidence_required: "Authoritative sample-level participant identifier or reconstructable intermediate accession."
     inference_from_group_label_or_filename: false
   subject_to_cohort:
-    status: PENDING
+    status: UNRESOLVED
     observed: false
     evidence_required: "Authoritative cohort label or study-design field assigning the subject to discovery or validation."
     inference_from_publication_prose_only: false
@@ -31,16 +31,16 @@ assay_nodes:
     modality: DIA
     subtype: LC_DIA_TANDEM_MS
     platform: Orbitrap Exploris 480
-    evidence_status: REPORTED_METADATA_ONLY
+    evidence_status: PASS_REPORTED
   validation:
     modality: TARGETED_MS
     subtype: UNKNOWN
     platform: UNKNOWN
-    evidence_status: REPORTED_METADATA_ONLY
-    orthogonality_status: NOT_ESTABLISHED
+    evidence_status: PASS_REPORTED
+    orthogonality_status: UNRESOLVED
 artifact_edges:
-  discovery_manifest: PENDING
-  validation_manifest: PENDING
+  discovery_manifest: UNRESOLVED
+  validation_manifest: UNRESOLVED
   sealed_outcome_artifact: DECLARED_NOT_ACCESSED
 hashes:
   source_record_sha256: null
@@ -48,4 +48,4 @@ hashes:
   discovery_manifest_sha256: null
   validation_manifest_sha256: null
   sealed_outcome_artifact_sha256: null
-reviewer_rationale: "The ProteomeXchange record establishes accession-level study metadata and reports an independent targeted-MS cohort, but it does not itself establish the biological identity chain. No Run-to-Sample, Sample-to-Subject, or Subject-to-Cohort edge is marked PASS until authoritative sample-level evidence is reviewed."
+reviewer_rationale: "After the predefined three-round metadata-only search, no authoritative Run-to-Sample, Sample-to-Subject, or Subject-to-Cohort edge was established. The record reports DIA discovery and targeted-MS validation, but publication-level independence remains unproven and no cohort intersection can be calculated. No measurement or validation outcome was accessed."

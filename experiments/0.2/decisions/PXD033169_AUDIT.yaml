@@ -1,9 +1,11 @@
 schema_version: "0.2"
 experiment: OysterBox Experiment 0.2 — Exploratory Feasibility Benchmark
 dataset_identifier: PXD033169
-audit_status: OPEN_METADATA_ONLY
+audit_status: CLOSED_SEARCH_BUDGET_EXHAUSTED
 screening_decision: NEEDS_CLARIFICATION
 benchmark_eligibility: BLOCKED
+benchmark_v1_decision: EXCLUDE_PENDING_NEW_AUTHORITATIVE_EVIDENCE
+negative_case_label: provenance_insufficient_not_scientific_failure
 scoring_allowed: false
 performance_inspected: false
 outcome_labels_exposed_to_oysterbox: false
@@ -94,6 +96,22 @@ provenance_gates:
   processing_provenance: PENDING
   validation_outcome_separation: PENDING
   redistribution_or_hash_status: PENDING
+evidence_outcome:
+  identity_graph:
+    run_to_sample: UNRESOLVED
+    sample_to_subject: UNRESOLVED
+    subject_to_cohort: UNRESOLVED
+    cohort_intersection: UNRESOLVED
+  assay_transition:
+    discovery_modality: PASS
+    validation_modality: PASS_REPORTED
+    validation_subtype: UNRESOLVED
+    orthogonality: UNRESOLVED
+  artifact_boundary:
+    discovery_manifest: UNRESOLVED
+    validation_manifest: UNRESOLVED
+    sealed_outcome_contract: PASS
+  decision_basis: "The three-round metadata-only search did not establish the identity graph or exact targeted-MS subtype."
 candidate_effort_budget:
   purpose: Prevent indefinite forensic archaeology of a single candidate.
   predefined_search_routes:
@@ -102,19 +120,19 @@ candidate_effort_budget:
     - publisher full text and supplementary metadata
     - linked publication repository records
   maximum_search_rounds: 3
-  rounds_completed: 1
+  rounds_completed: 3
   authoritative_participant_mapping_found: false
+  search_exhausted: true
   if_mapping_not_found_after_budget: NEEDS_CLARIFICATION_OR_EXCLUDE_AND_MOVE_TO_NEXT_CANDIDATE
   performance_may_influence_decision: false
 next_operations:
-  - inspect_pride_project_metadata_and_submission_sdrf_without_opening_measurements
-  - inspect_publisher_supplementary_metadata_for_sample_subject_fields
-  - classify_discovery_and_validation_file_roles
-  - hash_metadata_manifests_separately
-  - freeze_or_reject_discovery_cutoff
-  - update_identity_graph_without_inference
+  - preserve_closed_provenance_insufficient_negative_case
+  - select_candidate_3_independently_of_oysterbox_performance
+  - reopen_only_if_new_authoritative_participant_mapping_evidence_appears
 transition:
   current: NEEDS_CLARIFICATION
-  next_allowed: INCLUDE_ONLY_AFTER_ALL_REQUIRED_GATES_PASS
-  benchmark_v1_freeze: forbidden
-reviewer_rationale: "PXD033169 survives the provenance-first lead screen because the authoritative ProteomeXchange record reports DIA discovery, targeted-MS validation, and an asserted independent cohort. The claim of independence remains unverified. The first audit records only metadata-level facts; no validation measurements, outcomes, or performance results were accessed."
+  next_allowed: REOPEN_ONLY_IF_NEW_AUTHORITATIVE_PARTICIPANT_MAPPING_EVIDENCE_APPEARS
+  benchmark_v1: EXCLUDED_PENDING_NEW_AUTHORITATIVE_EVIDENCE
+  benchmark_v1_freeze: forbidden_until_audited_include
+next_candidate: Candidate #3; selection remains independent of OysterBox performance
+reviewer_rationale: "PXD033169 was a structurally promising provenance-first lead, but the predefined three-round metadata-only search did not establish Run-to-Sample, Sample-to-Subject, Subject-to-Cohort, cohort intersection, or the exact targeted-MS subtype. The candidate is retained as a provenance-insufficient negative case, not a scientific failure. No validation measurements, outcomes, or performance results were accessed."
