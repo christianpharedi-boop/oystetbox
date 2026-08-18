@@ -77,6 +77,17 @@ class OysterBoxTests(unittest.TestCase):
             "redistribution_or_hash_status": "hashed",
             "decision": "INCLUDE",
             "screening_status": "FINAL_INCLUDED",
+            "decision_basis": {
+                "dataset_license": "VERIFIED",
+                "discovery_artifact": "HASHED",
+                "validation_artifact": "HASHED",
+                "cutoff": "FROZEN",
+                "candidate_lineage": "VERIFIED",
+                "cohort_independence": "VERIFIED",
+                "identifier_mapping": "VERIFIED",
+                "metadata_completeness": "VERIFIED",
+                "validation_outcome_separation": "VERIFIED",
+            },
             "reviewer_rationale": "screened independently",
             "acquisition_manifest_sha256": "a" * 64,
             "validation_outcome_separation_sha256": "b" * 64,
@@ -86,6 +97,8 @@ class OysterBoxTests(unittest.TestCase):
             score_eligibility({**base, "decision": "NEEDS_CLARIFICATION"})
         with self.assertRaises(ValueError):
             score_eligibility({key: value for key, value in base.items() if key != "discovery_cutoff"})
+        with self.assertRaises(ValueError):
+            score_eligibility({**base, "decision_basis": {"dataset_license": "VERIFIED"}})
 
     def test_pxd007535_is_provisional_and_unscored(self):
         candidate = (ROOT / "experiments/0.2/dataset_candidates/PXD007535.yaml").read_text(encoding="utf-8")
@@ -98,6 +111,10 @@ class OysterBoxTests(unittest.TestCase):
         self.assertIn("outcome_labels_exposed_to_oysterbox: false", decision)
         self.assertIn("eligible_for_scoring: false", ledger)
         self.assertIn("scoring_permitted: false", ledger)
+        benchmark = (ROOT / "provenance/EXPERIMENT_0.2_BENCHMARK_v1.yaml").read_text(encoding="utf-8")
+        self.assertIn("status: NOT_FROZEN", benchmark)
+        self.assertIn("selected_dataset: null", benchmark)
+        self.assertIn("validation_artifact_visible_to_scoring: false", benchmark)
 
     def test_parser_and_quality_gate(self):
         self.assertEqual(len(self.measurements), 6)

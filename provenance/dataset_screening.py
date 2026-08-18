@@ -27,7 +27,20 @@ REQUIRED_FIELDS = (
     "redistribution_or_hash_status",
     "decision",
     "screening_status",
+    "decision_basis",
     "reviewer_rationale",
+)
+
+DECISION_BASIS_FIELDS = (
+    "dataset_license",
+    "discovery_artifact",
+    "validation_artifact",
+    "cutoff",
+    "candidate_lineage",
+    "cohort_independence",
+    "identifier_mapping",
+    "metadata_completeness",
+    "validation_outcome_separation",
 )
 
 FROZEN_FIELDS = (
@@ -53,6 +66,13 @@ def validate_candidate(candidate: Mapping[str, object]) -> list[str]:
             errors.append(f"missing required field: {field}")
     if candidate.get("decision") not in {"INCLUDE", "EXCLUDE", "NEEDS_CLARIFICATION"}:
         errors.append("decision must be INCLUDE, EXCLUDE, or NEEDS_CLARIFICATION")
+    basis = candidate.get("decision_basis")
+    if not isinstance(basis, Mapping):
+        errors.append("decision_basis must be a mapping")
+    else:
+        for field in DECISION_BASIS_FIELDS:
+            if not basis.get(field):
+                errors.append(f"missing decision-basis field: {field}")
     return errors
 
 

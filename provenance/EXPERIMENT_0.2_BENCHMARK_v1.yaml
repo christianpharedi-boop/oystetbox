@@ -1,0 +1,28 @@
+schema_version: "0.2"
+benchmark_name: Experiment 0.2 Benchmark Dataset v1
+status: NOT_FROZEN
+selected_dataset: null
+scoring_permitted: false
+selection_independent_of_oysterbox_performance: true
+required_before_freeze:
+  - dataset_identity_verified
+  - dataset_license_verified
+  - discovery_artifact_sha256_recorded
+  - validation_artifact_sha256_recorded_separately
+  - discovery_information_cutoff_frozen
+  - candidate_lineage_verified
+  - cohort_independence_assessed
+  - identifier_mapping_verified
+  - metadata_completeness_verified
+  - validation_outcome_separation_verified
+  - screening_decision_include
+  - decision_basis_complete
+artifact_separation:
+  discovery_artifact_visible_to_scoring: true
+  validation_artifact_visible_to_scoring: false
+  predictions_must_be_hashed_before_outcome_release: true
+  outcome_release_requires_frozen_prediction_hash: true
+transition_policy:
+  from_needs_clarification_to_include: requires_new_audited_decision_record
+  from_include_to_benchmark_v1: requires_all_required_before_freeze
+  scoring_code_commit: frozen_oysterbox_v0_1

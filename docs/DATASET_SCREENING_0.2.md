@@ -41,15 +41,22 @@ Each candidate must be assessed against the following criteria and supported by 
 | Leakage assessment | Post-cutoff information and contamination review |
 | Redistribution/hash status | Permission to store files or immutable checksums |
 | Decision | `INCLUDE`, `EXCLUDE`, or `NEEDS_CLARIFICATION` |
+| Decision basis | Machine-readable status for license, artifacts, cutoff, lineage, independence, mapping, metadata, and outcome separation |
 | Reviewer rationale | Reproducible explanation for the decision |
 
 ## Decision procedure
 
 Screen candidates using only the frozen criteria. Record evidence URLs, acquisition timestamps, file hashes, and unresolved questions in `provenance/DATASET_SCREENING_0.2.yaml` and candidate-specific records under `experiments/0.2/dataset_candidates/`.
 
-A candidate may be marked `INCLUDE` only after the dataset identity, discovery cutoff, acquisition manifest checksum, validation-outcome separation checksum, licensing status, candidate-selection lineage, cohort-overlap status, and decision are frozen. A promising structural candidate may be recorded as `PROVISIONAL_CANDIDATE`, but it remains `NEEDS_CLARIFICATION` until those conditions are verified. `EXCLUDE` and `NEEDS_CLARIFICATION` candidates are never passed to scoring.
+A candidate may be marked `INCLUDE` only after the dataset identity, discovery cutoff, acquisition manifest checksum, validation-outcome separation checksum, licensing status, candidate-selection lineage, cohort-overlap status, decision, and machine-readable `decision_basis` are frozen. A promising structural candidate may be recorded as `PROVISIONAL_CANDIDATE`, but it remains `NEEDS_CLARIFICATION` until those conditions are verified. `EXCLUDE` and `NEEDS_CLARIFICATION` candidates are never passed to scoring.
 
 After all screening decisions are committed, the included dataset may be acquired and scored using the frozen OysterBox 0.1 rubric. Validation outcomes remain in a separate controlled artifact until predictions are frozen and checksummed.
+
+## Experiment 0.2 Benchmark Dataset v1
+
+Once one candidate satisfies every screening gate, create a separate immutable benchmark-freeze record in `provenance/EXPERIMENT_0.2_BENCHMARK_v1.yaml`. This transition ends dataset selection. The record must name the selected dataset, freeze the discovery and validation artifact hashes separately, preserve the discovery cutoff, and state that the validation artifact was unavailable to OysterBox during prediction.
+
+After the benchmark is frozen, OysterBox receives only the discovery artifact. Predictions must be checksummed before the validation artifact is released. A benchmark freeze is not permitted merely because a candidate looks promising; it requires a new audited decision record changing `NEEDS_CLARIFICATION` to `INCLUDE`.
 
 ## Required pre-scoring invariant
 
