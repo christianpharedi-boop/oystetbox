@@ -1,0 +1,14 @@
+schema_version: "0.2"
+dataset_identifier: PXD007535
+artifact_role: discovery_subject_manifest
+status: NOT_RECONCILED
+reported_count:
+  publication_text: 67
+  pride_project_description: 66
+identifiable_count: null
+acquired_artifact_count: null
+subjects: []
+subject_id_normalization: null
+source_files: []
+evidence_hash: null
+notes: Subject identifiers are not present in the current metadata-only acquisition. Do not select 66 or 67 as the benchmark count until the supplementary/raw manifest is acquired and reconciled.

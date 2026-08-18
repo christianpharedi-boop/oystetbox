@@ -2,9 +2,11 @@ schema_version: "0.2"
 dataset_identifier: PXD007535
 status: PENDING_CLASSIFICATION
 source_file_inventory: acquisition/manifests/PXD007535_files.json
+role_classification_record: experiments/0.2/acquisition/PXD007535_file_role_classification.yaml
 metadata_inventory_count: 100
 candidate_validation_files_by_filename: 3
 unclassified_raw_or_scan_files: 97
+filename_only_assignment_for_admission: false
 complete_discovery_artifact:
   status: NOT_DEFINED
   files: []

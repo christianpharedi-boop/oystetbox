@@ -1,0 +1,14 @@
+schema_version: "0.2"
+dataset_identifier: PXD007535
+artifact_role: validation_subject_manifest
+status: NOT_RECONCILED
+reported_count:
+  publication_text: 82
+identifiable_count: null
+acquired_artifact_count: null
+subjects: []
+subject_id_normalization: null
+source_files: []
+evidence_hash: null
+outcome_contents_exposed_to_scoring: false
+notes: Subject/sample identifiers may be reconciled from metadata and manifests only. Biological measurements and validation outcomes must remain sealed and are not represented in this record.

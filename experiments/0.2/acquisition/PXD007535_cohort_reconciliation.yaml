@@ -13,17 +13,24 @@ reported_counts:
     - count: 82
       source: PRIDE project description and publication description
       source_url: https://www.ebi.ac.uk/pride/archive/projects/PXD007535
+discovery_subject_manifest: experiments/0.2/acquisition/PXD007535_discovery_subject_manifest.yaml
+validation_subject_manifest: experiments/0.2/acquisition/PXD007535_validation_subject_manifest.yaml
 discovery_subjects: []
 validation_subjects: []
 intersection: []
 counts:
-  discovery: null
-  validation: 82
+  reported_discovery_publication: 67
+  reported_discovery_pride_description: 66
+  identifiable_discovery: null
+  discovery_in_acquired_artifact: null
+  reported_validation: 82
+  identifiable_validation: null
+  validation_in_acquired_artifact: null
   intersection: null
   discovery_only: null
   validation_only: null
 overlap_status: UNKNOWN
-reconciliation_method: "Pending acquisition of subject/sample manifests and explicit identifier normalization."
+reconciliation_method: "Metadata-only record; pending acquisition of subject/sample manifests, explicit identifier normalization, and evidence hashing."
 source_manifest_sha256: null
 reviewer: ""
 reviewed_at: null

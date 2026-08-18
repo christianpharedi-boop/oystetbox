@@ -17,6 +17,9 @@ acquisition_state:
   validation_contents_opened: false
   validation_outcome_contract: experiments/0.2/validation_outcomes/PXD007535_SEALED_OUTCOME_ARTIFACT.yaml
   artifact_set_definition: experiments/0.2/acquisition/PXD007535_artifact_set_definition.yaml
+  file_role_classification: experiments/0.2/acquisition/PXD007535_file_role_classification.yaml
+  discovery_subject_manifest: experiments/0.2/acquisition/PXD007535_discovery_subject_manifest.yaml
+  validation_subject_manifest: experiments/0.2/acquisition/PXD007535_validation_subject_manifest.yaml
   cohort_reconciliation: experiments/0.2/acquisition/PXD007535_cohort_reconciliation.yaml
   information_boundary: experiments/0.2/acquisition/PXD007535_information_boundary.yaml
 source_record:
@@ -43,13 +46,13 @@ gates:
     public_redistribution_authorized: false
   discovery_artifact:
     status: PENDING_HASH
-    evidence: "Official project metadata and file inventory were acquired; one small discovery-side scan was acquired, but the complete LFQ discovery artifact and manifest checksum remain absent."
+    evidence: "The official 100-file inventory is classified only provisionally; 97 raw/scan files remain unclassified and one small discovery-side scan was acquired. Complete LFQ discovery membership and manifest checksum remain absent."
     sample_artifact: acquisition/PXD007535/discovery/20160316_022_SP17.wiff.scan
     sample_sha256: cc6a705d3059335c92d5f91a910aaa36f9f4d1f40adccec2c415c973f3f5cbb6
     artifact_sha256: null
   discovery_cutoff:
     status: PENDING
-    evidence: "Relevant dates are recorded, but artifact roles and the admissible information boundary are not yet defined."
+    evidence: "Relevant dates are recorded, but file roles, subject manifests, and the admissible information boundary are not yet defined."
     cutoff: null
     boundary_record: experiments/0.2/acquisition/PXD007535_information_boundary.yaml
   validation_source:
@@ -65,7 +68,7 @@ gates:
     housekeeping: 4
   cohort_independence:
     status: PENDING
-    evidence: "Publication describes an independent validation cohort, but exact subject/sample reconciliation has not been frozen; reported discovery counts conflict (66 in PRIDE description versus 67 in the candidate/audit record)."
+    evidence: "Metadata-only reconciliation is blocked: reported discovery counts conflict (66 in PRIDE description versus 67 in publication/candidate material), and identifiable discovery/validation subject manifests are absent."
     overlap_status: UNKNOWN
     reconciliation_record: experiments/0.2/acquisition/PXD007535_cohort_reconciliation.yaml
   identifier_mapping:
@@ -97,11 +100,15 @@ gates:
     evidence: "Discovery and validation artifact hashes are both required before admission; the official file inventory is complete but artifact-role classification remains pending."
     artifact_set_definition: experiments/0.2/acquisition/PXD007535_artifact_set_definition.yaml
 next_operations:
+  - classify_all_files_with_authoritative_role_evidence
   - acquire_complete_discovery_artifact
   - complete_discovery_manifest_and_hash
+  - reconcile_reported_identifiable_and_acquired_discovery_counts
   - freeze_discovery_information_cutoff
   - acquire_complete_validation_srm_artifact_separately
   - assemble_and_hash_sealed_validation_outcome_artifact
+  - reconcile_reported_identifiable_and_acquired_validation_counts
+  - calculate_subject_intersection_without_exposing_outcomes
   - reconcile_cohort_subjects_and_overlap
   - freeze_identifier_mapping
   - verify_metadata_and_processing_manifest
