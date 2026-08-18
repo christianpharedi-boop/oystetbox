@@ -1,0 +1,16 @@
+schema_version: "0.2"
+dataset_identifier: PXD007535
+status: PENDING_CLASSIFICATION
+source_file_inventory: acquisition/manifests/PXD007535_files.json
+metadata_inventory_count: 100
+candidate_validation_files_by_filename: 3
+unclassified_raw_or_scan_files: 97
+complete_discovery_artifact:
+  status: NOT_DEFINED
+  files: []
+complete_validation_artifact:
+  status: NOT_DEFINED
+  files: []
+classification_rule: "Do not infer discovery versus validation role from filename alone. Confirm file roles against study/sample manifests and processing metadata before assigning complete artifact sets."
+acquisition_rule: "Only after role classification may complete discovery and validation manifests be generated. Validation files must enter the sealed area directly."
+notes: The official API inventory is complete as a file listing, but artifact-role classification and complete-set acquisition remain unresolved.

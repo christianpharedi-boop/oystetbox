@@ -1,17 +1,30 @@
 schema_version: "0.2"
 dataset_identifier: PXD007535
-status: NOT_RECONCILED
+status: BLOCKED_CONFLICTING_REPORTED_COUNTS
+reported_counts:
+  discovery:
+    - count: 66
+      source: PRIDE project description
+      source_url: https://www.ebi.ac.uk/pride/archive/projects/PXD007535
+    - count: 67
+      source: current PXD007535 candidate/audit record
+      source_url: https://doi.org/10.1074/mcp.RA118.000718
+  validation:
+    - count: 82
+      source: PRIDE project description and publication description
+      source_url: https://www.ebi.ac.uk/pride/archive/projects/PXD007535
 discovery_subjects: []
 validation_subjects: []
 intersection: []
 counts:
   discovery: null
-  validation: null
+  validation: 82
   intersection: null
   discovery_only: null
   validation_only: null
-reconciliation_method: ""
+overlap_status: UNKNOWN
+reconciliation_method: "Pending acquisition of subject/sample manifests and explicit identifier normalization."
 source_manifest_sha256: null
 reviewer: ""
 reviewed_at: null
-notes: The intersection must be explicitly enumerated. The word independent is not accepted as a substitute for subject-level reconciliation.
+notes: Do not infer zero overlap from the word independent. The 66-versus-67 discovery-count discrepancy must be resolved before cohort independence can be marked PASS.

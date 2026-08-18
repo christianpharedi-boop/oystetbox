@@ -3,7 +3,10 @@ source:
   repository: PRIDE / ProteomeXchange
   url: https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD007535
 publication_license: CC BY 4.0 (reported; verify against source record)
-dataset_license_status: NOT_VERIFIED
+dataset_license_status: PARTIALLY_RESOLVED
+dataset_license_basis: PRE_JUNE_2018_EMBL_EBI_TERMS_OF_USE
+original_data_owner_restrictions: NOT_VERIFIED
+public_redistribution_authorized: false
 acquisition_date: ""
 discovery_evidence:
   description: Discovery LFQ proteomics cohort with 67 subjects and 119 differential proteins.
@@ -47,7 +50,7 @@ redistribution_or_hash_status:
 decision: NEEDS_CLARIFICATION
 screening_status: PROVISIONAL_CANDIDATE
 decision_basis:
-  dataset_license: UNVERIFIED
+  dataset_license: PARTIALLY_RESOLVED
   discovery_artifact: PENDING_HASH
   validation_artifact: PENDING_HASH
   cutoff: PENDING

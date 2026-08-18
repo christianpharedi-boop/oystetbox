@@ -16,6 +16,9 @@ acquisition_state:
   file_listing: acquisition/manifests/PXD007535_files.json
   validation_contents_opened: false
   validation_outcome_contract: experiments/0.2/validation_outcomes/PXD007535_SEALED_OUTCOME_ARTIFACT.yaml
+  artifact_set_definition: experiments/0.2/acquisition/PXD007535_artifact_set_definition.yaml
+  cohort_reconciliation: experiments/0.2/acquisition/PXD007535_cohort_reconciliation.yaml
+  information_boundary: experiments/0.2/acquisition/PXD007535_information_boundary.yaml
 source_record:
   repository: PRIDE / ProteomeXchange
   dataset_url: https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD007535
@@ -31,9 +34,13 @@ gates:
     evidence: "Publication reported as CC BY 4.0; publication license is tracked separately from dataset terms."
     evidence_url: https://doi.org/10.1074/mcp.RA118.000718
   dataset_license:
-    status: UNVERIFIED
-    evidence: "Dataset-level redistribution and experimental-use terms were not established by this audit."
-    evidence_url: https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD007535
+    status: PARTIALLY_RESOLVED
+    license_basis: PRE_JUNE_2018_EMBL_EBI_TERMS_OF_USE
+    evidence: "PRIDE policy routes datasets submitted before June 2018 to EMBL-EBI terms of use. Original data-owner restrictions and file redistribution authorization remain unverified."
+    evidence_url: https://www.ebi.ac.uk/pride/markdownpage/datapolicy
+    terms_url: https://www.ebi.ac.uk/about/terms-of-use/
+    original_data_owner_restrictions: NOT_VERIFIED
+    public_redistribution_authorized: false
   discovery_artifact:
     status: PENDING_HASH
     evidence: "Official project metadata and file inventory were acquired; one small discovery-side scan was acquired, but the complete LFQ discovery artifact and manifest checksum remain absent."
@@ -42,8 +49,9 @@ gates:
     artifact_sha256: null
   discovery_cutoff:
     status: PENDING
-    evidence: "Relevant dates are known, but the admissible information boundary and frozen discovery artifact are not yet defined."
+    evidence: "Relevant dates are recorded, but artifact roles and the admissible information boundary are not yet defined."
     cutoff: null
+    boundary_record: experiments/0.2/acquisition/PXD007535_information_boundary.yaml
   validation_source:
     status: PASS
     assay_type: TARGETED_SRM
@@ -57,8 +65,9 @@ gates:
     housekeeping: 4
   cohort_independence:
     status: PENDING
-    evidence: "Publication describes an independent validation cohort, but exact subject/sample reconciliation has not been frozen."
+    evidence: "Publication describes an independent validation cohort, but exact subject/sample reconciliation has not been frozen; reported discovery counts conflict (66 in PRIDE description versus 67 in the candidate/audit record)."
     overlap_status: UNKNOWN
+    reconciliation_record: experiments/0.2/acquisition/PXD007535_cohort_reconciliation.yaml
   identifier_mapping:
     status: PENDING
     evidence: "Protein and proteotypic-peptide material is reported, but mapping release/version and unresolved count are not frozen."
@@ -85,7 +94,8 @@ gates:
     prediction_hash: null
   artifact_hashes:
     status: PENDING
-    evidence: "Discovery and validation artifact hashes are both required before admission."
+    evidence: "Discovery and validation artifact hashes are both required before admission; the official file inventory is complete but artifact-role classification remains pending."
+    artifact_set_definition: experiments/0.2/acquisition/PXD007535_artifact_set_definition.yaml
 next_operations:
   - acquire_complete_discovery_artifact
   - complete_discovery_manifest_and_hash
@@ -95,7 +105,7 @@ next_operations:
   - reconcile_cohort_subjects_and_overlap
   - freeze_identifier_mapping
   - verify_metadata_and_processing_manifest
-  - verify_dataset_level_license
+  - verify_original_data_owner_restrictions_and_file_redistribution_terms
   - update_decision_basis
 transition:
   current: NEEDS_CLARIFICATION
